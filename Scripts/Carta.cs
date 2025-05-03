@@ -74,50 +74,75 @@ public class Carta : MonoBehaviour
     IEnumerator FusionarConSlider(GameObject carta1, GameObject carta2)
     {
 
-        float duration = 9f;
+        float duration = 3f;
         float elapsed = 0f;
-
         Carta cartaComp1 = carta1.GetComponent<Carta>();
         Carta cartaComp2 = carta2.GetComponent<Carta>();
-
         Slider slider = cartaComp1.slider;
-        slider.value = 0f;
-        slider.gameObject.SetActive(true); // Aseguramos que esté visible
-
-        while (elapsed < duration)
+        CardEnum? tipoFusion=null;
+        //comprobar que fusion es
+        if (cartaComp1.cartaEnum == CardEnum.Azul &&  cartaComp2.cartaEnum == CardEnum.Rojo || cartaComp1.cartaEnum == CardEnum.Rojo && cartaComp2.cartaEnum == CardEnum.Azul)
         {
-            if (fusionCancelada) // Si la fusión ha sido cancelada, detenemos la coroutine
-            {
-                // Restaurar el slider y las cartas
-                slider.value = 0f;
-                slider.gameObject.SetActive(false); // Hacemos invisible el slider
-                carta1.SetActive(true); // Reactivamos la carta 1
-                carta2.SetActive(true); // Reactivamos la carta 2
-
-                cartasEnFusion.Remove(carta1); // Eliminar las cartas del HashSet si se canceló la fusión
-                cartasEnFusion.Remove(carta2);
-
-                yield break; // Salir de la coroutine si se cancela
-            }
-
-            elapsed += Time.deltaTime;
-            slider.value = Mathf.Clamp01(elapsed / duration);
-            yield return null;
+            tipoFusion=CardEnum.Morado;
         }
 
-        slider.value = 1f;
+        if (tipoFusion != null)
+        {
+            slider.value = 0f;
+            slider.gameObject.SetActive(true); // Aseguramos que esté visible
 
-        // Si no se canceló, fusionamos las cartas
-        Vector3 posicion = carta1.transform.position;
+            while (elapsed < duration)
+            {
+                #region FusionCancelada
+                if (fusionCancelada) // Si la fusión ha sido cancelada, detenemos la coroutine
+                {
+                    // Restaurar el slider y las cartas
+                    slider.value = 0f;
+                    slider.gameObject.SetActive(false); // Hacemos invisible el slider
+                    carta1.SetActive(true); // Reactivamos la carta 1
+                    carta2.SetActive(true); // Reactivamos la carta 2
 
-        Destroy(carta1);
-        Destroy(carta2);
+                    cartasEnFusion.Remove(carta1); // Eliminar las cartas del HashSet si se canceló la fusión
+                    cartasEnFusion.Remove(carta2);
 
-        GameObject nuevaCarta = Instantiate(morado);
-        nuevaCarta.transform.position = posicion;
+                    yield break; // Salir de la coroutine si se cancela
+                }
+                #endregion
 
-        cartasEnFusion.Remove(carta1);
-        cartasEnFusion.Remove(carta2);
+                elapsed += Time.deltaTime;
+                slider.value = Mathf.Clamp01(elapsed / duration);
+                yield return null;
+            }
+
+            slider.value = 1f;
+
+            #region fusiones
+
+            //guardar la posicion
+            Vector3 posicion = carta1.transform.position;
+
+            //Morado
+            if (tipoFusion == CardEnum.Morado) 
+            {
+                Destroy(carta1);
+                Destroy(carta2);
+
+                GameObject nuevaCarta = Instantiate(morado);
+                nuevaCarta.transform.position = posicion;
+
+                cartasEnFusion.Remove(carta1);
+                cartasEnFusion.Remove(carta2);
+
+            }
+
+
+
+            #endregion
+        }
+        else 
+        {
+            //NO HAY FUSION PARA ESA CONVINACION
+        }
 
 
     }

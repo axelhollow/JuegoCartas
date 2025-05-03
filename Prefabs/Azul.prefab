@@ -364,10 +364,9 @@ GameObject:
   - component: {fileID: 3806383199233221537}
   - component: {fileID: 9135897490699165692}
   - component: {fileID: 4475040068497598450}
-  - component: {fileID: -2609285047397210223}
   - component: {fileID: 6429034079806001811}
   m_Layer: 0
-  m_Name: Carta
+  m_Name: Azul
   m_TagString: Draggable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -474,19 +473,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stackOffset: 0.2
   agarrada: 0
---- !u!114 &-2609285047397210223
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5363898381958202192}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d084086e3a2ee7f4e9da64d426bb5fbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  alturaEntreHijos: 0.2
 --- !u!114 &6429034079806001811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -502,7 +488,11 @@ MonoBehaviour:
   cartaEnum: 1
   slider: {fileID: 1305302888999103861}
   fusionCancelada: 0
+  alturaEntreHijos: 0.1
+  escaleraOffset: -0.3
   morado: {fileID: 5363898381958202192, guid: d57fd6d4c95fd9f4a85d7544fadfba0b, type: 3}
+  numHijos: 0
+  hijo: {fileID: 0}
 --- !u!1 &8041215697305764797
 GameObject:
   m_ObjectHideFlags: 0
