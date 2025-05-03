@@ -12,8 +12,7 @@ public class Carta : MonoBehaviour
     public HashSet<GameObject> cartasEnFusion = new HashSet<GameObject>();
     public Coroutine fusionCoroutine = null;  // Referencia a la coroutine activa para poder cancelarla
     public bool fusionCancelada = false;
-    public float alturaEntreHijos = 0.1f;
-    public float escaleraOffset = -0.3f;
+
     public GameObject morado;
     public int numHijos;
     public GameObject hijo;
@@ -25,23 +24,6 @@ public class Carta : MonoBehaviour
     }
     private void Update()
     {
-        //Acomodarr Hijos
-        if (gameObject.transform.childCount > 1)
-        {
-
-            //Ordenar a los hijos
-            for (int i = 0; i < transform.childCount; i++)
-            {
-                Transform hijo = transform.GetChild(i);
-                Vector3 nuevaPos = transform.position;
-
-                nuevaPos.y += alturaEntreHijos * (i + 1);           // Apila en altura
-                nuevaPos.z += escaleraOffset * (i + 1);             // Desplaza hacia atrás (como escalera)
-
-                hijo.position = nuevaPos;
-            }
-        }
-
 
         //Fusion
         if (gameObject.transform.childCount > numHijos)
