@@ -9,7 +9,7 @@ public class DragAndDropController : MonoBehaviour
     private Camera cam;
     private GameObject selectedObject;
     private float distanceToObject;
-    private float fixedY=0.5f;
+    private float fixedY=0.2f;
     public float stackOffset = 0.2f; // Altura entre objetos apilados
     public bool agarrada=false;
 
