@@ -21,7 +21,6 @@ public class DragAndDropController : MonoBehaviour
 
     void Update()
     {
-       
         if (Input.GetMouseButtonDown(0)) // Click izquierdo
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
@@ -38,10 +37,9 @@ public class DragAndDropController : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButton(0) && selectedObject != null)
+        if (Input.GetMouseButton(0) && selectedObject != null && selectedObject.GetComponent<DragAndDropController>().agarrada)
         {
             selectedObject.transform.SetParent(null);
-
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             Vector3 point = ray.GetPoint(distanceToObject);
             point.y = fixedY; // mantener a altura fija mientras arrastras
@@ -51,11 +49,13 @@ public class DragAndDropController : MonoBehaviour
         if (Input.GetMouseButtonUp(0) && selectedObject != null && agarrada)
         {
             Vector3 point = gameObject.transform.position;
-            
             gameObject.transform.position = point;
             TryStack(selectedObject);
             point.y = 0;
-            gameObject.transform.position= point;   
+            gameObject.transform.position= point;
+
+
+            //Agarre y seleccion
             selectedObject.GetComponent<DragAndDropController>().agarrada=false;
             selectedObject = null;
         }
@@ -63,7 +63,6 @@ public class DragAndDropController : MonoBehaviour
 
     void TryStack(GameObject droppedObject)
     {
-        print("uwu");
 
 
         Ray downRay = new Ray(droppedObject.transform.position + Vector3.down *0.1f, Vector3.down); // Rayo apuntando hacia abajo
@@ -71,15 +70,9 @@ public class DragAndDropController : MonoBehaviour
         // Usar un alcance mayor (1f o el valor que mejor te funcione)
         if (Physics.Raycast(downRay, out RaycastHit hit, 1f)) // Alcance del Raycast de 1 metro (ajustable)
         {
-            print(hit.collider.tag);
             // Asegurarse de que el objeto que está debajo tiene la etiqueta "Draggable"
             if (hit.collider.CompareTag("Draggable"))
             {
-                print("raycast choca");
-                // Imprimir para verificar si el objeto debajo fue detectado
-                print("Detecta objeto debajo: " + hit.collider.name);
-                print("objeto sujetado: " + gameObject.name);
-
                 if (hit.collider.gameObject.transform.parent == null) 
                 {
                     selectedObject.transform.SetParent(hit.collider.gameObject.transform);
