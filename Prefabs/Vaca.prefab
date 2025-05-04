@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 1791897303041773952}
   - component: {fileID: 7160845570450764302}
   - component: {fileID: 3242400201711474076}
+  - component: {fileID: -5831666667328084423}
   m_Layer: 0
   m_Name: Vaca
   m_TagString: Draggable
@@ -211,6 +212,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alturaEntreHijos: 0.1
   escaleraOffset: -0.3
+--- !u!114 &-5831666667328084423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159474320037564355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3840e07c12a502c44a265e45f3144b8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lecheOBJ: {fileID: 5363898381958202192, guid: 0af651684586a02458e9d9c4be3bd71b, type: 3}
+  slider: {fileID: 2442043939047655796}
 --- !u!1 &1801791388099012680
 GameObject:
   m_ObjectHideFlags: 0

@@ -144,15 +144,22 @@ public class Carta : MonoBehaviour
         {
             foreach (GameObject carta in cartasEnFusion)
             {
-                Carta cartaComp = carta.GetComponent<Carta>();
-                if (cartaComp != null && cartaComp.slider != null)
+                try
                 {
-                    cartaComp.slider.value = 0f;
-                    cartaComp.slider.gameObject.SetActive(false);
-                }
+                    Carta cartaComp = carta.GetComponent<Carta>();
+                    if (cartaComp != null && cartaComp.slider != null)
+                    {
+                        cartaComp.slider.value = 0f;
+                        cartaComp.slider.gameObject.SetActive(false);
+                    }
 
-                // Volver a activar las cartas para que estén disponibles para futuras fusiones
-                carta.SetActive(true);
+                    // Volver a activar las cartas para que estén disponibles para futuras fusiones
+                    carta.SetActive(true);
+                }
+                catch(MissingReferenceException ex) 
+                {
+                    print("Carta: " + gameObject.name + " destruida");
+                }
             }
         }
 
@@ -166,6 +173,7 @@ public class Carta : MonoBehaviour
     {
         Rojo,
         Azul,
-        Morado
+        Morado,
+        Heno
     }
 }
