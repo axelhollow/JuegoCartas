@@ -33,11 +33,11 @@ public class MaquinaProduccion : MonoBehaviour
     void Update()
     {
        
-
+        if(numHijos<1)numHijos = 1;
         if (transform.childCount > numHijos && fabricando==false) 
         {
             
-            //Fusion corutine
+            
             fusionCoroutine = StartCoroutine("procesarHijos");
 
         }
@@ -105,15 +105,31 @@ public class MaquinaProduccion : MonoBehaviour
                         }
                     }
                 }
-            }
+                numHijos = transform.childCount;
 
-            numHijos = transform.childCount;
+            }
+            else 
+            {
+                if (hijo.GetComponent<Canvas>() != null)
+                {
+
+                    print("EL CANVAS SE IGNORA");
+                }
+                else 
+                {
+
+                    hijo.SetParent(null);
+                    hijo.transform.position = transform.position + Vector3.left * 1f;
+                    numHijos--;
+                }
+                
+            }
+            
+
 
             foreach (GameObject item in cartasAProcesar)
             {
-                Vector3 posicionLeche = item.transform.position;
-                posicionLeche.x += 1;
-                posicionLeche.z -= 1;
+ 
 
                 float duration = 5f;
                 float elapsed = 0f;
@@ -129,7 +145,27 @@ public class MaquinaProduccion : MonoBehaviour
                 slider.gameObject.SetActive(false);
 
                 GameObject leche = Instantiate(lecheOBJ);
-                leche.transform.position = posicionLeche;
+                Vector3 posicionLeche = transform.position;
+
+                if (Physics.Raycast(posicionLeche + Vector3.up * 0.5f, Vector3.down, out RaycastHit hit, 1f))
+                {
+                    if (hit.collider.TryGetComponent<Carta>(out Carta carta))
+                    {
+                        if (carta.cartaEnum == CardEnum.Leche)
+                        {
+                            Debug.Log("Encontrado con Raycast");
+                        }
+                    }
+                }
+                Vector3 origen = posicionLeche + Vector3.up * 0.5f;
+                Vector3 direccion = Vector3.down;
+                float distancia = 1f;
+
+                Debug.DrawRay(origen, direccion * distancia, Color.green, 2f); // 2 segundos de duración
+
+                posicionLeche.x += 1;
+                posicionLeche.z -= 1;
+                leche.transform.position = posicionLeche+ Vector3.up * 0.5f;
                 Destroy(item);
                 numHijos--;
             }

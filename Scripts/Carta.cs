@@ -187,6 +187,7 @@ public class Carta : MonoBehaviour
         Rojo,
         Azul,
         Morado,
-        Heno
+        Heno,
+        Leche
     }
 }
