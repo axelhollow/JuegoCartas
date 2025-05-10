@@ -51,7 +51,19 @@ public class Carta : MonoBehaviour
             CancelarFusion();
         }
 
-        
+        if (transform.childCount > 1 && transform.parent!=null) 
+        {
+            foreach (Transform child in transform)
+            {
+                if (child.GetComponent<Carta>() != null) 
+                {
+                    child.transform.SetParent(transform.parent.transform);
+                
+                }
+                
+            }
+        }
+      
     }
     IEnumerator FusionarConSlider(GameObject carta1, GameObject carta2)
     {
@@ -128,6 +140,7 @@ public class Carta : MonoBehaviour
 
 
     }
+
     public void CancelarFusion()
     {
         fusionCancelada = true;
@@ -158,7 +171,7 @@ public class Carta : MonoBehaviour
                 }
                 catch(MissingReferenceException ex) 
                 {
-                    print("Carta: " + gameObject.name + " destruida");
+                    print("Carta: " + gameObject.name + " destruida "+ex);
                 }
             }
         }

@@ -49,12 +49,9 @@ public class DragAndDropController : MonoBehaviour
         if (Input.GetMouseButtonUp(0) && selectedObject != null && agarrada)
         {
             Vector3 point = gameObject.transform.position;
-            gameObject.transform.position = point;
             TryStack(selectedObject);
-            point.y = 0;
-            gameObject.transform.position= point;
-
-
+            point.y = -0.8450004f;
+            selectedObject.transform.position= point;
             //Agarre y seleccion
             selectedObject.GetComponent<DragAndDropController>().agarrada=false;
             selectedObject = null;
@@ -75,14 +72,18 @@ public class DragAndDropController : MonoBehaviour
             {
                 if (hit.collider.gameObject.transform.parent == null) 
                 {
+
+               
                     selectedObject.transform.SetParent(hit.collider.gameObject.transform);
 
                 }
                 else 
                 {
+
                     selectedObject.transform.SetParent(hit.collider.gameObject.transform.parent);
                 }
             }
+
         }
 
     }

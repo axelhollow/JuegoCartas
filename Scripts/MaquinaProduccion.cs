@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using static Carta;
@@ -13,37 +14,65 @@ public class MaquinaProduccion : MonoBehaviour
     public bool fabricando=false;
     public List<GameObject> cartasAProcesar = new List<GameObject>();
 
+    //Cancelar Fusion
+    public bool fusionCancelada = false;
+    public Coroutine fusionCoroutine = null;  // Referencia a la coroutine activa para poder cancelarla
+    public HashSet<GameObject> cartasEnFusion = new HashSet<GameObject>();
+
+    //Nivel De Hijos
     public int profundidadMaxima = 99;
 
     private void Awake()
     {
-        numHijos=transform.childCount;
+        numHijos = transform.childCount;
+        print("Hijos vaca: "+ numHijos);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+       
 
         if (transform.childCount > numHijos && fabricando==false) 
         {
-            StartCoroutine("procesarHijos");
+            
+            //Fusion corutine
+            fusionCoroutine = StartCoroutine("procesarHijos");
 
         }
+        if(transform.childCount < numHijos && fabricando==true) 
+        {
+            print("cancelar fusion");
+            CancelarFusion();
+        }
+
         
     }
 
-    IEnumerator procesarHijos() 
+
+
+    IEnumerator procesarHijos()
     {
         fabricando = true;
+
+        // Guardamos una copia de los hijos originales antes de modificar la jerarquía
+        List<Transform> hijosOriginales = new List<Transform>();
         foreach (Transform hijo in transform)
         {
-            //Hijo correcto
+            hijosOriginales.Add(hijo);
+        }
+
+        foreach (Transform hijo in hijosOriginales)
+        {
+            // Hijo correcto
             if (hijo.GetComponent<Carta>() != null && hijo.GetComponent<Carta>().cartaEnum == CardEnum.Heno)
             {
+                print("heno padre: " + hijo.name + " num hijos: " + hijo.transform.childCount);
                 Queue<(Transform nodo, int nivel)> cola = new Queue<(Transform, int)>();
                 cola.Enqueue((hijo, 0));
                 cartasAProcesar.Insert(0, hijo.gameObject);
-                print(hijo.gameObject.name);
+
                 while (cola.Count > 0)
                 {
                     var (actual, nivel) = cola.Dequeue();
@@ -51,15 +80,22 @@ public class MaquinaProduccion : MonoBehaviour
                     if (nivel > profundidadMaxima)
                         continue;
 
-                    foreach (Transform nieto in actual)
+                    // Copia temporal de hijos para evitar problemas al cambiar jerarquía
+                    List<Transform> nietos = new List<Transform>();
+                    foreach (Transform n in actual)
                     {
-                        // Verificamos si tiene el componente Carta
+                        nietos.Add(n);
+                    }
+
+                    foreach (Transform nieto in nietos)
+                    {
                         if (nieto.TryGetComponent<Carta>(out Carta carta))
                         {
                             if (carta.cartaEnum == CardEnum.Heno)
                             {
-                                // Insertar al principio para que los últimos aparezcan primero
                                 cartasAProcesar.Insert(0, nieto.gameObject);
+                                nieto.gameObject.transform.SetParent(transform);
+                                print(nieto.gameObject.name);
                             }
                         }
 
@@ -69,39 +105,57 @@ public class MaquinaProduccion : MonoBehaviour
                         }
                     }
                 }
-
             }
 
+            numHijos = transform.childCount;
 
             foreach (GameObject item in cartasAProcesar)
             {
-
                 Vector3 posicionLeche = item.transform.position;
                 posicionLeche.x += 1;
                 posicionLeche.z -= 1;
 
-
-                //Slider
-                float duration = 3f;
+                float duration = 5f;
                 float elapsed = 0f;
                 slider.gameObject.SetActive(true);
-                while (elapsed < duration)
+
+                while (elapsed < duration && fabricando)
                 {
                     elapsed += Time.deltaTime;
                     slider.value = Mathf.Clamp01(elapsed / duration);
                     yield return null;
                 }
+
                 slider.gameObject.SetActive(false);
 
-                //Destruccion y creacion
-                Instantiate(lecheOBJ);
-                lecheOBJ.transform.position = posicionLeche;
+                GameObject leche = Instantiate(lecheOBJ);
+                leche.transform.position = posicionLeche;
                 Destroy(item);
+                numHijos--;
             }
- 
-
         }
+
         cartasAProcesar.Clear();
         fabricando = false;
+    }
+
+
+    public void CancelarFusion()
+    {
+        fabricando=false;
+        // Detener la coroutine si está en ejecución
+        if (fusionCoroutine != null)
+        {
+            StopCoroutine(fusionCoroutine);
+            fusionCoroutine = null;
+        }
+
+        // Obtener los sliders activos
+        slider.value = 0;
+        slider.gameObject.SetActive(false);
+        cartasEnFusion.Remove(gameObject);
+        fusionCancelada = false;
+        cartasAProcesar.Clear();
+        numHijos = 1; 
     }
 }
