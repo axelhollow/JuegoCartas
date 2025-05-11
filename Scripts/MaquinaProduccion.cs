@@ -10,6 +10,7 @@ public class MaquinaProduccion : MonoBehaviour
 {
     public int numHijos;
     public GameObject lecheOBJ;
+    public CardEnum EnumObjectivo;
     public Slider slider;
     public bool fabricando=false;
     public List<GameObject> cartasAProcesar = new List<GameObject>();
@@ -25,8 +26,6 @@ public class MaquinaProduccion : MonoBehaviour
     private void Awake()
     {
         numHijos = transform.childCount;
-        print("Hijos vaca: "+ numHijos);
-        
     }
 
     // Update is called once per frame
@@ -43,7 +42,6 @@ public class MaquinaProduccion : MonoBehaviour
         }
         if(transform.childCount < numHijos && fabricando==true) 
         {
-            print("cancelar fusion");
             CancelarFusion();
         }
 
@@ -66,47 +64,47 @@ public class MaquinaProduccion : MonoBehaviour
         foreach (Transform hijo in hijosOriginales)
         {
             // Hijo correcto
-            if (hijo.GetComponent<Carta>() != null && hijo.GetComponent<Carta>().cartaEnum == CardEnum.Heno)
+            if (hijo.GetComponent<Carta>() != null)
             {
-                print("heno padre: " + hijo.name + " num hijos: " + hijo.transform.childCount);
-                Queue<(Transform nodo, int nivel)> cola = new Queue<(Transform, int)>();
-                cola.Enqueue((hijo, 0));
-                cartasAProcesar.Insert(0, hijo.gameObject);
-
-                while (cola.Count > 0)
+                if (hijo.GetComponent<Carta>().cartaEnum == EnumObjectivo)
                 {
-                    var (actual, nivel) = cola.Dequeue();
+                    Queue<(Transform nodo, int nivel)> cola = new Queue<(Transform, int)>();
+                    cola.Enqueue((hijo, 0));
+                    cartasAProcesar.Insert(0, hijo.gameObject);
 
-                    if (nivel > profundidadMaxima)
-                        continue;
-
-                    // Copia temporal de hijos para evitar problemas al cambiar jerarquía
-                    List<Transform> nietos = new List<Transform>();
-                    foreach (Transform n in actual)
+                    while (cola.Count > 0)
                     {
-                        nietos.Add(n);
-                    }
+                        var (actual, nivel) = cola.Dequeue();
 
-                    foreach (Transform nieto in nietos)
-                    {
-                        if (nieto.TryGetComponent<Carta>(out Carta carta))
+                        if (nivel > profundidadMaxima)
+                            continue;
+
+                        // Copia temporal de hijos para evitar problemas al cambiar jerarquía
+                        List<Transform> nietos = new List<Transform>();
+                        foreach (Transform n in actual)
                         {
-                            if (carta.cartaEnum == CardEnum.Heno)
+                            nietos.Add(n);
+                        }
+
+                        foreach (Transform nieto in nietos)
+                        {
+                            if (nieto.TryGetComponent<Carta>(out Carta carta))
                             {
-                                cartasAProcesar.Insert(0, nieto.gameObject);
-                                nieto.gameObject.transform.SetParent(transform);
-                                print(nieto.gameObject.name);
+                                if (carta.cartaEnum == EnumObjectivo)
+                                {
+                                    cartasAProcesar.Insert(0, nieto.gameObject);
+                                    nieto.gameObject.transform.SetParent(transform);
+                                }
+                            }
+
+                            if (nieto.childCount > 0 && nivel < profundidadMaxima)
+                            {
+                                cola.Enqueue((nieto, nivel + 1));
                             }
                         }
-
-                        if (nieto.childCount > 0 && nivel < profundidadMaxima)
-                        {
-                            cola.Enqueue((nieto, nivel + 1));
-                        }
                     }
+                    numHijos = transform.childCount;
                 }
-                numHijos = transform.childCount;
-
             }
             else 
             {
@@ -200,7 +198,7 @@ public class MaquinaProduccion : MonoBehaviour
 
 
 
-                //Destruimos el Heno
+                //Destruimos el objeto necesario para crear el otro(el heno en caso de la leche)
                 Destroy(item);
                 numHijos--;
             }
