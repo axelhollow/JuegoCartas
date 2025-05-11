@@ -167,28 +167,40 @@ public class MaquinaProduccion : MonoBehaviour
 
                 slider.gameObject.SetActive(false);
 
+                //Instanciamos la leche
                 GameObject leche = Instantiate(lecheOBJ);
-                Vector3 posicionLeche = transform.position;
 
-                if (Physics.Raycast(posicionLeche + Vector3.up * 0.5f, Vector3.down, out RaycastHit hit, 1f))
-                {
-                    if (hit.collider.TryGetComponent<Carta>(out Carta carta))
+                    Vector3 direccion = Vector3.down;
+                    RaycastHit hit;
+                    
+                    leche.transform.position = transform.position + Vector3.up * 1f;
+                    leche.transform.position = leche.transform.position + Vector3.right * 1f;
+                    Vector3 origen = leche.transform.position;
+                    Debug.DrawRay(origen, direccion * 5, Color.red, 2f);
+                    if (Physics.Raycast(origen, Vector3.down, out hit, 5f))
                     {
-                        if (carta.cartaEnum == CardEnum.Leche)
+                        
+                        if (hit.collider.GetComponent<Carta>() != null)
                         {
-                            Debug.Log("Encontrado con Raycast");
+                            Debug.Log("Carta válida detectada debajo del hijo.");
+                            leche.transform.SetParent(hit.collider.transform);
+                        }
+                        else
+                        {
+                            Debug.Log("No es una carta");
                         }
                     }
-                }
-                Vector3 origen = posicionLeche + Vector3.up * 0.5f;
-                Vector3 direccion = Vector3.down;
-                float distancia = 1f;
+                    else
+                    {
+                        Debug.Log("No se detectó nada debajo del hijo.");
+                    }
+                    leche.transform.position = leche.transform.position + Vector3.down * 1f;
 
-                Debug.DrawRay(origen, direccion * distancia, Color.green, 2f); // 2 segundos de duración
 
-                posicionLeche.x += 1;
-                posicionLeche.z -= 1;
-                leche.transform.position = posicionLeche+ Vector3.up * 0.5f;
+
+
+
+                //Destruimos el Heno
                 Destroy(item);
                 numHijos--;
             }
