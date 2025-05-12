@@ -189,6 +189,8 @@ public class Carta : MonoBehaviour
         Morado,
         Heno,
         Leche,
-        Queso
+        Queso,
+        Semilla,
+        TierraCultivo
     }
 }

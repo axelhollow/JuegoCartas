@@ -19,13 +19,21 @@ public class MaquinaProduccion : MonoBehaviour
     public bool fusionCancelada = false;
     public Coroutine fusionCoroutine = null;  // Referencia a la coroutine activa para poder cancelarla
     public HashSet<GameObject> cartasEnFusion = new HashSet<GameObject>();
-
+    public float duration = 3f;
+    public float elapsed;
     //Nivel De Hijos
     public int profundidadMaxima = 99;
 
     private void Awake()
     {
         numHijos = transform.childCount;
+
+        switch (EnumObjectivo) 
+        {
+            case CardEnum.Leche: duration = 3;break;
+            case CardEnum.Queso: duration = 5;break;
+        
+        }
     }
 
     // Update is called once per frame
@@ -115,7 +123,6 @@ public class MaquinaProduccion : MonoBehaviour
                 }
                 else 
                 {
-
                     hijo.SetParent(null);
                     hijo.transform.position = transform.position + Vector3.up * 1f;
                     hijo.transform.position = hijo.transform.position + Vector3.left * 1f;
@@ -125,7 +132,6 @@ public class MaquinaProduccion : MonoBehaviour
                     Debug.DrawRay(origen, direccion * 5, Color.red, 2f);
                     if (Physics.Raycast(origen, Vector3.down, out hit, 5f))
                     {
-                        
                         if (hit.collider.GetComponent<Carta>() != null)
                         {
                             Debug.Log("Carta válida detectada debajo del hijo.");
@@ -150,10 +156,9 @@ public class MaquinaProduccion : MonoBehaviour
 
             foreach (GameObject item in cartasAProcesar)
             {
- 
 
-                float duration = 1f;
-                float elapsed = 0f;
+                elapsed = 0;
+
                 slider.gameObject.SetActive(true);
 
                 while (elapsed < duration && fabricando)
