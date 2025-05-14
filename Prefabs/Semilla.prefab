@@ -225,9 +225,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cartaEnum: 6
-  slider: {fileID: 0}
+  slider: {fileID: 2442043939047655796}
   fusionCancelada: 0
-  morado: {fileID: 0}
+  ResultadoFusion: {fileID: 5363898381958202192, guid: 5de10caae4d44c6459812458dde5c3ef, type: 3}
   numHijos: 0
   hijo: {fileID: 0}
 --- !u!1 &1801791388099012680

@@ -13,7 +13,7 @@ public class Carta : MonoBehaviour
     public Coroutine fusionCoroutine = null;  // Referencia a la coroutine activa para poder cancelarla
     public bool fusionCancelada = false;
 
-    public GameObject morado;
+    public GameObject ResultadoFusion;
     public int numHijos;
     public GameObject hijo;
 
@@ -68,7 +68,7 @@ public class Carta : MonoBehaviour
     IEnumerator FusionarConSlider(GameObject carta1, GameObject carta2)
     {
 
-        float duration = 3f;
+        float duration = 1f;
         float elapsed = 0f;
         Carta cartaComp1 = carta1.GetComponent<Carta>();
         Carta cartaComp2 = carta2.GetComponent<Carta>();
@@ -78,6 +78,13 @@ public class Carta : MonoBehaviour
         if (cartaComp1.cartaEnum == CardEnum.Azul &&  cartaComp2.cartaEnum == CardEnum.Rojo || cartaComp1.cartaEnum == CardEnum.Rojo && cartaComp2.cartaEnum == CardEnum.Azul)
         {
             tipoFusion=CardEnum.Morado;
+            ResultadoFusion = cartaComp2.ResultadoFusion;
+        }
+        if (cartaComp1.cartaEnum == CardEnum.TierraCultivo && cartaComp2.cartaEnum == CardEnum.Semilla)
+        {
+            tipoFusion = CardEnum.Heno;
+            duration = 5f;
+            ResultadoFusion = cartaComp2.ResultadoFusion;
         }
 
         if (tipoFusion != null)
@@ -115,21 +122,14 @@ public class Carta : MonoBehaviour
             //guardar la posicion
             Vector3 posicion = carta1.transform.position;
 
-            //Morado
-            if (tipoFusion == CardEnum.Morado) 
-            {
                 Destroy(carta1);
                 Destroy(carta2);
 
-                GameObject nuevaCarta = Instantiate(morado);
+                GameObject nuevaCarta = Instantiate(ResultadoFusion);
                 nuevaCarta.transform.position = posicion;
 
                 cartasEnFusion.Remove(carta1);
                 cartasEnFusion.Remove(carta2);
-
-            }
-
-
 
             #endregion
         }

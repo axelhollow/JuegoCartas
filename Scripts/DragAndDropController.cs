@@ -25,7 +25,7 @@ public class DragAndDropController : MonoBehaviour
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-
+           // Debug.DrawRay(ray.origin, ray.direction * 100f, Color.red, 1f);
             if (Physics.Raycast(ray, out hit))
             {
                 if (hit.collider.CompareTag("Draggable"))
@@ -63,7 +63,7 @@ public class DragAndDropController : MonoBehaviour
 
 
         Ray downRay = new Ray(droppedObject.transform.position + Vector3.down *0.1f, Vector3.down); // Rayo apuntando hacia abajo
-        //Debug.DrawRay(downRay.origin, downRay.direction * 1f, Color.green, 2f);
+        Debug.DrawRay(downRay.origin, downRay.direction * 1f, Color.green, 2f);
         // Usar un alcance mayor (1f o el valor que mejor te funcione)
         if (Physics.Raycast(downRay, out RaycastHit hit, 1f)) // Alcance del Raycast de 1 metro (ajustable)
         {

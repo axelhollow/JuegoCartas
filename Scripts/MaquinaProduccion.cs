@@ -19,7 +19,7 @@ public class MaquinaProduccion : MonoBehaviour
     public bool fusionCancelada = false;
     public Coroutine fusionCoroutine = null;  // Referencia a la coroutine activa para poder cancelarla
     public HashSet<GameObject> cartasEnFusion = new HashSet<GameObject>();
-    public float duration = 3f;
+    public float duration;
     public float elapsed;
     //Nivel De Hijos
     public int profundidadMaxima = 99;
@@ -30,7 +30,7 @@ public class MaquinaProduccion : MonoBehaviour
 
         switch (EnumObjectivo) 
         {
-            case CardEnum.Leche: duration = 3;break;
+            case CardEnum.Leche: duration = 2;break;
             case CardEnum.Queso: duration = 5;break;
         
         }
