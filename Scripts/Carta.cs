@@ -191,6 +191,8 @@ public class Carta : MonoBehaviour
         Leche,
         Queso,
         Semilla,
-        TierraCultivo
+        TierraCultivo,
+        Moneda,
+        Vaca
     }
 }
