@@ -117,10 +117,12 @@ public class DragAndDropController : MonoBehaviour
                 //    monedaAux.transform.position = new Vector3(-8.341585f, -0.8450004f, 4.220949f);
 
                 //}
-
-                int valor_actual = int.Parse(monedas.text.ToString()) + valorCarta;
-                monedas.text=valor_actual.ToString();
-                Destroy(gameObject);
+                if (valorCarta != 0)
+                {
+                    int valor_actual = int.Parse(monedas.text.ToString()) + valorCarta;
+                    monedas.text = valor_actual.ToString();
+                    Destroy(gameObject);
+                }
 
             }
 
