@@ -1842,8 +1842,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4285032574
+  m_fontColor: {r: 0.49411768, g: 0.40784317, b: 0.40784317, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2155,6 +2155,79 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &1375058182
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8280902411288293004, guid: b407af6e9347dbf4f90f666c98d2728b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1988866726741810389, guid: b407af6e9347dbf4f90f666c98d2728b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.389
+      objectReference: {fileID: 0}
+    - target: {fileID: 1988866726741810389, guid: b407af6e9347dbf4f90f666c98d2728b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.8949995
+      objectReference: {fileID: 0}
+    - target: {fileID: 1988866726741810389, guid: b407af6e9347dbf4f90f666c98d2728b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.759
+      objectReference: {fileID: 0}
+    - target: {fileID: 1988866726741810389, guid: b407af6e9347dbf4f90f666c98d2728b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1988866726741810389, guid: b407af6e9347dbf4f90f666c98d2728b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1988866726741810389, guid: b407af6e9347dbf4f90f666c98d2728b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1988866726741810389, guid: b407af6e9347dbf4f90f666c98d2728b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1988866726741810389, guid: b407af6e9347dbf4f90f666c98d2728b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1988866726741810389, guid: b407af6e9347dbf4f90f666c98d2728b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1988866726741810389, guid: b407af6e9347dbf4f90f666c98d2728b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3806383199233221537, guid: b407af6e9347dbf4f90f666c98d2728b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 250bf37c2e2185442aa43fb516617806, type: 2}
+    - target: {fileID: 5363898381958202192, guid: b407af6e9347dbf4f90f666c98d2728b, type: 3}
+      propertyPath: m_Name
+      value: Mercado
+      objectReference: {fileID: 0}
+    - target: {fileID: 5363898381958202192, guid: b407af6e9347dbf4f90f666c98d2728b, type: 3}
+      propertyPath: m_TagString
+      value: Mercado
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429034079806001811, guid: b407af6e9347dbf4f90f666c98d2728b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b407af6e9347dbf4f90f666c98d2728b, type: 3}
 --- !u!1 &1399381491
 GameObject:
   m_ObjectHideFlags: 0
@@ -2453,8 +2526,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4285032574
+  m_fontColor: {r: 0.49411768, g: 0.40784317, b: 0.40784317, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2918,8 +2991,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4285032574
+  m_fontColor: {r: 0.49411768, g: 0.40784317, b: 0.40784317, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3037,6 +3110,14 @@ PrefabInstance:
     - target: {fileID: 5542588060398058923, guid: 4882a79205f241f46a36dd44bd78c9d9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160845570450764302, guid: 4882a79205f241f46a36dd44bd78c9d9, type: 3}
+      propertyPath: Moneda
+      value: 
+      objectReference: {fileID: 1159474320037564355, guid: 9c29b2588adb5c74684414e5ccbc7a2a, type: 3}
+    - target: {fileID: 7160845570450764302, guid: 4882a79205f241f46a36dd44bd78c9d9, type: 3}
+      propertyPath: valorCarta
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3373,7 +3454,7 @@ MonoBehaviour:
   botonNormal: {fileID: 1600467701}
   botonRapido: {fileID: 248105302}
   colorActivo: {r: 0, g: 1, b: 0, a: 1}
-  colorInactivo: {r: 1, g: 1, b: 1, a: 1}
+  colorInactivo: {r: 0.49411768, g: 0.40784317, b: 0.40784317, a: 1}
 --- !u!1 &2109732910
 GameObject:
   m_ObjectHideFlags: 0
@@ -3602,3 +3683,4 @@ SceneRoots:
   - {fileID: 209236242}
   - {fileID: 1935923188}
   - {fileID: 205403806}
+  - {fileID: 1375058182}

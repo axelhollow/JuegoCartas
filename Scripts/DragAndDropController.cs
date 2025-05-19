@@ -12,6 +12,8 @@ public class DragAndDropController : MonoBehaviour
     private float fixedY=0.2f;
     public float stackOffset = 0.2f; // Altura entre objetos apilados
     public bool agarrada=false;
+    public int valorCarta;
+    public GameObject Moneda;
 
     void Start()
     {
@@ -34,6 +36,7 @@ public class DragAndDropController : MonoBehaviour
                     selectedObject.GetComponent<DragAndDropController>().agarrada = true;
                     distanceToObject = Vector3.Distance(cam.transform.position, selectedObject.transform.position);
                 }
+              
             }
         }
 
@@ -82,6 +85,16 @@ public class DragAndDropController : MonoBehaviour
 
                     selectedObject.transform.SetParent(hit.collider.gameObject.transform.parent);
                 }
+            }
+            if (hit.collider.CompareTag("Mercado"))
+            {
+                for (int i = 1; i <= 3; i++)
+                {
+                    var monedaAux = Instantiate(Moneda);
+                    monedaAux.transform.position = hit.collider.gameObject.transform.position;
+                }
+                Destroy(gameObject);
+
             }
 
         }
