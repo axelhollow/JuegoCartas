@@ -198,6 +198,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stackOffset: 0.2
   agarrada: 0
+  valorCarta: 1
+  Moneda: {fileID: 1159474320037564355, guid: 9c29b2588adb5c74684414e5ccbc7a2a, type: 3}
 --- !u!114 &3242400201711474076
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -29,6 +29,8 @@ public class DayCycleManager : MonoBehaviour
 
     public event Action OnDayEnded;
 
+    public TextMeshProUGUI monedasActuales;
+
     [Header("Partículas")]
     public GameObject particulaDestruccionPrefab;
 
@@ -78,7 +80,7 @@ public class DayCycleManager : MonoBehaviour
         var cartas = GameObject.FindObjectsOfType<Carta>(true);
 
         int tierras = cartas.Count(c => c.cartaEnum == CardEnum.TierraCultivo && c.gameObject.activeInHierarchy);
-        int monedas = cartas.Count(c => c.cartaEnum == CardEnum.Moneda && c.gameObject.activeInHierarchy);
+        int monedas = int.Parse(monedasActuales.text);
 
         textoObjetivoActual.text = $"{monedas} / {tierras}";
 
@@ -105,15 +107,15 @@ public class DayCycleManager : MonoBehaviour
 
         Carta[] todasLasCartas = GameObject.FindObjectsOfType<Carta>(true);
 
-        var cartasMoneda = todasLasCartas
-            .Where(c => c.cartaEnum == CardEnum.Moneda && c.gameObject.activeInHierarchy)
-            .ToList();
+        //var cartasMoneda = todasLasCartas
+        //    .Where(c => c.cartaEnum == CardEnum.Moneda && c.gameObject.activeInHierarchy)
+        //    .ToList();
 
         var cartasTierra = todasLasCartas
             .Where(c => c.cartaEnum == CardEnum.TierraCultivo && c.gameObject.activeInHierarchy)
             .ToList();
 
-        int cantidadMonedas = cartasMoneda.Count;
+        int cantidadMonedas = int.Parse(monedasActuales.text);
         int objetivo = cartasTierra.Count;
 
         textMonedas.text = "Monedas: " + cantidadMonedas;
@@ -123,22 +125,25 @@ public class DayCycleManager : MonoBehaviour
         {
             textResultado.text = "Objetivo cumplido";
 
-            for (int i = 0; i < objetivo && i < cartasMoneda.Count; i++)
-            {
-                GenerarParticula(cartasMoneda[i].transform.position);
-                Destroy(cartasMoneda[i].gameObject);
-            }
+            //for (int i = 0; i < objetivo && i < cartasMoneda.Count; i++)
+            //{
+            //    GenerarParticula(cartasMoneda[i].transform.position);
+            //    Destroy(cartasMoneda[i].gameObject);
+            //}
+           int monedasAct= int.Parse(monedasActuales.text)-objetivo;
+            monedasActuales.text=monedasAct.ToString();
         }
         else
         {
             textResultado.text = "No cumpliste el objetivo";
 
             // Destruir todas las monedas disponibles
-            foreach (var moneda in cartasMoneda)
-            {
-                GenerarParticula(moneda.transform.position);
-                Destroy(moneda.gameObject);
-            }
+            //foreach (var moneda in cartasMoneda)
+            //{
+            //    GenerarParticula(moneda.transform.position);
+            //    Destroy(moneda.gameObject);
+            //}
+            monedasActuales.text = "0";
 
             int diferencia = objetivo - cantidadMonedas;
 
