@@ -25,24 +25,25 @@ public class Carta : MonoBehaviour
     private void Update()
     {
 
-        //Fusion
-        if (gameObject.transform.childCount > numHijos)
-        {
-            numHijos = gameObject.transform.childCount;
-            foreach (Transform child in transform)
+            //Fusion
+            if (gameObject.transform.childCount > numHijos)
             {
-                 hijo = child.gameObject;
-
-                if (hijo.tag == "Draggable" && !cartasEnFusion.Contains(hijo))
+                numHijos = gameObject.transform.childCount;
+                foreach (Transform child in transform)
                 {
-                    cartasEnFusion.Add(gameObject); // Añadir las cartas al HashSet
-                    cartasEnFusion.Add(hijo);
-                    fusionCoroutine = StartCoroutine(FusionarConSlider(gameObject, hijo)); // Iniciar la fusión
-                    break;
-                }
+                    hijo = child.gameObject;
 
+                    if (hijo.tag == "Draggable" && !cartasEnFusion.Contains(hijo))
+                    {
+                        cartasEnFusion.Add(gameObject); // Añadir las cartas al HashSet
+                        cartasEnFusion.Add(hijo);
+                        fusionCoroutine = StartCoroutine(FusionarConSlider(gameObject, hijo)); // Iniciar la fusión
+                        break;
+                    }
+
+                }
             }
-        }
+        
 
         //CancelarFusion
 
@@ -94,25 +95,30 @@ public class Carta : MonoBehaviour
 
             while (elapsed < duration)
             {
-                #region FusionCancelada
-                if (fusionCancelada) // Si la fusión ha sido cancelada, detenemos la coroutine
-                {
-                    // Restaurar el slider y las cartas
-                    slider.value = 0f;
-                    slider.gameObject.SetActive(false); // Hacemos invisible el slider
-                    carta1.SetActive(true); // Reactivamos la carta 1
-                    carta2.SetActive(true); // Reactivamos la carta 2
 
-                    cartasEnFusion.Remove(carta1); // Eliminar las cartas del HashSet si se canceló la fusión
-                    cartasEnFusion.Remove(carta2);
+                    #region FusionCancelada
+                    if (fusionCancelada) // Si la fusión ha sido cancelada, detenemos la coroutine
+                    {
+                        // Restaurar el slider y las cartas
+                        slider.value = 0f;
+                        slider.gameObject.SetActive(false); // Hacemos invisible el slider
+                        carta1.SetActive(true); // Reactivamos la carta 1
+                        carta2.SetActive(true); // Reactivamos la carta 2
 
-                    yield break; // Salir de la coroutine si se cancela
-                }
+                        cartasEnFusion.Remove(carta1); // Eliminar las cartas del HashSet si se canceló la fusión
+                        cartasEnFusion.Remove(carta2);
+
+                        yield break; // Salir de la coroutine si se cancela
+                    }
                 #endregion
 
-                elapsed += Time.deltaTime;
-                slider.value = Mathf.Clamp01(elapsed / duration);
-                yield return null;
+                if (GameManager.EstaPausado != true)
+                {
+                    elapsed += Time.deltaTime;
+                    slider.value = Mathf.Clamp01(elapsed / duration);
+                }
+                    yield return null;
+                
             }
 
             slider.value = 1f;

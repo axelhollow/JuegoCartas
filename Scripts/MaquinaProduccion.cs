@@ -39,15 +39,17 @@ public class MaquinaProduccion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
-        if(numHijos<1)numHijos = 1;
-        if (transform.childCount > numHijos && fabricando==false) 
-        {
-            
-            
-            fusionCoroutine = StartCoroutine("procesarHijos");
 
-        }
+        if(numHijos<1)numHijos = 1;
+
+            if (transform.childCount > numHijos && fabricando == false)
+            {
+
+
+                fusionCoroutine = StartCoroutine("procesarHijos");
+
+            }
+        
         if(transform.childCount < numHijos && fabricando==true) 
         {
             CancelarFusion();
@@ -163,8 +165,13 @@ public class MaquinaProduccion : MonoBehaviour
 
                 while (elapsed < duration && fabricando)
                 {
-                    elapsed += Time.deltaTime;
-                    slider.value = Mathf.Clamp01(elapsed / duration);
+
+                    if (GameManager.EstaPausado != true)
+                    {
+                        elapsed += Time.deltaTime;
+                        slider.value = Mathf.Clamp01(elapsed / duration);
+                       
+                    }
                     yield return null;
                 }
 

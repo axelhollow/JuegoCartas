@@ -45,21 +45,24 @@ public class DayCycleManager : MonoBehaviour
 
     void Update()
     {
-        timer += Time.deltaTime;
-
-        if (timer >= dayDuration)
+        if (GameManager.EstaPausado != true)
         {
-            timer = 0f;
-            currentDay++;
-            UpdateDayUI();
-            OnDayEnded?.Invoke();
-            ShowEndOfDaySummary();
+            timer += Time.deltaTime;
+
+            if (timer >= dayDuration)
+            {
+                timer = 0f;
+                currentDay++;
+                UpdateDayUI();
+                OnDayEnded?.Invoke();
+                ShowEndOfDaySummary();
+            }
+
+            if (dayProgressSlider != null)
+                dayProgressSlider.value = timer;
+
+            ActualizarObjetivoActual();
         }
-
-        if (dayProgressSlider != null)
-            dayProgressSlider.value = timer;
-
-        ActualizarObjetivoActual();
     }
 
     void UpdateDayUI()
