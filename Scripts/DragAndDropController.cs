@@ -15,11 +15,12 @@ public class DragAndDropController : MonoBehaviour
     public bool agarrada = false;
     public int valorCarta;
     //public GameObject Moneda;
-    public TextMeshProUGUI monedas;
+    private TextMeshProUGUI monedas;
     void Start()
     {
         cam = Camera.main;
-
+        GameObject monedasOBJ = GameObject.Find("NumMonedas");
+        monedas= monedasOBJ.GetComponent<TextMeshProUGUI>();
     }
 
     void Update()
@@ -31,7 +32,7 @@ public class DragAndDropController : MonoBehaviour
             // Debug.DrawRay(ray.origin, ray.direction * 100f, Color.red, 1f);
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.collider.CompareTag("Draggable"))
+                if (hit.collider.CompareTag("Draggable") || hit.collider.CompareTag("Sobre"))
                 {
 
                     selectedObject = hit.collider.gameObject;
@@ -95,7 +96,7 @@ public class DragAndDropController : MonoBehaviour
             {
                 print("mercado golpeado");
                
-                if (valorCarta>0)
+                if (valorCarta>-1)
                 {
                     int valor_actual = int.Parse(monedas.text.ToString()) + valorCarta;
                     monedas.text = valor_actual.ToString();

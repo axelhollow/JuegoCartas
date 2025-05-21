@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class AcomodarHijos : MonoBehaviour
 {
-    public float alturaEntreHijos = 0.1f;
-    public float escaleraOffset = -0.3f;
+    private float alturaEntreHijos = 0.1f;
+    private float escaleraOffset = -0.55f;
 
     // Update is called once per frame
     void Update()

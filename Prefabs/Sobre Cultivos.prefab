@@ -226,6 +226,7 @@ GameObject:
   - component: {fileID: 9068262839994881938}
   - component: {fileID: 6991691331137086437}
   - component: {fileID: 9014305755538163337}
+  - component: {fileID: -1911922229511491877}
   m_Layer: 0
   m_Name: Sobre Cultivos
   m_TagString: Sobre
@@ -340,6 +341,22 @@ MonoBehaviour:
   - {fileID: 1159474320037564355, guid: 22b89c421fe8a754794a0a1c1f8b0c85, type: 3}
   rangoX: 2
   rangoZ: 2
+  tiempoEntreClicks: 0.3
+--- !u!114 &-1911922229511491877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3126774926498801597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4903356b48031d4ab7bb2ccfdec9d6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stackOffset: 0.2
+  agarrada: 0
+  valorCarta: -1
 --- !u!1 &3142410750967766722
 GameObject:
   m_ObjectHideFlags: 0

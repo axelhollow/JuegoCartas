@@ -13,25 +13,29 @@ public class SobreDeCartas : MonoBehaviour
     public float rangoX;          // Rango máximo para aleatorizar X (+- rangoX)
     public float rangoZ;
 
+    private float tiempoUltimoClick = 0f;
+    public float tiempoEntreClicks = 0.3f; // Tiempo máximo entre clics para considerarlo doble clic
     void OnMouseDown()
     {
-        puntoBase=gameObject.transform.position;
-
-        Debug.Log("¡Me clicaron!: " + gameObject.name);
-        int tamanoLista = listaCartas.Count;
-        for (int i = 1; i < 4; i++)
+        if (Time.time - tiempoUltimoClick < tiempoEntreClicks)
         {
-            int numeroAleatorio = UnityEngine.Random.Range(0, tamanoLista);
-            GameObject carta = listaCartas[numeroAleatorio];
-            if (carta != null) 
+            // Doble clic detectado
+            puntoBase = gameObject.transform.position;
+            int tamanoLista = listaCartas.Count;
+            for (int i = 1; i < 4; i++)
             {
-                InstanciarEnXaleatorio(carta);
+                int numeroAleatorio = UnityEngine.Random.Range(0, tamanoLista);
+                GameObject carta = listaCartas[numeroAleatorio];
+                if (carta != null)
+                {
+                    InstanciarEnXaleatorio(carta);
+                }
+
             }
-
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
 
-
+        tiempoUltimoClick = Time.time;
     }
 
     void InstanciarEnXaleatorio(GameObject carta)

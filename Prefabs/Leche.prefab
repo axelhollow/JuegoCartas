@@ -474,8 +474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stackOffset: 0.2
   agarrada: 0
-  valorCarta: 1
-  monedas: {fileID: 0}
+  valorCarta: 2
 --- !u!114 &6429034079806001811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -506,8 +505,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eaac98db78fb9a47bda1a3145dc8aca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alturaEntreHijos: 0.1
-  escaleraOffset: -0.3
 --- !u!1 &8041215697305764797
 GameObject:
   m_ObjectHideFlags: 0

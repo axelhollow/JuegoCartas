@@ -118,39 +118,39 @@ public class MaquinaProduccion : MonoBehaviour
             }
             else 
             {
-                if (hijo.GetComponent<Canvas>() != null)
-                {
+                //if (hijo.GetComponent<Canvas>() != null)
+                //{
 
                     print("EL CANVAS SE IGNORA");
-                }
-                else 
-                {
-                    hijo.SetParent(null);
-                    hijo.transform.position = transform.position + Vector3.up * 1f;
-                    hijo.transform.position = hijo.transform.position + Vector3.left * 1f;
-                    Vector3 direccion = Vector3.down;
-                    RaycastHit hit;
-                    Vector3 origen = hijo.position;
-                    Debug.DrawRay(origen, direccion * 5, Color.red, 2f);
-                    if (Physics.Raycast(origen, Vector3.down, out hit, 5f))
-                    {
-                        if (hit.collider.GetComponent<Carta>() != null)
-                        {
-                            Debug.Log("Carta válida detectada debajo del hijo.");
-                            hijo.SetParent(hit.collider.transform);
-                        }
-                        else
-                        {
-                            Debug.Log("No es una carta");
-                        }
-                    }
-                    else
-                    {
-                        Debug.Log("No se detectó nada debajo del hijo.");
-                    }
-                    hijo.transform.position = hijo.transform.position + Vector3.up * -1f;
-                    numHijos--;
-                }
+                //}
+                //else 
+                //{
+                //    hijo.SetParent(null);
+                //    hijo.transform.position = transform.position + Vector3.up * 1f;
+                //    hijo.transform.position = hijo.transform.position + Vector3.left * 2f;
+                //    Vector3 direccion = Vector3.down;
+                //    RaycastHit hit;
+                //    Vector3 origen = hijo.position;
+                //    Debug.DrawRay(origen, direccion * 5, Color.red, 2f);
+                //    if (Physics.Raycast(origen, Vector3.down, out hit, 5f))
+                //    {
+                //        if (hit.collider.GetComponent<Carta>() != null)
+                //        {
+                //            Debug.Log("Carta válida detectada debajo del hijo.");
+                //            hijo.SetParent(hit.collider.transform);
+                //        }
+                //        else
+                //        {
+                //            Debug.Log("No es una carta");
+                //        }
+                //    }
+                //    else
+                //    {
+                //        Debug.Log("No se detectó nada debajo del hijo.");
+                //    }
+                //    hijo.transform.position = hijo.transform.position + Vector3.up * -1f;
+                //    numHijos--;
+                //}
                 
             }
             
@@ -184,15 +184,15 @@ public class MaquinaProduccion : MonoBehaviour
                     RaycastHit hit;
                     
                     leche.transform.position = transform.position + Vector3.up * 1f;
-                    leche.transform.position = leche.transform.position + Vector3.right * 1f;
+                    leche.transform.position = leche.transform.position + Vector3.right * 2f;
                     Vector3 origen = leche.transform.position;
                     Debug.DrawRay(origen, direccion * 5, Color.red, 2f);
                     if (Physics.Raycast(origen, Vector3.down, out hit, 5f))
                     {
-                        
+
                         if (hit.collider.GetComponent<Carta>() != null)
                         {
-                            Debug.Log("Carta válida detectada debajo del hijo.");
+                             Debug.Log("Carta válida detectada debajo del hijo.");
                             leche.transform.SetParent(hit.collider.transform);
                         }
                         else
