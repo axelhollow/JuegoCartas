@@ -107,8 +107,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.550824, y: -0.8449995, z: 1.8635278}
-  m_LocalScale: {x: 1, y: 0.1, z: 1.5}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.6, y: 0.15999997, z: 2.4000008}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8474435893364557143}
   m_Father: {fileID: 0}
@@ -198,6 +198,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stackOffset: 0.2
   agarrada: 0
+  valorCarta: 0
+  monedas: {fileID: 0}
 --- !u!114 &3242400201711474076
 MonoBehaviour:
   m_ObjectHideFlags: 0

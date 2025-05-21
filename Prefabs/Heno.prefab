@@ -383,8 +383,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.012}
-  m_LocalScale: {x: 1, y: 0.1, z: 1.5}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.6, y: 0.15999994, z: 2.3999987}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7939365860605889005}
   m_Father: {fileID: 0}
@@ -474,6 +474,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stackOffset: 0.2
   agarrada: 0
+  valorCarta: 0
+  monedas: {fileID: 0}
 --- !u!114 &6429034079806001811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -489,7 +491,7 @@ MonoBehaviour:
   cartaEnum: 3
   slider: {fileID: 1305302888999103861}
   fusionCancelada: 0
-  morado: {fileID: 5363898381958202192, guid: d57fd6d4c95fd9f4a85d7544fadfba0b, type: 3}
+  ResultadoFusion: {fileID: 0}
   numHijos: 0
   hijo: {fileID: 0}
 --- !u!114 &-8280902411288293004

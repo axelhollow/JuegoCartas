@@ -33,15 +33,19 @@ public class DragAndDropController : MonoBehaviour
             {
                 if (hit.collider.CompareTag("Draggable"))
                 {
+
                     selectedObject = hit.collider.gameObject;
-                    selectedObject.GetComponent<DragAndDropController>().agarrada = true;
+                    if (selectedObject.GetComponent<DragAndDropController>() != null)
+                    {
+                        selectedObject.GetComponent<DragAndDropController>().agarrada = true;
+                    }
                     distanceToObject = Vector3.Distance(cam.transform.position, selectedObject.transform.position);
                 }
 
             }
         }
 
-        if (Input.GetMouseButton(0) && selectedObject != null && selectedObject.GetComponent<DragAndDropController>().agarrada)
+        if (Input.GetMouseButton(0) && selectedObject != null && selectedObject.GetComponent<DragAndDropController>()!=null && selectedObject.GetComponent<DragAndDropController>().agarrada)
         {
             selectedObject.transform.SetParent(null);
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
@@ -89,35 +93,9 @@ public class DragAndDropController : MonoBehaviour
             }
             if (hit.collider.CompareTag("Mercado"))
             {
-                //for (int i = 1; i <= valorCarta; i++)
-                //{
-                //    GameObject monedaAux = Instantiate(Moneda);
-                //    Vector3 posicion = new Vector3(-8.341585f, 0, 4.220949f);
-                //    monedaAux.transform.position = posicion;
-                //    downRay = new Ray(posicion + Vector3.down * 0.1f, Vector3.down); // Rayo apuntando hacia abajo
-                //    Debug.DrawRay(downRay.origin, downRay.direction * 1f, Color.green, 2f);
-                //    if (Physics.Raycast(downRay, out RaycastHit detecta, 1f)) // Alcance del Raycast de 1 metro (ajustable)
-                //    {
-                //        if (detecta.collider.CompareTag("Draggable"))
-                //        {
-                //            if (detecta.collider.gameObject.transform.parent == null)
-                //            {
-
-
-                //                monedaAux.transform.SetParent(detecta.collider.gameObject.transform);
-
-                //            }
-                //            else
-                //            {
-
-                //                monedaAux.transform.SetParent(detecta.collider.gameObject.transform.parent);
-                //            }
-                //        }
-                //    }
-                //    monedaAux.transform.position = new Vector3(-8.341585f, -0.8450004f, 4.220949f);
-
-                //}
-                if (valorCarta != 0)
+                print("mercado golpeado");
+               
+                if (valorCarta>0)
                 {
                     int valor_actual = int.Parse(monedas.text.ToString()) + valorCarta;
                     monedas.text = valor_actual.ToString();
