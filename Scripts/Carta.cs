@@ -21,19 +21,21 @@ public class Carta : MonoBehaviour
     private void Awake()
     {
         numHijos = gameObject.transform.childCount;
+
     }
     private void Update()
     {
 
-            //Fusion
-            if (gameObject.transform.childCount > numHijos)
+
+        //Fusion
+        if (gameObject.transform.childCount != numHijos)
             {
-                numHijos = gameObject.transform.childCount;
+                
                 foreach (Transform child in transform)
                 {
                     hijo = child.gameObject;
 
-                    if (hijo.tag == "Draggable" && !cartasEnFusion.Contains(hijo))
+                    if (hijo.tag == "Draggable" && !cartasEnFusion.Contains(hijo) && hijo.transform.childCount==1 && gameObject.transform.childCount==2)
                     {
                         cartasEnFusion.Add(gameObject); // Añadir las cartas al HashSet
                         cartasEnFusion.Add(hijo);
@@ -47,9 +49,11 @@ public class Carta : MonoBehaviour
 
         //CancelarFusion
 
-        if(gameObject.transform.childCount < numHijos) 
+        if(gameObject.transform.childCount ==1 || gameObject.transform.childCount >2) 
         {
+
             CancelarFusion();
+            numHijos = gameObject.transform.childCount;
         }
 
         if (transform.childCount > 1 && transform.parent!=null) 
@@ -182,7 +186,6 @@ public class Carta : MonoBehaviour
             }
         }
 
-        numHijos = numHijos-1;
         cartasEnFusion.Remove(hijo);
         cartasEnFusion.Remove(gameObject);
         hijo = null;    
