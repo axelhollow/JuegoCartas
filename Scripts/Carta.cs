@@ -25,13 +25,15 @@ public class Carta : MonoBehaviour
     }
     private void Update()
     {
-
+       // numHijos = gameObject.transform.childCount;
+        
 
         //Fusion
-        if (gameObject.transform.childCount != numHijos)
+        if (gameObject.transform.childCount == 2)
             {
-                
-                foreach (Transform child in transform)
+            numHijos = gameObject.transform.childCount;
+            print(numHijos);
+            foreach (Transform child in transform)
                 {
                     hijo = child.gameObject;
 
