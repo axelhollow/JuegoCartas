@@ -92,19 +92,64 @@ public class DragAndDropController : MonoBehaviour
                     selectedObject.transform.SetParent(hit.collider.gameObject.transform.parent);
                 }
             }
+            //Metodo simple video
+            //if (hit.collider.CompareTag("Mercado"))
+            //{
+            //    print("mercado golpeado");
+
+            //    if (valorCarta>-1)
+            //    {
+            //        int valor_actual = int.Parse(monedas.text.ToString()) + valorCarta;
+            //        monedas.text = valor_actual.ToString();
+            //        Destroy(gameObject);
+            //    }
+
+            //}
+
+            //Metodo correcto
             if (hit.collider.CompareTag("Mercado"))
             {
                 print("mercado golpeado");
-               
-                if (valorCarta>-1)
-                {
-                    int valor_actual = int.Parse(monedas.text.ToString()) + valorCarta;
-                    monedas.text = valor_actual.ToString();
-                    Destroy(gameObject);
-                }
 
+                List<Transform> allObjectsToSell = GetAllDescendantsBreadthFirst(transform);
+                allObjectsToSell.Add(transform); // Añade el objeto padre al final
+
+                foreach (Transform obj in allObjectsToSell)
+                {
+                    DragAndDropController dac = obj.GetComponent<DragAndDropController>();
+                    if (dac != null && dac.valorCarta > -1)
+                    {
+                        int valor_actual = int.Parse(monedas.text.ToString()) + dac.valorCarta;
+                        monedas.text = valor_actual.ToString();
+                    }
+                    Destroy(obj.gameObject);
+                }
             }
 
         }
+    }
+
+    List<Transform> GetAllDescendantsBreadthFirst(Transform root)
+    {
+        Queue<Transform> queue = new Queue<Transform>();
+        List<Transform> result = new List<Transform>();
+
+        foreach (Transform child in root)
+        {
+            queue.Enqueue(child);
+        }
+
+        while (queue.Count > 0)
+        {
+            Transform current = queue.Dequeue();
+            result.Add(current);
+
+            foreach (Transform child in current)
+            {
+                queue.Enqueue(child);
+            }
+        }
+
+        return result;
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ComprarSobre : MonoBehaviour
@@ -11,45 +12,82 @@ public class ComprarSobre : MonoBehaviour
     public float distanciaEmpuje = 2f;     // Cuánto queremos empujar
     public float duracionEmpuje = 0.5f;    // Duración del empuje animado
 
+    public TextMeshProUGUI monedas;
+    public int costeSobre;
+    private int cantidadMonedas;
+
+
+    private void Start()
+    {
+        cantidadMonedas = int.Parse(monedas.text);
+    }
     void OnMouseDown()
     {
-        // Empujar si hay un SOBRE en el lugar exacto
-        Collider[] objetosEnPosicion = Physics.OverlapSphere(posicion, 0.5f);
-        foreach (Collider col in objetosEnPosicion)
+        if (TryCompra()==true) 
         {
-            if (col.CompareTag("Sobre"))
+            //cobramos el coste
+            restarDinero();
+
+            // Empujar si hay un SOBRE en el lugar exacto
+            Collider[] objetosEnPosicion = Physics.OverlapSphere(posicion, 0.5f);
+            foreach (Collider col in objetosEnPosicion)
             {
-                Vector3 direccionEmpuje = (col.transform.position - posicion).normalized;
-                if (direccionEmpuje == Vector3.zero) direccionEmpuje = Vector3.right;
-                StartCoroutine(EmpujarSuave(col.transform, direccionEmpuje * distanciaEmpuje, duracionEmpuje));
+                if (col.CompareTag("Sobre"))
+                {
+                    Vector3 direccionEmpuje = (col.transform.position - posicion).normalized;
+                    if (direccionEmpuje == Vector3.zero) direccionEmpuje = Vector3.right;
+                    StartCoroutine(EmpujarSuave(col.transform, direccionEmpuje * distanciaEmpuje, duracionEmpuje));
+                }
+            }
+
+            // Empujar si hay un DRAGGABLE justo en la posición
+            foreach (Collider col in objetosEnPosicion)
+            {
+                if (col.CompareTag("Draggable"))
+                {
+                    Vector3 direccionEmpuje = (col.transform.position - posicion).normalized;
+                    if (direccionEmpuje == Vector3.zero) direccionEmpuje = Vector3.right;
+                    StartCoroutine(EmpujarSuave(col.transform, direccionEmpuje * distanciaEmpuje, duracionEmpuje));
+                }
+            }
+
+            // Instanciar el objeto en la posición deseada
+            var sobre = Instantiate(SobrePrefab);
+            sobre.transform.position = posicion;
+
+            // Empujar objetos DRAGGABLE cercanos (como antes)
+            Collider[] objetosCercanos = Physics.OverlapSphere(posicion, radioDeteccion);
+            foreach (Collider col in objetosCercanos)
+            {
+                if (col.CompareTag("Draggable") && col.gameObject != sobre)
+                {
+                    Vector3 direccionEmpuje = (col.transform.position - posicion).normalized;
+                    StartCoroutine(EmpujarSuave(col.transform, direccionEmpuje * distanciaEmpuje, duracionEmpuje));
+                }
             }
         }
+    }
 
-        // Empujar si hay un DRAGGABLE justo en la posición
-        foreach (Collider col in objetosEnPosicion)
+    public void restarDinero() 
+    {
+        cantidadMonedas=cantidadMonedas-costeSobre;
+        monedas.text=cantidadMonedas.ToString();
+    }
+
+    public bool TryCompra() 
+    {
+        cantidadMonedas = int.Parse(monedas.text);
+        if (cantidadMonedas - costeSobre > -1)
         {
-            if (col.CompareTag("Draggable"))
-            {
-                Vector3 direccionEmpuje = (col.transform.position - posicion).normalized;
-                if (direccionEmpuje == Vector3.zero) direccionEmpuje = Vector3.right;
-                StartCoroutine(EmpujarSuave(col.transform, direccionEmpuje * distanciaEmpuje, duracionEmpuje));
-            }
+            return true;
         }
-
-        // Instanciar el objeto en la posición deseada
-        var sobre = Instantiate(SobrePrefab);
-        sobre.transform.position = posicion;
-
-        // Empujar objetos DRAGGABLE cercanos (como antes)
-        Collider[] objetosCercanos = Physics.OverlapSphere(posicion, radioDeteccion);
-        foreach (Collider col in objetosCercanos)
+        else 
         {
-            if (col.CompareTag("Draggable") && col.gameObject != sobre)
-            {
-                Vector3 direccionEmpuje = (col.transform.position - posicion).normalized;
-                StartCoroutine(EmpujarSuave(col.transform, direccionEmpuje * distanciaEmpuje, duracionEmpuje));
-            }
+            print("FALSE");
+            return false;
         }
+     
+
     }
 
     IEnumerator EmpujarSuave(Transform objeto, Vector3 desplazamiento, float duracion)
