@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 3242400201711474076}
   - component: {fileID: -5831666667328084423}
   m_Layer: 0
-  m_Name: Vaca
+  m_Name: Gallina
   m_TagString: Draggable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -141,7 +141,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3fc0036cc4526f044a9e8067df65a1d5, type: 2}
+  - {fileID: 2100000, guid: d2a46ec8ef9844f4fb1c5fdb89254f79, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -224,8 +224,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numHijos: 0
-  lecheOBJ: {fileID: 5363898381958202192, guid: 0af651684586a02458e9d9c4be3bd71b, type: 3}
-  EnumObjetivo: 3
+  lecheOBJ: {fileID: 5363898381958202192, guid: c5fb2c4c6e7f3bc4490de6fcd158f5bb, type: 3}
+  EnumObjetivo: 11
   slider: {fileID: 2442043939047655796}
   fabricando: 0
   cartasAProcesar: []

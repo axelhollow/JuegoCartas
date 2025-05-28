@@ -89,9 +89,9 @@ GameObject:
   - component: {fileID: 1791897303041773952}
   - component: {fileID: 7160845570450764302}
   - component: {fileID: 3242400201711474076}
-  - component: {fileID: -5831666667328084423}
+  - component: {fileID: 8400453942804276622}
   m_Layer: 0
-  m_Name: Vaca
+  m_Name: Semilla Heno
   m_TagString: Draggable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -107,7 +107,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.550824, y: -0.8449995, z: 1.8635278}
-  m_LocalScale: {x: 1.6, y: 0.15999994, z: 2.3999987}
+  m_LocalScale: {x: 1.6, y: 0.15999997, z: 2.4000008}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8474435893364557143}
@@ -141,7 +141,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3fc0036cc4526f044a9e8067df65a1d5, type: 2}
+  - {fileID: 2100000, guid: d7c2950742c447c49bc70a59f8d102ac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -198,7 +198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stackOffset: 0.2
   agarrada: 0
-  valorCarta: 3
+  valorCarta: 1
 --- !u!114 &3242400201711474076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,7 +211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eaac98db78fb9a47bda1a3145dc8aca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-5831666667328084423
+--- !u!114 &8400453942804276622
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -220,19 +220,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1159474320037564355}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3840e07c12a502c44a265e45f3144b8f, type: 3}
+  m_Script: {fileID: 11500000, guid: db9867b0af4305c4c90bf61ec6747d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numHijos: 0
-  lecheOBJ: {fileID: 5363898381958202192, guid: 0af651684586a02458e9d9c4be3bd71b, type: 3}
-  EnumObjetivo: 3
+  cartaEnum: 6
   slider: {fileID: 2442043939047655796}
-  fabricando: 0
-  cartasAProcesar: []
   fusionCancelada: 0
-  duration: 3
-  elapsed: 0
-  profundidadMaxima: 99
+  ResultadoFusion: {fileID: 5363898381958202192, guid: 5de10caae4d44c6459812458dde5c3ef, type: 3}
+  numHijos: 0
+  hijo: {fileID: 0}
 --- !u!1 &1801791388099012680
 GameObject:
   m_ObjectHideFlags: 0

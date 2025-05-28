@@ -81,19 +81,30 @@ public class Carta : MonoBehaviour
         Carta cartaComp2 = carta2.GetComponent<Carta>();
         Slider slider = cartaComp1.slider;
         CardEnum? tipoFusion=null;
+
         //comprobar que fusion es
         if (cartaComp1.cartaEnum == CardEnum.Azul &&  cartaComp2.cartaEnum == CardEnum.Rojo || cartaComp1.cartaEnum == CardEnum.Rojo && cartaComp2.cartaEnum == CardEnum.Azul)
         {
             tipoFusion=CardEnum.Morado;
             ResultadoFusion = cartaComp2.ResultadoFusion;
         }
-        if (cartaComp1.cartaEnum == CardEnum.TierraCultivo && cartaComp2.cartaEnum == CardEnum.Semilla)
+        if (cartaComp1.cartaEnum == CardEnum.TierraCultivo && cartaComp2.cartaEnum == CardEnum.SemillaHeno)
         {
             tipoFusion = CardEnum.Heno;
             duration = 5f;
             ResultadoFusion = cartaComp2.ResultadoFusion;
         }
+        if (cartaComp1.cartaEnum == CardEnum.TierraCultivo && cartaComp2.cartaEnum == CardEnum.SemillaMaiz)
+        {
+            tipoFusion = CardEnum.Maiz;
+            duration = 5f;
+            ResultadoFusion = cartaComp2.ResultadoFusion;
+        }
 
+
+
+
+        //Procesar la fusion
         if (tipoFusion != null)
         {
             slider.value = 0f;
@@ -201,9 +212,13 @@ public class Carta : MonoBehaviour
         Heno,
         Leche,
         Queso,
-        Semilla,
+        SemillaHeno,
         TierraCultivo,
         Moneda,
-        Vaca
+        Vaca,
+        Gallina,
+        Maiz,
+        Huevo,
+        SemillaMaiz
     }
 }

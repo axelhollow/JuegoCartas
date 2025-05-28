@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 3242400201711474076}
   - component: {fileID: 8400453942804276622}
   m_Layer: 0
-  m_Name: Semilla
+  m_Name: Semilla Maiz
   m_TagString: Draggable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -141,7 +141,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 90135fe387a89e74cb50e045cb0b2f66, type: 2}
+  - {fileID: 2100000, guid: ec281c0f132ac814fa1c4c60d6df25d8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -223,10 +223,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db9867b0af4305c4c90bf61ec6747d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cartaEnum: 6
+  cartaEnum: 13
   slider: {fileID: 2442043939047655796}
   fusionCancelada: 0
-  ResultadoFusion: {fileID: 5363898381958202192, guid: 5de10caae4d44c6459812458dde5c3ef, type: 3}
+  ResultadoFusion: {fileID: 5363898381958202192, guid: 552b45f8f54e8294f97c25540f52bd18, type: 3}
   numHijos: 0
   hijo: {fileID: 0}
 --- !u!1 &1801791388099012680

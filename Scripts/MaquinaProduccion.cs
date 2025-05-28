@@ -10,7 +10,7 @@ public class MaquinaProduccion : MonoBehaviour
 {
     public int numHijos;
     public GameObject lecheOBJ;
-    public CardEnum EnumObjectivo;
+    public CardEnum EnumObjetivo;
     public Slider slider;
     public bool fabricando=false;
     public List<GameObject> cartasAProcesar = new List<GameObject>();
@@ -28,7 +28,7 @@ public class MaquinaProduccion : MonoBehaviour
     {
         numHijos = transform.childCount;
 
-        switch (EnumObjectivo) 
+        switch (EnumObjetivo) 
         {
             case CardEnum.Leche: duration = 2;break;
             case CardEnum.Queso: duration = 5;break;
@@ -76,7 +76,7 @@ public class MaquinaProduccion : MonoBehaviour
             // Hijo correcto
             if (hijo.GetComponent<Carta>() != null)
             {
-                if (hijo.GetComponent<Carta>().cartaEnum == EnumObjectivo)
+                if (hijo.GetComponent<Carta>().cartaEnum == EnumObjetivo)
                 {
                     Queue<(Transform nodo, int nivel)> cola = new Queue<(Transform, int)>();
                     cola.Enqueue((hijo, 0));
@@ -100,7 +100,7 @@ public class MaquinaProduccion : MonoBehaviour
                         {
                             if (nieto.TryGetComponent<Carta>(out Carta carta))
                             {
-                                if (carta.cartaEnum == EnumObjectivo)
+                                if (carta.cartaEnum == EnumObjetivo)
                                 {
                                     cartasAProcesar.Insert(0, nieto.gameObject);
                                     nieto.gameObject.transform.SetParent(transform);
