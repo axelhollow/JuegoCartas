@@ -20,8 +20,11 @@ public class DayCycleManager : MonoBehaviour
     public TextMeshProUGUI textMonedas;
     public TextMeshProUGUI textObjetivo;
     public TextMeshProUGUI textResultado;
-
     public TextMeshProUGUI textoObjetivoActual; // Contador en tiempo real
+    public TextMeshProUGUI monedasActuales;
+
+    [Header("Canvas UI")]
+    public Canvas canvasUI;
 
     private float timer = 0f;
     private int currentDay = 1;
@@ -29,7 +32,7 @@ public class DayCycleManager : MonoBehaviour
 
     public event Action OnDayEnded;
 
-    public TextMeshProUGUI monedasActuales;
+
 
     [Header("Partículas")]
     public GameObject particulaDestruccionPrefab;
@@ -38,9 +41,11 @@ public class DayCycleManager : MonoBehaviour
     {
         UpdateDayUI();
 
+        //le damos un valor al mx del slider
         if (dayProgressSlider != null)
             dayProgressSlider.maxValue = dayDuration;
 
+        //desactivamos el panel del final del dia
         if (panelResumenDia != null)
             panelResumenDia.SetActive(false);
     }
@@ -103,13 +108,10 @@ public class DayCycleManager : MonoBehaviour
 
     void ShowEndOfDaySummary()
     {
+        canvasUI.gameObject.SetActive(false);
         Time.timeScale = 0f;
 
         Carta[] todasLasCartas = GameObject.FindObjectsOfType<Carta>(true);
-
-        //var cartasMoneda = todasLasCartas
-        //    .Where(c => c.cartaEnum == CardEnum.Moneda && c.gameObject.activeInHierarchy)
-        //    .ToList();
 
         var cartasTierra = todasLasCartas
             .Where(c => c.cartaEnum == CardEnum.TierraCultivo && c.gameObject.activeInHierarchy)
@@ -125,11 +127,7 @@ public class DayCycleManager : MonoBehaviour
         {
             textResultado.text = "Objetivo cumplido";
 
-            //for (int i = 0; i < objetivo && i < cartasMoneda.Count; i++)
-            //{
-            //    GenerarParticula(cartasMoneda[i].transform.position);
-            //    Destroy(cartasMoneda[i].gameObject);
-            //}
+          
            int monedasAct= int.Parse(monedasActuales.text)-objetivo;
             monedasActuales.text=monedasAct.ToString();
         }
@@ -137,12 +135,6 @@ public class DayCycleManager : MonoBehaviour
         {
             textResultado.text = "No cumpliste el objetivo";
 
-            // Destruir todas las monedas disponibles
-            //foreach (var moneda in cartasMoneda)
-            //{
-            //    GenerarParticula(moneda.transform.position);
-            //    Destroy(moneda.gameObject);
-            //}
             monedasActuales.text = "0";
 
             int diferencia = objetivo - cantidadMonedas;
@@ -210,6 +202,7 @@ public class DayCycleManager : MonoBehaviour
     public void ContinuarJuego()
     {
         Time.timeScale = 1f;
+        canvasUI.gameObject.SetActive(true);
         if (panelResumenDia != null)
             panelResumenDia.SetActive(false);
     }

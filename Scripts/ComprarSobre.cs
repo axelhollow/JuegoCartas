@@ -16,6 +16,9 @@ public class ComprarSobre : MonoBehaviour
     public int costeSobre;
     private int cantidadMonedas;
 
+    [Header("Partículas")]
+    public GameObject particulaDestruccionPrefab;
+
 
     private void Start()
     {
@@ -52,8 +55,11 @@ public class ComprarSobre : MonoBehaviour
             }
 
             // Instanciar el objeto en la posición deseada
+            AudioManager.Instance.PlaySFX("Dinero");
+            GenerarParticula(posicion);
             var sobre = Instantiate(SobrePrefab);
             sobre.transform.position = posicion;
+
 
             // Empujar objetos DRAGGABLE cercanos (como antes)
             Collider[] objetosCercanos = Physics.OverlapSphere(posicion, radioDeteccion);
@@ -67,7 +73,14 @@ public class ComprarSobre : MonoBehaviour
             }
         }
     }
-
+    void GenerarParticula(Vector3 posicion)
+    {
+        if (particulaDestruccionPrefab != null)
+        {
+            var instancia = Instantiate(particulaDestruccionPrefab, posicion, Quaternion.identity);
+            Destroy(instancia, 2f);
+        }
+    }
     public void restarDinero() 
     {
         cantidadMonedas=cantidadMonedas-costeSobre;
