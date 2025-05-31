@@ -334,10 +334,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   listaCartas:
-  - {fileID: 1159474320037564355, guid: 4882a79205f241f46a36dd44bd78c9d9, type: 3}
-  - {fileID: 1159474320037564355, guid: 3d847875d0b01bf43973530bba98181e, type: 3}
-  - {fileID: 5363898381958202192, guid: 0af651684586a02458e9d9c4be3bd71b, type: 3}
+  - {fileID: 5363898381958202192, guid: 552b45f8f54e8294f97c25540f52bd18, type: 3}
+  - {fileID: 1159474320037564355, guid: c0915af6c04180b49bdff9d4d205e429, type: 3}
+  - {fileID: 1159474320037564355, guid: 6e9344c390d8b3649ada7fe9b5b81760, type: 3}
   - {fileID: 5363898381958202192, guid: 5de10caae4d44c6459812458dde5c3ef, type: 3}
+  - {fileID: 1159474320037564355, guid: 22b89c421fe8a754794a0a1c1f8b0c85, type: 3}
+  - {fileID: 1159474320037564355, guid: 22b89c421fe8a754794a0a1c1f8b0c85, type: 3}
   - {fileID: 1159474320037564355, guid: 22b89c421fe8a754794a0a1c1f8b0c85, type: 3}
   rangoX: 2
   rangoZ: 2

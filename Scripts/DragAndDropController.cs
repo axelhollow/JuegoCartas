@@ -38,7 +38,9 @@ public class DragAndDropController : MonoBehaviour
                     selectedObject = hit.collider.gameObject;
                     if (selectedObject.GetComponent<DragAndDropController>() != null)
                     {
+                        
                         selectedObject.GetComponent<DragAndDropController>().agarrada = true;
+                        AudioManager.Instance.PlaySFX("Coger");
                     }
                     distanceToObject = Vector3.Distance(cam.transform.position, selectedObject.transform.position);
                 }
@@ -63,6 +65,7 @@ public class DragAndDropController : MonoBehaviour
             selectedObject.transform.position = point;
             //Agarre y seleccion
             selectedObject.GetComponent<DragAndDropController>().agarrada = false;
+            AudioManager.Instance.PlaySFX("Dejar");
             selectedObject = null;
         }
     }
