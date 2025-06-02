@@ -127,6 +127,13 @@ public class DragAndDropController : MonoBehaviour
                     }
                     Destroy(obj.gameObject);
                 }
+                //animacion
+                LeanTween.scale(monedas.gameObject, Vector3.one * 1.2f, 0.15f).setEaseOutBack().setOnComplete(() =>
+                {
+                    LeanTween.scale(monedas.gameObject, Vector3.one, 0.15f).setEaseInBack();
+                });
+                //sonido
+                AudioManager.Instance.PlaySFX("Dinero");
             }
 
         }

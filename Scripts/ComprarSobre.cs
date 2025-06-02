@@ -56,6 +56,12 @@ public class ComprarSobre : MonoBehaviour
 
             // Instanciar el objeto en la posición deseada
             AudioManager.Instance.PlaySFX("Dinero");
+
+            LeanTween.scale(monedas.gameObject, Vector3.one * 1.2f, 0.15f).setEaseOutBack().setOnComplete(() =>
+            {
+                LeanTween.scale(monedas.gameObject, Vector3.one, 0.15f).setEaseInBack();
+            });
+
             GenerarParticula(posicion);
             var sobre = Instantiate(SobrePrefab);
             sobre.transform.position = posicion;
@@ -97,6 +103,7 @@ public class ComprarSobre : MonoBehaviour
         else 
         {
             print("FALSE");
+            AudioManager.Instance.PlaySFX("Error");
             return false;
         }
      

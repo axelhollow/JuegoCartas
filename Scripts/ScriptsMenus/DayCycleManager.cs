@@ -71,7 +71,7 @@ public class DayCycleManager : MonoBehaviour
             ActualizarObjetivoActual();
         }
     }
-
+    //Incrementar Dia
     void UpdateDayUI()
     {
         if (dayCounterText != null)
@@ -91,7 +91,8 @@ public class DayCycleManager : MonoBehaviour
 
         bool cumple = monedas >= tierras;
 
-        textoObjetivoActual.color = cumple ? Color.green : Color.red;
+        //textoObjetivoActual.color = cumple ? Color.green : Color.red;
+        textoObjetivoActual.color = cumple ? new Color32(142, 230, 142, 255) : new Color32(234, 106, 106, 255);
 
         // Activar animación solo si se acaba de cumplir el objetivo
         if (cumple && !cumpliaObjetivoAntes)
