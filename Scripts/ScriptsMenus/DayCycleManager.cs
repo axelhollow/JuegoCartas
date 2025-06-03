@@ -9,7 +9,7 @@ using static Carta;
 public class DayCycleManager : MonoBehaviour
 {
     [Header("Duración del día en segundos")]
-    public float dayDuration = 60f;
+    public float dayDuration;
 
     [Header("Referencias UI")]
     public Slider dayProgressSlider;
@@ -27,15 +27,20 @@ public class DayCycleManager : MonoBehaviour
     public Canvas canvasUI;
 
     private float timer = 0f;
-    private int currentDay = 1;
+    public int currentDay;
     private bool cumpliaObjetivoAntes = false; // <- Nuevo flag dinámico
 
     public event Action OnDayEnded;
 
-
+    [Header("Objetivo del dia")]
+    private int objetivo;
 
     [Header("Partículas")]
     public GameObject particulaDestruccionPrefab;
+
+    [Header("Configuración")]
+    public int maxDays = 100;
+    public AnimationCurve curvaObjetivo;
 
     void Start()
     {
@@ -48,6 +53,8 @@ public class DayCycleManager : MonoBehaviour
         //desactivamos el panel del final del dia
         if (panelResumenDia != null)
             panelResumenDia.SetActive(false);
+        //calcular el objevtivo del día 1
+        CalcularObjetivoDelDia();
     }
 
     void Update()
@@ -63,12 +70,12 @@ public class DayCycleManager : MonoBehaviour
                 UpdateDayUI();
                 OnDayEnded?.Invoke();
                 ShowEndOfDaySummary();
+                //OBJETIVO DEL DIA
+                CalcularObjetivoDelDia();
             }
 
             if (dayProgressSlider != null)
                 dayProgressSlider.value = timer;
-
-            ActualizarObjetivoActual();
         }
     }
     //Incrementar Dia
@@ -77,50 +84,53 @@ public class DayCycleManager : MonoBehaviour
         if (dayCounterText != null)
             dayCounterText.text = "Día " + currentDay;
     }
-
-    void ActualizarObjetivoActual()
+    void ObjetivoDelDia() 
     {
-        if (textoObjetivoActual == null) return;
-
-        var cartas = GameObject.FindObjectsOfType<Carta>(true);
-
-        int tierras = cartas.Count(c => c.cartaEnum == CardEnum.TierraCultivo && c.gameObject.activeInHierarchy);
-        int monedas = int.Parse(monedasActuales.text);
-
-        textoObjetivoActual.text = $"{monedas} / {tierras}";
-
-        bool cumple = monedas >= tierras;
-
-        //textoObjetivoActual.color = cumple ? Color.green : Color.red;
-        textoObjetivoActual.color = cumple ? new Color32(142, 230, 142, 255) : new Color32(234, 106, 106, 255);
-
-        // Activar animación solo si se acaba de cumplir el objetivo
-        if (cumple && !cumpliaObjetivoAntes)
+        switch (currentDay) 
         {
-            LeanTween.scale(textoObjetivoActual.gameObject, Vector3.one * 1.2f, 0.15f).setEaseOutBack().setOnComplete(() =>
-            {
-                LeanTween.scale(textoObjetivoActual.gameObject, Vector3.one, 0.15f).setEaseInBack();
-            });
+            case 1:
+                {
+                    objetivo = currentDay;
+                    textoObjetivoActual.text = objetivo.ToString();
+                    break;
+                }
+            case 2:
+                {
+                    objetivo = currentDay * 2;
+                    textoObjetivoActual.text = objetivo.ToString(); 
+                    break;
+                }
         }
+        
+    
+    }
 
-        // Guardar el estado para la siguiente comparación
-        cumpliaObjetivoAntes = cumple;
+    public void CalcularObjetivoDelDia()
+    {
+
+        float t = (float)(currentDay - 1) / (maxDays - 1); // Normaliza entre 0 y 1
+
+        float valor = curvaObjetivo.Evaluate(t); ; // Evaluar la curva
+        print(valor);
+        objetivo = Mathf.RoundToInt(valor);
+       
+        textoObjetivoActual.text = objetivo.ToString();
     }
 
     void ShowEndOfDaySummary()
     {
-        canvasUI.gameObject.SetActive(false);
         Time.timeScale = 0f;
+        canvasUI.gameObject.SetActive(false);
+        panelResumenDia.SetActive(true);
 
-        Carta[] todasLasCartas = GameObject.FindObjectsOfType<Carta>(true);
 
-        var cartasTierra = todasLasCartas
-            .Where(c => c.cartaEnum == CardEnum.TierraCultivo && c.gameObject.activeInHierarchy)
-            .ToList();
+        //Carta[] todasLasCartas = GameObject.FindObjectsOfType<Carta>(true);
+
+        //var cartasTierra = todasLasCartas
+        //    .Where(c => c.cartaEnum == CardEnum.TierraCultivo && c.gameObject.activeInHierarchy)
+        //    .ToList();
 
         int cantidadMonedas = int.Parse(monedasActuales.text);
-        int objetivo = cartasTierra.Count;
-
         textMonedas.text = "Monedas: " + cantidadMonedas;
         textObjetivo.text = "Objetivo: " + objetivo + " monedas";
 
@@ -132,74 +142,19 @@ public class DayCycleManager : MonoBehaviour
            int monedasAct= int.Parse(monedasActuales.text)-objetivo;
             monedasActuales.text=monedasAct.ToString();
         }
+        //No cumples el objetivo diario PIERDES
         else
         {
             textResultado.text = "No cumpliste el objetivo";
 
-            monedasActuales.text = "0";
 
-            int diferencia = objetivo - cantidadMonedas;
-
-            var tierrasParaEliminar = cartasTierra.OrderBy(x => UnityEngine.Random.value).Take(diferencia).ToList();
-
-            foreach (var tierra in tierrasParaEliminar)
-            {
-                GenerarParticula(tierra.transform.position);
-                Destroy(tierra.gameObject);
-            }
         }
 
-        panelResumenDia.SetActive(true);
 
-        // --- Chequeo de derrota ---
-        // Esperamos un frame para que se actualice la escena, para esto usamos StartCoroutine
 
-        StartCoroutine(VerificarDerrotaAlFinalDelDia());
-    }
-
-    IEnumerator VerificarDerrotaAlFinalDelDia()
-    {
-        // Esperar al siguiente frame para que se actualicen los objetos destruidos
-        yield return null;
-
-        // Buscar si quedan tierras activas
-        var tierrasRestantes = GameObject.FindObjectsOfType<Carta>(true)
-            .Where(c => c.cartaEnum == CardEnum.TierraCultivo && c.gameObject.activeInHierarchy)
-            .ToList();
-
-        if (tierrasRestantes.Count == 0)
-        {
-            // Aquí tu lógica de derrota, por ejemplo:
-            Debug.Log("¡Has perdido! No quedan tierras.");
-
-            // Puedes mostrar un panel de Game Over o reiniciar el juego
-            MostrarPanelDerrota();
-        }
-    }
-
-    void MostrarPanelDerrota()
-    {
-        // Ejemplo simple: mostrar un panel con mensaje de derrota
-        // Puedes adaptar esto a tu UI
-
-        // Por ejemplo, si tienes un panel específico:
-        // panelDerrota.SetActive(true);
-
-        // O simplemente pausar el juego
-        Time.timeScale = 0f;
-
-        // Puedes hacer más cosas aquí...
     }
 
 
-    void GenerarParticula(Vector3 posicion)
-    {
-        if (particulaDestruccionPrefab != null)
-        {
-            var instancia = Instantiate(particulaDestruccionPrefab, posicion, Quaternion.identity);
-            Destroy(instancia, 2f);
-        }
-    }
     public void ContinuarJuego()
     {
         Time.timeScale = 1f;
