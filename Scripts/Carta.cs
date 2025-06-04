@@ -204,21 +204,5 @@ public class Carta : MonoBehaviour
         hijo = null;    
         fusionCancelada = false;
     }
-    public enum CardEnum
-    {
-        Rojo,
-        Azul,
-        Morado,
-        Heno,
-        Leche,
-        Queso,
-        SemillaHeno,
-        TierraCultivo,
-        Moneda,
-        Vaca,
-        Gallina,
-        Maiz,
-        Huevo,
-        SemillaMaiz
-    }
+   
 }

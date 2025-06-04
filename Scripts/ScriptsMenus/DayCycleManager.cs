@@ -5,6 +5,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using static Carta;
+using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 public class DayCycleManager : MonoBehaviour
 {
@@ -23,12 +24,13 @@ public class DayCycleManager : MonoBehaviour
     public TextMeshProUGUI textoObjetivoActual; // Contador en tiempo real
     public TextMeshProUGUI monedasActuales;
 
+
     [Header("Canvas UI")]
     public Canvas canvasUI;
 
     private float timer = 0f;
     public int currentDay;
-    private bool cumpliaObjetivoAntes = false; // <- Nuevo flag dinámico
+
 
     public event Action OnDayEnded;
 
@@ -42,9 +44,17 @@ public class DayCycleManager : MonoBehaviour
     public int maxDays = 100;
     public AnimationCurve curvaObjetivo;
 
+    [Header("CartaOjetivo")]
+    public Image imagenUI;           // Asigna en el Inspector
+    private Sprite nuevoSprite;       // Asigna en el Inspector
+    public CardEnum objetivoCarta;
+    public CartaObjetivo[] listaCartasObjetivo;
+
     void Start()
     {
+        imagenUI.gameObject.SetActive(false);
         UpdateDayUI();
+
 
         //le damos un valor al mx del slider
         if (dayProgressSlider != null)
@@ -109,12 +119,39 @@ public class DayCycleManager : MonoBehaviour
     {
 
         float t = (float)(currentDay - 1) / (maxDays - 1); // Normaliza entre 0 y 1
-
         float valor = curvaObjetivo.Evaluate(t); ; // Evaluar la curva
         print(valor);
         objetivo = Mathf.RoundToInt(valor);
-       
         textoObjetivoActual.text = objetivo.ToString();
+
+        if (currentDay >= 2 && currentDay <= 3)
+        {
+            objetivoCarta = CardEnum.Vaca;
+            nuevoSprite = Resources.Load<Sprite>($"Sprites/UI/CartasObjetivo/{objetivoCarta.ToString()}");
+            imagenUI.sprite = nuevoSprite;
+            imagenUI.gameObject.SetActive(true);
+        }
+        else 
+        {
+
+            imagenUI.gameObject.SetActive(false);
+        }
+
+
+    }
+
+    public bool ComprobarSiTieneLaCarta(CardEnum cartaObjetivoEnum) 
+    {
+
+        listaCartasObjetivo = GameObject.FindObjectsOfType<CartaObjetivo>(true);
+        var cartasObjetivo = listaCartasObjetivo.Where(c => c.carta == cartaObjetivoEnum && c.gameObject.activeInHierarchy).ToList();
+        print("Carta objetivo: " + cartaObjetivoEnum);
+        if (cartasObjetivo != null)
+        {
+            print("Tiene la carta");
+            return true;
+        }
+        return false;
     }
 
     void ShowEndOfDaySummary()
@@ -124,39 +161,44 @@ public class DayCycleManager : MonoBehaviour
         panelResumenDia.SetActive(true);
 
 
-        //Carta[] todasLasCartas = GameObject.FindObjectsOfType<Carta>(true);
-
-        //var cartasTierra = todasLasCartas
-        //    .Where(c => c.cartaEnum == CardEnum.TierraCultivo && c.gameObject.activeInHierarchy)
-        //    .ToList();
-
         int cantidadMonedas = int.Parse(monedasActuales.text);
         textMonedas.text = "Monedas: " + cantidadMonedas;
         textObjetivo.text = "Objetivo: " + objetivo + " monedas";
 
+
         if (cantidadMonedas >= objetivo)
         {
-            textResultado.text = "Objetivo cumplido";
-
-          
-           int monedasAct= int.Parse(monedasActuales.text)-objetivo;
-            monedasActuales.text=monedasAct.ToString();
+            if (objetivoCarta != CardEnum.Rojo)
+            {
+                if (ComprobarSiTieneLaCarta(objetivoCarta))
+                {
+                    printVictoria();
+                }
+            }
+            else 
+            {
+                printVictoria();
+            }
         }
         //No cumples el objetivo diario PIERDES
         else
         {
             textResultado.text = "No cumpliste el objetivo";
 
-
         }
-
-
-
     }
 
+    void printVictoria() 
+    {
+
+        textResultado.text = "Objetivo cumplido";
+        //int monedasAct = int.Parse(monedasActuales.text) - objetivo;
+        //monedasActuales.text = monedasAct.ToString();
+    }
 
     public void ContinuarJuego()
     {
+        //To do: hacer que si la escala esta a 1f, el boton de x1,x2,x0, sea el activo el x1
         Time.timeScale = 1f;
         canvasUI.gameObject.SetActive(true);
         if (panelResumenDia != null)
