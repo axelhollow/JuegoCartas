@@ -20,9 +20,13 @@ public class DayCycleManager : MonoBehaviour
     public GameObject panelResumenDia;
     public TextMeshProUGUI textMonedas;
     public TextMeshProUGUI textObjetivo;
+    public TextMeshProUGUI objetivoCartaTXT;
     public TextMeshProUGUI textResultado;
     public TextMeshProUGUI textoObjetivoActual; // Contador en tiempo real
     public TextMeshProUGUI monedasActuales;
+    RectTransform recResultadoText;
+    private Vector2 posicionGuardada;
+    RectTransform recCartasText;
 
 
     [Header("Canvas UI")]
@@ -57,6 +61,13 @@ public class DayCycleManager : MonoBehaviour
 
     void Start()
     {
+
+        recResultadoText = textResultado.GetComponent<RectTransform>();
+        posicionGuardada = textResultado.GetComponent<RectTransform>().anchoredPosition;
+        recCartasText = objetivoCartaTXT.GetComponent<RectTransform>();
+
+
+        objetivoCartaTXT.gameObject.SetActive(false);
         imagenUI.gameObject.SetActive(false);
         UpdateDayUI();
 
@@ -138,7 +149,7 @@ public class DayCycleManager : MonoBehaviour
         }
         else 
         {
-
+            objetivoCarta = CardEnum.Rojo;
             imagenUI.gameObject.SetActive(false);
         }
 
@@ -153,7 +164,6 @@ public class DayCycleManager : MonoBehaviour
         print("Carta objetivo: " + cartaObjetivoEnum);
         if (cartasObjetivo != null)
         {
-            print("Tiene la carta");
             return true;
         }
         return false;
@@ -167,38 +177,56 @@ public class DayCycleManager : MonoBehaviour
 
 
         int cantidadMonedas = int.Parse(monedasActuales.text);
-        textMonedas.text = "Monedas: " + cantidadMonedas;
-        textObjetivo.text = "Objetivo: " + objetivo + " monedas";
+        textMonedas.text = "Objetivos:";
+        textObjetivo.text = objetivo + " monedas";
 
-
-        if (cantidadMonedas >= objetivo)
+        if(objetivoCarta != CardEnum.Rojo) 
         {
-            if (objetivoCarta != CardEnum.Rojo)
+
+            if (ComprobarSiTieneLaCarta(objetivoCarta) && cantidadMonedas >= objetivo)
             {
-                if (ComprobarSiTieneLaCarta(objetivoCarta))
-                {
-                    printVictoria();
-                }
+                printVictoria(true);
             }
             else 
             {
-                printVictoria();
+                textResultado.text = "No cumpliste el objetivo";
+                recResultadoText.anchoredPosition = posicionGuardada;
+
+                objetivoCartaTXT.gameObject.SetActive(true);
+                objetivoCartaTXT.text = $"1 carta de {objetivoCarta}";
+
             }
         }
-        //No cumples el objetivo diario PIERDES
-        else
+        if(objetivoCarta == CardEnum.Rojo)
         {
-            textResultado.text = "No cumpliste el objetivo";
+            if (cantidadMonedas >= objetivo)
+            {
+                printVictoria(false);
+            }
+            else 
+            {
+                objetivoCartaTXT.gameObject.SetActive(false);
+                textResultado.text = "No cumpliste el objetivo";
+                recResultadoText.anchoredPosition = recCartasText.anchoredPosition;
 
+            }
         }
     }
 
-    void printVictoria() 
+    void printVictoria(bool carta) 
     {
-
-        textResultado.text = "Objetivo cumplido";
-        //int monedasAct = int.Parse(monedasActuales.text) - objetivo;
-        //monedasActuales.text = monedasAct.ToString();
+        if (carta==false)
+        {
+            objetivoCartaTXT.gameObject.SetActive(false);
+            textResultado.text = "Objetivo cumplido";
+            recResultadoText.anchoredPosition = recCartasText.anchoredPosition;
+        }
+        else
+        {
+            recResultadoText.anchoredPosition = posicionGuardada;
+            objetivoCartaTXT.gameObject.SetActive(true);
+            objetivoCartaTXT.text = $"1 carta de {objetivoCarta}";
+        }
     }
 
     public void ContinuarJuego()
