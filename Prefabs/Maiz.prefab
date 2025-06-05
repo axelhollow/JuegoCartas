@@ -507,8 +507,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectName: Maiz
-  description: Con un poco de sal y aceite te haces una peli
-  valor: 2
+  description: Alimentar gallinas o hacer unas palomitas, ambas buenas opciones
+  valor: 1
 --- !u!114 &-8280902411288293004
 MonoBehaviour:
   m_ObjectHideFlags: 0

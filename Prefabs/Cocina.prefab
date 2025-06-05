@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 7160845570450764302}
   - component: {fileID: 3242400201711474076}
   - component: {fileID: 8400453942804276622}
+  - component: {fileID: 6137213895282375172}
   m_Layer: 0
   m_Name: Cocina
   m_TagString: Draggable
@@ -198,7 +199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stackOffset: 0.2
   agarrada: 0
-  valorCarta: 0
+  valorCarta: 5
 --- !u!114 &3242400201711474076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,12 +224,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db9867b0af4305c4c90bf61ec6747d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cartaEnum: 7
+  cartaEnum: 14
   slider: {fileID: 2442043939047655796}
   fusionCancelada: 0
   ResultadoFusion: {fileID: 0}
   numHijos: 0
   hijo: {fileID: 0}
+--- !u!114 &6137213895282375172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159474320037564355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f65bc9593843afe43b261e8627315040, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectName: Cocina
+  description: Indispensable para preparar platos
+  valor: 5
 --- !u!1 &1801791388099012680
 GameObject:
   m_ObjectHideFlags: 0

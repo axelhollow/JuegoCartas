@@ -519,8 +519,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectName: Leche
-  description: Un liquido sacado de los pezones de una vaca
-  valor: 1
+  description: Oro blanco, del cual se puede hacer queso
+  valor: 2
 --- !u!1 &8041215697305764797
 GameObject:
   m_ObjectHideFlags: 0

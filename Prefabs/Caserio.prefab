@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 7677743686463576675}
   - component: {fileID: 3242400201711474076}
   - component: {fileID: -5831666667328084423}
+  - component: {fileID: 5310321536320151851}
   m_Layer: 0
   m_Name: Caserio
   m_TagString: Draggable
@@ -249,6 +250,21 @@ MonoBehaviour:
   duration: 0
   elapsed: 0
   profundidadMaxima: 99
+--- !u!114 &5310321536320151851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159474320037564355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f65bc9593843afe43b261e8627315040, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectName: Caserio
+  description: El lugar magico donde se crea el queso
+  valor: 5
 --- !u!1 &1801791388099012680
 GameObject:
   m_ObjectHideFlags: 0

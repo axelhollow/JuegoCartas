@@ -10,7 +10,7 @@ public class BotonesVelocidad : MonoBehaviour
     public Button botonNormal;
     public Button botonRapido;
 
-    public Color colorActivo = Color.green;
+    public Color colorActivo;
     public Color colorInactivo = Color.white;
 
 

@@ -366,6 +366,7 @@ GameObject:
   - component: {fileID: 4475040068497598450}
   - component: {fileID: 6429034079806001811}
   - component: {fileID: -8280902411288293004}
+  - component: {fileID: 5470497293471394798}
   m_Layer: 0
   m_Name: Mercado
   m_TagString: Mercado
@@ -417,7 +418,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 250bf37c2e2185442aa43fb516617806, type: 2}
+  - {fileID: 2100000, guid: fd2dec31381f57a4381b50102800b643, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -475,7 +476,6 @@ MonoBehaviour:
   stackOffset: 0.2
   agarrada: 0
   valorCarta: 0
-  monedas: {fileID: 0}
 --- !u!114 &6429034079806001811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -506,8 +506,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eaac98db78fb9a47bda1a3145dc8aca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alturaEntreHijos: 0.1
-  escaleraOffset: -0.3
+--- !u!114 &5470497293471394798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5363898381958202192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f65bc9593843afe43b261e8627315040, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectName: Mercado
+  description: Arrastra una carta para venderla
+  valor: 0
 --- !u!1 &8041215697305764797
 GameObject:
   m_ObjectHideFlags: 0

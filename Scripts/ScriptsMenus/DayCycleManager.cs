@@ -50,6 +50,11 @@ public class DayCycleManager : MonoBehaviour
     public CardEnum objetivoCarta;
     public CartaObjetivo[] listaCartasObjetivo;
 
+    [Header("Botones")]
+    public GameObject BottonPause;
+    public GameObject BottonPlay;
+    public GameObject BotonX2;
+
     void Start()
     {
         imagenUI.gameObject.SetActive(false);
@@ -198,7 +203,16 @@ public class DayCycleManager : MonoBehaviour
 
     public void ContinuarJuego()
     {
-        //To do: hacer que si la escala esta a 1f, el boton de x1,x2,x0, sea el activo el x1
+        //Dejar como boton activo el x1
+
+        Color colorVerdeClaro = new Color(142f / 255f, 230f / 255f, 142f / 255f);
+
+
+        BottonPause.GetComponentInChildren<TextMeshProUGUI>().color=Color.white;
+        BottonPlay.GetComponentInChildren<TextMeshProUGUI>().color = colorVerdeClaro;
+        BotonX2.GetComponentInChildren<TextMeshProUGUI>().color = Color.white;
+
+
         Time.timeScale = 1f;
         canvasUI.gameObject.SetActive(true);
         if (panelResumenDia != null)

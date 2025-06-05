@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 7160845570450764302}
   - component: {fileID: 3242400201711474076}
   - component: {fileID: 8400453942804276622}
+  - component: {fileID: 711642596204389863}
   m_Layer: 0
   m_Name: Semilla Maiz
   m_TagString: Draggable
@@ -229,6 +230,21 @@ MonoBehaviour:
   ResultadoFusion: {fileID: 5363898381958202192, guid: 552b45f8f54e8294f97c25540f52bd18, type: 3}
   numHijos: 0
   hijo: {fileID: 0}
+--- !u!114 &711642596204389863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159474320037564355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f65bc9593843afe43b261e8627315040, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectName: Semilla de maiz
+  description: Se planta en tierras de cultivo
+  valor: 1
 --- !u!1 &1801791388099012680
 GameObject:
   m_ObjectHideFlags: 0

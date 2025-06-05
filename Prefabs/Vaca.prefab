@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 3242400201711474076}
   - component: {fileID: -5831666667328084423}
   - component: {fileID: 593436304873656108}
+  - component: {fileID: 2696104303346921182}
   m_Layer: 0
   m_Name: Vaca
   m_TagString: Draggable
@@ -247,6 +248,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carta: 8
+--- !u!114 &2696104303346921182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159474320037564355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f65bc9593843afe43b261e8627315040, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectName: Vaca
+  description: Si la alimentas bien, produce leche
+  valor: 3
 --- !u!1 &1801791388099012680
 GameObject:
   m_ObjectHideFlags: 0

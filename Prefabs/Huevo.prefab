@@ -518,9 +518,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f65bc9593843afe43b261e8627315040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectName: Leche
-  description: Un liquido sacado de los pezones de una vaca
-  valor: 1
+  objectName: Huevo
+  description: Divertido y rico en proteinas
+  valor: 2
 --- !u!1 &8041215697305764797
 GameObject:
   m_ObjectHideFlags: 0

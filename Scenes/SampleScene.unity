@@ -604,10 +604,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1159474320037564355, guid: c0915af6c04180b49bdff9d4d205e429, type: 3}
-      insertIndex: 5
-      addedObject: {fileID: 1215630019}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0915af6c04180b49bdff9d4d205e429, type: 3}
 --- !u!1001 &209236242
 PrefabInstance:
@@ -664,7 +661,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5363898381958202192, guid: 5de10caae4d44c6459812458dde5c3ef, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1262761974}
   m_SourcePrefab: {fileID: 100100000, guid: 5de10caae4d44c6459812458dde5c3ef, type: 3}
 --- !u!1 &216254155
 GameObject:
@@ -962,7 +962,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce54d7fe5fb50fb4394c86430ce8522c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dayDuration: 10
+  dayDuration: 5
   dayProgressSlider: {fileID: 1428104973}
   dayCounterText: {fileID: 516375350}
   panelResumenDia: {fileID: 2109732910}
@@ -1029,6 +1029,9 @@ MonoBehaviour:
   imagenUI: {fileID: 648288716}
   objetivoCarta: 0
   listaCartasObjetivo: []
+  BottonPause: {fileID: 557940926}
+  BottonPlay: {fileID: 1600467699}
+  BotonX2: {fileID: 248105300}
 --- !u!4 &222756106
 Transform:
   m_ObjectHideFlags: 0
@@ -1199,8 +1202,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 261.7}
-  m_SizeDelta: {x: 270, y: 61.6292}
+  m_AnchoredPosition: {x: 1.1235, y: 262.1819}
+  m_SizeDelta: {x: 258.5613, y: 60.6651}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &280787254
 MonoBehaviour:
@@ -1249,13 +1252,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 39
+  m_fontSize: 32.4
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -1670,10 +1673,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Leche
       objectReference: {fileID: 0}
-    - target: {fileID: 6911438628609376052, guid: 0af651684586a02458e9d9c4be3bd71b, type: 3}
-      propertyPath: valor
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2049,6 +2048,7 @@ GameObject:
   - component: {fileID: 418981805}
   - component: {fileID: 418981804}
   - component: {fileID: 418981803}
+  - component: {fileID: 418981808}
   m_Layer: 0
   m_Name: ComprarSobresSemillas (2)
   m_TagString: Mercado
@@ -2074,7 +2074,7 @@ MonoBehaviour:
   distanciaEmpuje: 1.2
   duracionEmpuje: 0.3
   monedas: {fileID: 4680631660819440087}
-  costeSobre: 3
+  costeSobre: 13
   particulaDestruccionPrefab: {fileID: 6813416509558619124, guid: 3b7f2c753d435d647a80f1f047a113e3, type: 3}
 --- !u!65 &418981804
 BoxCollider:
@@ -2163,6 +2163,21 @@ Transform:
   - {fileID: 1575137120}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &418981808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418981802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f65bc9593843afe43b261e8627315040, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectName: "Sobre de producci\xF3n"
+  description: Un sobre que contiene, caserios, cocinas...
+  valor: 13
 --- !u!1 &463942280
 GameObject:
   m_ObjectHideFlags: 0
@@ -2621,7 +2636,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -60}
+  m_AnchoredPosition: {x: 0, y: 3.8}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &648288716
@@ -2770,6 +2785,7 @@ GameObject:
   - component: {fileID: 696033255}
   - component: {fileID: 696033254}
   - component: {fileID: 696033253}
+  - component: {fileID: 696033258}
   m_Layer: 0
   m_Name: ComprarSobresSemillas (1)
   m_TagString: Mercado
@@ -2795,7 +2811,7 @@ MonoBehaviour:
   distanciaEmpuje: 1.2
   duracionEmpuje: 0.3
   monedas: {fileID: 4680631660819440087}
-  costeSobre: 3
+  costeSobre: 7
   particulaDestruccionPrefab: {fileID: 6813416509558619124, guid: 3b7f2c753d435d647a80f1f047a113e3, type: 3}
 --- !u!65 &696033254
 BoxCollider:
@@ -2884,6 +2900,21 @@ Transform:
   - {fileID: 58115193}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &696033258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 696033252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f65bc9593843afe43b261e8627315040, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectName: "Sobre de ganader\xEDa"
+  description: Un sobre que contiene, vacas, gallinas, huevos, leche, queso
+  valor: 7
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -3102,7 +3133,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -83.400085, y: 98}
+  m_AnchoredPosition: {x: -97.50008, y: 138.03299}
   m_SizeDelta: {x: 91.868, y: 85.82}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &848478356
@@ -3301,7 +3332,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 31.00003, y: 101.46698}
+  m_AnchoredPosition: {x: 16.9, y: 141.5}
   m_SizeDelta: {x: 174.735, y: 50.675}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &974763893
@@ -3618,26 +3649,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1042669754}
   m_CullTransparentMesh: 1
---- !u!1 &1054017340 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1159474320037564355, guid: 22b89c421fe8a754794a0a1c1f8b0c85, type: 3}
-  m_PrefabInstance: {fileID: 1935923188}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1054017348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1054017340}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f65bc9593843afe43b261e8627315040, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectName: Tierra de cultivo
-  description: Tierra fertil donde crecen la plantas
-  valor: 0
 --- !u!1 &1081027577
 GameObject:
   m_ObjectHideFlags: 0
@@ -4023,10 +4034,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8400453942804276622, guid: dc978aa77af27a44b926e382214fd13f, type: 3}
-      propertyPath: cartaEnum
-      value: 14
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4212,7 +4219,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -4465,25 +4472,25 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!1 &1215630011 stripped
+--- !u!1 &1262761965 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 1159474320037564355, guid: c0915af6c04180b49bdff9d4d205e429, type: 3}
-  m_PrefabInstance: {fileID: 205403806}
+  m_CorrespondingSourceObject: {fileID: 5363898381958202192, guid: 5de10caae4d44c6459812458dde5c3ef, type: 3}
+  m_PrefabInstance: {fileID: 209236242}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1215630019
+--- !u!114 &1262761974
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1215630011}
+  m_GameObject: {fileID: 1262761965}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f65bc9593843afe43b261e8627315040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectName: Semilla
-  description: Semilla de trigo, perfectamente cultibable
+  objectName: Heno
+  description: Un monton de hierba seca y compactada, les encanta a las vacas
   valor: 1
 --- !u!1 &1279228434
 GameObject:
@@ -4663,10 +4670,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3806383199233221537, guid: b407af6e9347dbf4f90f666c98d2728b, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: fd2dec31381f57a4381b50102800b643, type: 2}
     - target: {fileID: 5363898381958202192, guid: b407af6e9347dbf4f90f666c98d2728b, type: 3}
       propertyPath: m_Name
       value: Mercado
@@ -5092,7 +5095,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -5841,7 +5844,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -6542,10 +6545,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1159474320037564355, guid: 22b89c421fe8a754794a0a1c1f8b0c85, type: 3}
-      insertIndex: 6
-      addedObject: {fileID: 1054017348}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22b89c421fe8a754794a0a1c1f8b0c85, type: 3}
 --- !u!1 &1950770474
 GameObject:

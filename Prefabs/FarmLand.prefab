@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 1791897303041773952}
   - component: {fileID: 7160845570450764302}
   - component: {fileID: 3242400201711474076}
+  - component: {fileID: 4337422014648257612}
   - component: {fileID: 8400453942804276622}
   m_Layer: 0
   m_Name: FarmLand
@@ -211,6 +212,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eaac98db78fb9a47bda1a3145dc8aca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4337422014648257612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159474320037564355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f65bc9593843afe43b261e8627315040, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectName: Tierra de cultivo
+  description: Tierra fertil donde crecen la plantas
+  valor: 0
 --- !u!114 &8400453942804276622
 MonoBehaviour:
   m_ObjectHideFlags: 0
