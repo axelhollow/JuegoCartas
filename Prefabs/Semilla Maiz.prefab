@@ -224,7 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db9867b0af4305c4c90bf61ec6747d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cartaEnum: 13
+  cartaEnum: 12
   slider: {fileID: 2442043939047655796}
   fusionCancelada: 0
   ResultadoFusion: {fileID: 5363898381958202192, guid: 552b45f8f54e8294f97c25540f52bd18, type: 3}
