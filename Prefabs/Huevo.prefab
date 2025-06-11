@@ -488,7 +488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db9867b0af4305c4c90bf61ec6747d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cartaEnum: 12
+  cartaEnum: 11
   slider: {fileID: 1305302888999103861}
   fusionCancelada: 0
   ResultadoFusion: {fileID: 0}

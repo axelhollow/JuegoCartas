@@ -14,7 +14,7 @@ public class ObjectInfoPanel : MonoBehaviour
     {
         nameText.text = obj.objectName;
         descriptionText.text = obj.description;
-        levelText.text = "Value: " + obj.valor;
+        levelText.text = "" + obj.valor;
         gameObject.SetActive(true);
     }
 

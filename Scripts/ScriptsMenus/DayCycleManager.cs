@@ -164,6 +164,7 @@ public class DayCycleManager : MonoBehaviour
         print("Carta objetivo: " + cartaObjetivoEnum);
         if (cartasObjetivo != null)
         {
+            print("tiene la carta");
             return true;
         }
         return false;
@@ -183,8 +184,9 @@ public class DayCycleManager : MonoBehaviour
         if(objetivoCarta != CardEnum.Rojo) 
         {
 
-            if (ComprobarSiTieneLaCarta(objetivoCarta) && cantidadMonedas >= objetivo)
+            if (ComprobarSiTieneLaCarta(objetivoCarta)==true && cantidadMonedas >= objetivo)
             {
+                print("ganaste");
                 printVictoria(true);
             }
             else 
@@ -224,6 +226,7 @@ public class DayCycleManager : MonoBehaviour
         else
         {
             recResultadoText.anchoredPosition = posicionGuardada;
+            textResultado.text = "Objetivo cumplido";
             objetivoCartaTXT.gameObject.SetActive(true);
             objetivoCartaTXT.text = $"1 carta de {objetivoCarta}";
         }
