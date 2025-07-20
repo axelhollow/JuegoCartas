@@ -6,9 +6,9 @@ using UnityEngine;
 
 public class BotonesVelocidad : MonoBehaviour
 {
-    public Button botonPausa;
-    public Button botonNormal;
-    public Button botonRapido;
+    private Button botonPausa;
+    private Button botonNormal;
+    private Button botonRapido;
 
     public Color colorActivo;
     public Color colorInactivo = Color.white;
@@ -38,6 +38,12 @@ public class BotonesVelocidad : MonoBehaviour
 
     void Start()
     {
+        botonPausa = GameObject.Find("BottonPause").GetComponent<Button>();
+        botonNormal = GameObject.Find("BottonPlay").GetComponent<Button>();
+        botonRapido = GameObject.Find("BottonX2").GetComponent<Button>();
+
+
+
         botonPausa.onClick.AddListener(() => JuegoEnPausa(true));
         botonNormal.onClick.AddListener(() => SetTiempo(1f));
         botonRapido.onClick.AddListener(() => SetTiempo(2f));
@@ -52,7 +58,7 @@ public class BotonesVelocidad : MonoBehaviour
         ActualizarColores();
     }
 
-    void JuegoEnPausa(bool pausa)
+    public void JuegoEnPausa(bool pausa)
     {
         var textoPausa = botonPausa.GetComponentInChildren<TextMeshProUGUI>();
         GameManager.PausarJuego(pausa);
@@ -69,7 +75,7 @@ public class BotonesVelocidad : MonoBehaviour
         }
     }
 
-    void ActualizarColores()
+    public void ActualizarColores()
     {
         // Obtener referencias al TextMeshProUGUI de cada botón
         var textoNormal = botonNormal.GetComponentInChildren<TextMeshProUGUI>();

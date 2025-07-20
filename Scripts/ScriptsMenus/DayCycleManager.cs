@@ -4,7 +4,7 @@ using TMPro;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-using static Carta;
+using static CartasJson;
 using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 public class DayCycleManager : MonoBehaviour
@@ -59,8 +59,15 @@ public class DayCycleManager : MonoBehaviour
     public GameObject BottonPlay;
     public GameObject BotonX2;
 
+
+    float tiempodediausado;
+
     void Start()
     {
+
+        currentDay=int.Parse(PlayerPrefs.GetString("NumDia", "1").Replace("Día","").Trim());
+
+        tiempodediausado = PlayerPrefs.GetFloat("DiaBarra", 0f);
 
         recResultadoText = textResultado.GetComponent<RectTransform>();
         posicionGuardada = textResultado.GetComponent<RectTransform>().anchoredPosition;
@@ -89,8 +96,9 @@ public class DayCycleManager : MonoBehaviour
         {
             timer += Time.deltaTime;
 
-            if (timer >= dayDuration)
+            if (timer >= dayDuration || timer+tiempodediausado>=dayDuration)
             {
+                tiempodediausado = 0f;
                 timer = 0f;
                 currentDay++;
                 UpdateDayUI();
@@ -101,7 +109,8 @@ public class DayCycleManager : MonoBehaviour
             }
 
             if (dayProgressSlider != null)
-                dayProgressSlider.value = timer;
+                dayProgressSlider.value = tiempodediausado+timer;
+
         }
     }
     //Incrementar Dia
@@ -136,7 +145,6 @@ public class DayCycleManager : MonoBehaviour
 
         float t = (float)(currentDay - 1) / (maxDays - 1); // Normaliza entre 0 y 1
         float valor = curvaObjetivo.Evaluate(t); ; // Evaluar la curva
-        print(valor);
         objetivo = Mathf.RoundToInt(valor);
         textoObjetivoActual.text = objetivo.ToString();
 

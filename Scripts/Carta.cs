@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
-public class Carta : MonoBehaviour
+public class CartasJson : MonoBehaviour
 {
 
     public CardEnum cartaEnum;
@@ -62,7 +62,7 @@ public class Carta : MonoBehaviour
         {
             foreach (Transform child in transform)
             {
-                if (child.GetComponent<Carta>() != null) 
+                if (child.GetComponent<CartasJson>() != null) 
                 {
                     child.transform.SetParent(transform.parent.transform);
                 
@@ -77,8 +77,8 @@ public class Carta : MonoBehaviour
 
         float duration = 1f;
         float elapsed = 0f;
-        Carta cartaComp1 = carta1.GetComponent<Carta>();
-        Carta cartaComp2 = carta2.GetComponent<Carta>();
+        CartasJson cartaComp1 = carta1.GetComponent<CartasJson>();
+        CartasJson cartaComp2 = carta2.GetComponent<CartasJson>();
         Slider slider = cartaComp1.slider;
         CardEnum? tipoFusion=null;
 
@@ -182,7 +182,7 @@ public class Carta : MonoBehaviour
             {
                 try
                 {
-                    Carta cartaComp = carta.GetComponent<Carta>();
+                    CartasJson cartaComp = carta.GetComponent<CartasJson>();
                     if (cartaComp != null && cartaComp.slider != null)
                     {
                         cartaComp.slider.value = 0f;

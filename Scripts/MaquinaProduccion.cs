@@ -4,7 +4,7 @@ using System.ComponentModel;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-using static Carta;
+using static CartasJson;
 
 public class MaquinaProduccion : MonoBehaviour
 {
@@ -74,9 +74,9 @@ public class MaquinaProduccion : MonoBehaviour
         foreach (Transform hijo in hijosOriginales)
         {
             // Hijo correcto
-            if (hijo.GetComponent<Carta>() != null)
+            if (hijo.GetComponent<CartasJson>() != null)
             {
-                if (hijo.GetComponent<Carta>().cartaEnum == EnumObjetivo)
+                if (hijo.GetComponent<CartasJson>().cartaEnum == EnumObjetivo)
                 {
                     Queue<(Transform nodo, int nivel)> cola = new Queue<(Transform, int)>();
                     cola.Enqueue((hijo, 0));
@@ -98,7 +98,7 @@ public class MaquinaProduccion : MonoBehaviour
 
                         foreach (Transform nieto in nietos)
                         {
-                            if (nieto.TryGetComponent<Carta>(out Carta carta))
+                            if (nieto.TryGetComponent<CartasJson>(out CartasJson carta))
                             {
                                 if (carta.cartaEnum == EnumObjetivo)
                                 {
@@ -157,7 +157,7 @@ public class MaquinaProduccion : MonoBehaviour
                     if (Physics.Raycast(origen, Vector3.down, out hit, 5f))
                     {
 
-                        if (hit.collider.GetComponent<Carta>() != null)
+                        if (hit.collider.GetComponent<CartasJson>() != null)
                         {
                              Debug.Log("Carta válida detectada debajo del hijo.");
                             leche.transform.SetParent(hit.collider.transform);

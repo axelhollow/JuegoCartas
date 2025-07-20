@@ -20,7 +20,7 @@ public class DragAndDropController : MonoBehaviour
     {
         cam = Camera.main;
         GameObject monedasOBJ = GameObject.Find("NumMonedas");
-        monedas= monedasOBJ.GetComponent<TextMeshProUGUI>();
+        monedas = monedasOBJ.GetComponent<TextMeshProUGUI>();
     }
 
     void Update()
