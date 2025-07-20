@@ -974,7 +974,7 @@ MonoBehaviour:
   textoObjetivoActual: {fileID: 974763893}
   monedasActuales: {fileID: 4680631660819440087}
   canvasUI: {fileID: 1089303961}
-  currentDay: 1
+  currentDay: 0
   particulaDestruccionPrefab: {fileID: 6813416509558619124, guid: 3b7f2c753d435d647a80f1f047a113e3, type: 3}
   maxDays: 100
   curvaObjetivo:
@@ -6517,7 +6517,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1723141392
 MonoBehaviour:
   m_ObjectHideFlags: 0

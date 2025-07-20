@@ -43,7 +43,7 @@ public class SaveSystem : MonoBehaviour
         float procentajeDia = barraDiaValor.value;
         PlayerPrefs.SetFloat("DiaBarra", procentajeDia);
         print("Porcentaje guardado: "+procentajeDia);
-
+        PlayerPrefs.Save();
         Debug.Log("Juego guardado en: " + Application.persistentDataPath + "/" + saveFileName);
     }
 }

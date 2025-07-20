@@ -148,7 +148,7 @@ public class DayCycleManager : MonoBehaviour
         objetivo = Mathf.RoundToInt(valor);
         textoObjetivoActual.text = objetivo.ToString();
 
-        if (currentDay >= 2 && currentDay <= 3)
+        if (currentDay >= 2 && currentDay < 3)
         {
             objetivoCarta = CardEnum.Vaca;
             nuevoSprite = Resources.Load<Sprite>($"Sprites/UI/CartasObjetivo/{objetivoCarta.ToString()}");
