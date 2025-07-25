@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 3916865758833490296}
   - component: {fileID: 2955738454994641240}
   - component: {fileID: 1791897303041773952}
+  - component: {fileID: 8568048397063527173}
   - component: {fileID: 7160845570450764302}
   - component: {fileID: 3242400201711474076}
   - component: {fileID: -5831666667328084423}
@@ -186,6 +187,24 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8568048397063527173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159474320037564355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5ac3e092f4b16a44a036223817328a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRenderer: {fileID: 2955738454994641240}
+  localizedMaterials:
+  - language: 0
+    material: {fileID: 2100000, guid: 9618fce48dea58d408188cc88586d9a6, type: 2}
+  - language: 1
+    material: {fileID: 2100000, guid: 3fc0036cc4526f044a9e8067df65a1d5, type: 2}
 --- !u!114 &7160845570450764302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,7 +280,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectName: Vaca
+  objectNameENG: Cow
   description: Si la alimentas bien, produce leche
+  descriptionENG: If you feed her well, she produces milk
   valor: 3
 --- !u!1 &1801791388099012680
 GameObject:

@@ -12,8 +12,26 @@ public class ObjectInfoPanel : MonoBehaviour
 
     public void ShowInfo(InspectableObject obj)
     {
-        nameText.text = obj.objectName;
-        descriptionText.text = obj.description;
+        if (LanguageManager.Instance.idiomaActual == "es")
+        {
+
+            nameText.text = obj.objectName;
+        }
+        if (LanguageManager.Instance.idiomaActual == "en")
+        {
+
+            nameText.text = obj.objectNameENG;
+        }
+
+        if (LanguageManager.Instance.idiomaActual == "es") 
+        {
+            descriptionText.text = obj.description;
+        }
+        if (LanguageManager.Instance.idiomaActual == "en")
+        {
+            descriptionText.text = obj.descriptionENG;
+        }
+
         levelText.text = "" + obj.valor;
         gameObject.SetActive(true);
     }
