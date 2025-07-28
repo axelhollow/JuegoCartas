@@ -261,7 +261,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectName: Gallina
+  objectNameENG: Hen
   description: Le encanta el maiz
+  descriptionENG: Loves corn!
   valor: 3
 --- !u!1 &1801791388099012680
 GameObject:

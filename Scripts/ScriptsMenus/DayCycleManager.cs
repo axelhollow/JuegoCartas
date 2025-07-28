@@ -117,7 +117,7 @@ public class DayCycleManager : MonoBehaviour
     void UpdateDayUI()
     {
         if (dayCounterText != null)
-            dayCounterText.text = "Día " + currentDay;
+            dayCounterText.text = ""+currentDay;
     }
     void ObjetivoDelDia() 
     {
@@ -186,10 +186,16 @@ public class DayCycleManager : MonoBehaviour
 
 
         int cantidadMonedas = int.Parse(monedasActuales.text);
-        textMonedas.text = "Objetivos:";
-        textObjetivo.text = objetivo + " monedas";
+        if (LanguageManager.Instance.idiomaActual == "es")
+        {
+            textObjetivo.text = objetivo + " monedas";
+        }
+        if (LanguageManager.Instance.idiomaActual == "en")
+        {
+            textObjetivo.text = objetivo + " coins";
+        }
 
-        if(objetivoCarta != CardEnum.Rojo) 
+        if (objetivoCarta != CardEnum.Rojo) 
         {
 
             if (ComprobarSiTieneLaCarta(objetivoCarta)==true && cantidadMonedas >= objetivo)
@@ -199,7 +205,14 @@ public class DayCycleManager : MonoBehaviour
             }
             else 
             {
-                textResultado.text = "No cumpliste el objetivo";
+                if (LanguageManager.Instance.idiomaActual == "es")
+                {
+                    textResultado.text = "No cumpliste el objetivo";
+                }
+                if (LanguageManager.Instance.idiomaActual == "en")
+                {
+                    textResultado.text = "Objective failed";
+                }
                 recResultadoText.anchoredPosition = posicionGuardada;
 
                 objetivoCartaTXT.gameObject.SetActive(true);
@@ -216,8 +229,15 @@ public class DayCycleManager : MonoBehaviour
             else 
             {
                 objetivoCartaTXT.gameObject.SetActive(false);
-                textResultado.text = "No cumpliste el objetivo";
-                recResultadoText.anchoredPosition = recCartasText.anchoredPosition;
+                if (LanguageManager.Instance.idiomaActual == "es")
+                {
+                    textResultado.text = "No cumpliste el objetivo";
+                }
+                if (LanguageManager.Instance.idiomaActual == "en")
+                {
+                    textResultado.text = "Objective failed";
+                }
+                    recResultadoText.anchoredPosition = recCartasText.anchoredPosition;
 
             }
         }
@@ -228,7 +248,15 @@ public class DayCycleManager : MonoBehaviour
         if (carta==false)
         {
             objetivoCartaTXT.gameObject.SetActive(false);
-            textResultado.text = "Objetivo cumplido";
+            if (LanguageManager.Instance.idiomaActual == "es")
+            {
+                textResultado.text = "Objetivo cumplido";
+            }
+            if (LanguageManager.Instance.idiomaActual == "en")
+            {
+                textResultado.text = "Objective complete";
+            }
+
             recResultadoText.anchoredPosition = recCartasText.anchoredPosition;
         }
         else

@@ -506,8 +506,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f65bc9593843afe43b261e8627315040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectName: Maiz
+  objectName: "Ma\xEDz"
+  objectNameENG: Corn
   description: Alimentar gallinas o hacer unas palomitas, ambas buenas opciones
+  descriptionENG: Feed hens or make popcorn, both great options
   valor: 1
 --- !u!114 &-8280902411288293004
 MonoBehaviour:

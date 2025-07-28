@@ -242,8 +242,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f65bc9593843afe43b261e8627315040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectName: Semilla de maiz
-  description: Se planta en tierras de cultivo
+  objectName: "Semilla de ma\xEDz"
+  objectNameENG: Corn seed
+  description: "Semillas que hacen crecer ma\xEDz, delicioso para animales y humanos"
+  descriptionENG: Seeds that produce corn, a delicious food enjoyed by animals and
+    humans
   valor: 1
 --- !u!1 &1801791388099012680
 GameObject:

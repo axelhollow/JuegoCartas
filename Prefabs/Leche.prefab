@@ -519,7 +519,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectName: Leche
+  objectNameENG: Milk
   description: Oro blanco, del cual se puede hacer queso
+  descriptionENG: White gold, the base ingredient for cheese
   valor: 2
 --- !u!1 &8041215697305764797
 GameObject:

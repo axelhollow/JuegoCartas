@@ -243,7 +243,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectName: Cocina
-  description: Indispensable para preparar platos
+  objectNameENG: 'Kitchen '
+  description: Convierte tus cultivos en deliciosos platos
+  descriptionENG: Convert crops into tasty meals
   valor: 5
 --- !u!1 &1801791388099012680
 GameObject:

@@ -60,7 +60,7 @@ public class LoadSystem : MonoBehaviour
       
        monedas.text=PlayerPrefs.GetString("Monedas","0");
        
-       diaNumero.text= PlayerPrefs.GetString("NumDia","Día 1");
+       diaNumero.text= PlayerPrefs.GetString("NumDia","1");
 
         Debug.Log("Carga completada.");
     }

@@ -519,7 +519,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectName: Mercado
+  objectNameENG: Market
   description: Arrastra una carta para venderla
+  descriptionENG: Drag a card to sell
   valor: 0
 --- !u!1 &8041215697305764797
 GameObject:

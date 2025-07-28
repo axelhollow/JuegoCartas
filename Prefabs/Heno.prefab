@@ -367,6 +367,7 @@ GameObject:
   - component: {fileID: 6429034079806001811}
   - component: {fileID: 5103474267121456017}
   - component: {fileID: -8280902411288293004}
+  - component: {fileID: -4039558979927068933}
   m_Layer: 0
   m_Name: Heno
   m_TagString: Draggable
@@ -507,7 +508,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectName: Heno
-  description: Paja secha apilada
+  objectNameENG: Hay
+  description: Incomible para un ser humano, pero para una vaca...
+  descriptionENG: Impossible for a human to eat, but perfect for a cow...
   valor: 1
 --- !u!114 &-8280902411288293004
 MonoBehaviour:
@@ -521,6 +524,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eaac98db78fb9a47bda1a3145dc8aca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-4039558979927068933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5363898381958202192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5ac3e092f4b16a44a036223817328a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRenderer: {fileID: 2955738454994641240, guid: 4882a79205f241f46a36dd44bd78c9d9, type: 3}
+  localizedMaterials:
+  - language: 0
+    material: {fileID: 2100000, guid: 08b2c960bc7c12d4eb5804355a06b2e7, type: 2}
+  - language: 1
+    material: {fileID: 2100000, guid: c11cc07747a21874d8b1f3e32894ee95, type: 2}
 --- !u!1 &8041215697305764797
 GameObject:
   m_ObjectHideFlags: 0

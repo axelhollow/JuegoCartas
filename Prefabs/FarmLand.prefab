@@ -225,7 +225,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectName: Tierra de cultivo
-  description: Tierra fertil donde crecen la plantas
+  objectNameENG: Farmland
+  description: Tierra fertil donde plantar tus semillas
+  descriptionENG: A fertile field for planting seeds and growing crops
   valor: 0
 --- !u!114 &8400453942804276622
 MonoBehaviour:

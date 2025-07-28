@@ -519,7 +519,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectName: Huevo
+  objectNameENG: Egg
   description: Divertido y rico en proteinas
+  descriptionENG: Enjoyable and protein-rich!
   valor: 2
 --- !u!1 &8041215697305764797
 GameObject:

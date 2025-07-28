@@ -227,6 +227,7 @@ GameObject:
   - component: {fileID: 6991691331137086437}
   - component: {fileID: 9014305755538163337}
   - component: {fileID: -1911922229511491877}
+  - component: {fileID: 7290984836991250133}
   m_Layer: 0
   m_Name: Sobre Cultivos
   m_TagString: Sobre
@@ -358,7 +359,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stackOffset: 0.2
   agarrada: 0
-  valorCarta: -1
+  valorCarta: 3
+--- !u!114 &7290984836991250133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3126774926498801597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f65bc9593843afe43b261e8627315040, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectName: Pack de semillas
+  objectNameENG: Seeds pack
+  description: Contiene cartas de semillas o cartas relacionadas
+  descriptionENG: Includes animal cards and other related cards.
+  valor: 3
 --- !u!1 &3142410750967766722
 GameObject:
   m_ObjectHideFlags: 0
