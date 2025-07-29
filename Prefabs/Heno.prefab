@@ -536,7 +536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5ac3e092f4b16a44a036223817328a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetRenderer: {fileID: 2955738454994641240, guid: 4882a79205f241f46a36dd44bd78c9d9, type: 3}
+  targetRenderer: {fileID: 3806383199233221537}
   localizedMaterials:
   - language: 0
     material: {fileID: 2100000, guid: 08b2c960bc7c12d4eb5804355a06b2e7, type: 2}

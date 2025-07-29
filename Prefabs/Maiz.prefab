@@ -367,6 +367,7 @@ GameObject:
   - component: {fileID: 6429034079806001811}
   - component: {fileID: 5103474267121456017}
   - component: {fileID: -8280902411288293004}
+  - component: {fileID: 5701497461745894786}
   m_Layer: 0
   m_Name: Maiz
   m_TagString: Draggable
@@ -523,6 +524,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eaac98db78fb9a47bda1a3145dc8aca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5701497461745894786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5363898381958202192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5ac3e092f4b16a44a036223817328a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRenderer: {fileID: 3806383199233221537}
+  localizedMaterials:
+  - language: 0
+    material: {fileID: 2100000, guid: c25fbebb453cc8e45bf361367b6bfa0b, type: 2}
+  - language: 1
+    material: {fileID: 2100000, guid: 468f7b5b97bae5446a45469e51b04f3e, type: 2}
 --- !u!1 &8041215697305764797
 GameObject:
   m_ObjectHideFlags: 0

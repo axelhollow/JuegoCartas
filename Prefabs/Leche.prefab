@@ -367,6 +367,7 @@ GameObject:
   - component: {fileID: 6429034079806001811}
   - component: {fileID: -8280902411288293004}
   - component: {fileID: 6911438628609376052}
+  - component: {fileID: -6580753195069915622}
   m_Layer: 0
   m_Name: Leche
   m_TagString: Draggable
@@ -523,6 +524,24 @@ MonoBehaviour:
   description: Oro blanco, del cual se puede hacer queso
   descriptionENG: White gold, the base ingredient for cheese
   valor: 2
+--- !u!114 &-6580753195069915622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5363898381958202192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5ac3e092f4b16a44a036223817328a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRenderer: {fileID: 3806383199233221537}
+  localizedMaterials:
+  - language: 0
+    material: {fileID: 2100000, guid: 227a78f48a5570643920e578630b0c7f, type: 2}
+  - language: 1
+    material: {fileID: 2100000, guid: ea94d1d669494d4428a7b317428e157b, type: 2}
 --- !u!1 &8041215697305764797
 GameObject:
   m_ObjectHideFlags: 0

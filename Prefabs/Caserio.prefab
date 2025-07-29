@@ -88,10 +88,10 @@ GameObject:
   - component: {fileID: 2955738454994641240}
   - component: {fileID: 1791897303041773952}
   - component: {fileID: 7160845570450764302}
-  - component: {fileID: 7677743686463576675}
   - component: {fileID: 3242400201711474076}
   - component: {fileID: -5831666667328084423}
   - component: {fileID: 5310321536320151851}
+  - component: {fileID: -7348939175424189366}
   m_Layer: 0
   m_Name: Caserio
   m_TagString: Draggable
@@ -201,23 +201,6 @@ MonoBehaviour:
   stackOffset: 0.2
   agarrada: 0
   valorCarta: 5
---- !u!114 &7677743686463576675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1159474320037564355}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f65bc9593843afe43b261e8627315040, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectName: Caserio
-  objectNameENG: 
-  description: Un sitio donde procesan la leche
-  descriptionENG: 
-  valor: 5
 --- !u!114 &3242400201711474076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,6 +252,24 @@ MonoBehaviour:
   description: El lugar magico donde se crea el queso
   descriptionENG: The magical place where cheese is made
   valor: 5
+--- !u!114 &-7348939175424189366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159474320037564355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5ac3e092f4b16a44a036223817328a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRenderer: {fileID: 2955738454994641240}
+  localizedMaterials:
+  - language: 0
+    material: {fileID: 2100000, guid: be83fd73c12589540ba69df3623b345c, type: 2}
+  - language: 1
+    material: {fileID: 2100000, guid: 8d28e3a42e45754428c350b48832a43c, type: 2}
 --- !u!1 &1801791388099012680
 GameObject:
   m_ObjectHideFlags: 0

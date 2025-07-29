@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 3242400201711474076}
   - component: {fileID: 8400453942804276622}
   - component: {fileID: 2041145779166549115}
+  - component: {fileID: 11061241731224990}
   m_Layer: 0
   m_Name: Queso
   m_TagString: Draggable
@@ -247,6 +248,24 @@ MonoBehaviour:
   description: Delicioso y muy valioso
   descriptionENG: "Yummy and of great value.\u201D"
   valor: 10
+--- !u!114 &11061241731224990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159474320037564355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5ac3e092f4b16a44a036223817328a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRenderer: {fileID: 2955738454994641240}
+  localizedMaterials:
+  - language: 0
+    material: {fileID: 2100000, guid: e06d40389b7d47b40a5c70dd55a79951, type: 2}
+  - language: 1
+    material: {fileID: 2100000, guid: a92357f44a20c0a44be821a2c4e93792, type: 2}
 --- !u!1 &1801791388099012680
 GameObject:
   m_ObjectHideFlags: 0

@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: -5831666667328084423}
   - component: {fileID: -2523024689070117186}
   - component: {fileID: 5572713964413448992}
+  - component: {fileID: -3614736413747927408}
   m_Layer: 0
   m_Name: Gallina
   m_TagString: Draggable
@@ -265,6 +266,24 @@ MonoBehaviour:
   description: Le encanta el maiz
   descriptionENG: Loves corn!
   valor: 3
+--- !u!114 &-3614736413747927408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159474320037564355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5ac3e092f4b16a44a036223817328a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRenderer: {fileID: 2955738454994641240}
+  localizedMaterials:
+  - language: 0
+    material: {fileID: 2100000, guid: 09b724ec77d8adb4aac8477ee17ed310, type: 2}
+  - language: 1
+    material: {fileID: 2100000, guid: d2a46ec8ef9844f4fb1c5fdb89254f79, type: 2}
 --- !u!1 &1801791388099012680
 GameObject:
   m_ObjectHideFlags: 0
