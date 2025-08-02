@@ -151,8 +151,18 @@ public class DayCycleManager : MonoBehaviour
         if (currentDay >= 2 && currentDay < 3)
         {
             objetivoCarta = CardEnum.Vaca;
-            nuevoSprite = Resources.Load<Sprite>($"Sprites/UI/CartasObjetivo/{objetivoCarta.ToString()}");
-            imagenUI.sprite = nuevoSprite;
+            if (LanguageManager.Instance.idiomaActual == "es")
+            {
+                nuevoSprite = Resources.Load<Sprite>($"Sprites/UI/CartasObjetivo/{objetivoCarta.ToString()}");
+            }
+            if (LanguageManager.Instance.idiomaActual == "en") 
+            {
+                nuevoSprite = Resources.Load<Sprite>($"Sprites/UI/CartasObjetivoEng/{objetivoCarta.ToString()}");
+
+            }
+            
+
+                imagenUI.sprite = nuevoSprite;
             imagenUI.gameObject.SetActive(true);
         }
         else 

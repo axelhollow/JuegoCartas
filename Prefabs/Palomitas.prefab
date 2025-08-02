@@ -365,11 +365,12 @@ GameObject:
   - component: {fileID: 9135897490699165692}
   - component: {fileID: 4475040068497598450}
   - component: {fileID: 6429034079806001811}
-  - component: {fileID: 5103474267121456017}
   - component: {fileID: -8280902411288293004}
-  - component: {fileID: 5701497461745894786}
+  - component: {fileID: 6911438628609376052}
+  - component: {fileID: 4548161668265490398}
+  - component: {fileID: 764051308430270583}
   m_Layer: 0
-  m_Name: Maiz
+  m_Name: Palomitas
   m_TagString: Draggable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -384,7 +385,7 @@ Transform:
   m_GameObject: {fileID: 5363898381958202192}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.012}
+  m_LocalPosition: {x: 3.694504, y: 0.40000007, z: -0.37987292}
   m_LocalScale: {x: 1.6, y: 0.15999994, z: 2.3999987}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -419,7 +420,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 468f7b5b97bae5446a45469e51b04f3e, type: 2}
+  - {fileID: 2100000, guid: 862bc29bda9ecfe4e9a25ac277b4ed85, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -476,7 +477,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stackOffset: 0.2
   agarrada: 0
-  valorCarta: 1
+  valorCarta: 2
 --- !u!114 &6429034079806001811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -489,29 +490,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db9867b0af4305c4c90bf61ec6747d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cartaEnum: 10
+  cartaEnum: 16
   slider: {fileID: 1305302888999103861}
   fusionCancelada: 0
-  ResultadoFusion: {fileID: 5363898381958202192, guid: fe48660b3da1d54419a07e9f77250243, type: 3}
+  ResultadoFusion: {fileID: 0}
   numHijos: 0
   hijo: {fileID: 0}
---- !u!114 &5103474267121456017
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5363898381958202192}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f65bc9593843afe43b261e8627315040, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectName: "Ma\xEDz"
-  objectNameENG: Corn
-  description: Alimentar gallinas o hacer unas palomitas, ambas buenas opciones
-  descriptionENG: Feed hens or make popcorn, both great options
-  valor: 1
 --- !u!114 &-8280902411288293004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -524,7 +508,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eaac98db78fb9a47bda1a3145dc8aca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5701497461745894786
+--- !u!114 &6911438628609376052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5363898381958202192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f65bc9593843afe43b261e8627315040, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectName: Palomitas
+  objectNameENG: Popcorn
+  description: Snack ligero y crujiente
+  descriptionENG: A light and crunchy snack
+  valor: 7
+--- !u!114 &4548161668265490398
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -539,9 +540,27 @@ MonoBehaviour:
   targetRenderer: {fileID: 3806383199233221537}
   localizedMaterials:
   - language: 0
-    material: {fileID: 2100000, guid: c25fbebb453cc8e45bf361367b6bfa0b, type: 2}
+    material: {fileID: 2100000, guid: bda8021adce45e64798e5dff21daeb2f, type: 2}
   - language: 1
-    material: {fileID: 2100000, guid: 468f7b5b97bae5446a45469e51b04f3e, type: 2}
+    material: {fileID: 2100000, guid: 862bc29bda9ecfe4e9a25ac277b4ed85, type: 2}
+--- !u!114 &764051308430270583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5363898381958202192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db9867b0af4305c4c90bf61ec6747d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cartaEnum: 0
+  slider: {fileID: 0}
+  fusionCancelada: 0
+  ResultadoFusion: {fileID: 0}
+  numHijos: 0
+  hijo: {fileID: 0}
 --- !u!1 &8041215697305764797
 GameObject:
   m_ObjectHideFlags: 0

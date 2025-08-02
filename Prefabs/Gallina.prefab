@@ -228,7 +228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numHijos: 0
   lecheOBJ: {fileID: 5363898381958202192, guid: c5fb2c4c6e7f3bc4490de6fcd158f5bb, type: 3}
-  EnumObjetivo: 11
+  EnumObjetivo: 10
   slider: {fileID: 2442043939047655796}
   fabricando: 0
   cartasAProcesar: []

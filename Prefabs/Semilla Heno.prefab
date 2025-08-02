@@ -215,8 +215,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectName: Semilla de heno
   objectNameENG: Hay seed
-  description: Semillas que hacen crecer heno, el alimento basico de algunos animales
-  descriptionENG: Seeds that sprout into hay, a staple food for many farm animals
+  description: Semillas que producen heno al cultivarlas
+  descriptionENG: Used to grow hay for animal feed.
   valor: 1
 --- !u!114 &3242400201711474076
 MonoBehaviour:

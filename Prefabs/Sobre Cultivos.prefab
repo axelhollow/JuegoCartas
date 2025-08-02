@@ -344,7 +344,7 @@ MonoBehaviour:
   - {fileID: 1159474320037564355, guid: 22b89c421fe8a754794a0a1c1f8b0c85, type: 3}
   rangoX: 2
   rangoZ: 2
-  tiempoEntreClicks: 0.3
+  tiempoEntreClicks: 0.5
 --- !u!114 &-1911922229511491877
 MonoBehaviour:
   m_ObjectHideFlags: 0

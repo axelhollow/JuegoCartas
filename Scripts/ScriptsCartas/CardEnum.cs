@@ -14,6 +14,8 @@
         Huevo,
         SemillaMaiz,
         Queseria,
-        Cocina
-    }
+        Cocina,
+        Tortilla,
+        Palomitas
+}
 
