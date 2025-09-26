@@ -8,7 +8,6 @@ public class SteamIntegration : MonoBehaviour
     void Start()
     {
         inicio();
-
     }
 
     public void inicio()
@@ -20,16 +19,14 @@ public class SteamIntegration : MonoBehaviour
         }
         catch (System.Exception e)
         {
-            Debug.LogError(e.Message);
+            Debug.LogWarning(e.Message);
         }
     }
 
-    public void printName() 
-    {
-        Debug.Log(Steamworks.SteamClient.Name);
-    }
+ 
     public void Unlock(string id)
     {
+      
         var arc = new Steamworks.Data.Achievement(id);
         arc.Trigger();
 

@@ -4,24 +4,27 @@ using UnityEngine;
 
 public class LogrosManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    SteamIntegration steamIntegration=new();
-    void Start()
+    SteamIntegration si;
+
+    private void Start()
     {
-        
+        si = GetComponent<SteamIntegration>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        GameObject vaca = GameObject.Find("Vaca");
+
+
+        if (vaca != null)
+        {
+           si.Unlock("vaca");
+        }
+
     }
 
 
-    public void IsUnlocked(string id) 
-    {
-    
-    }
+
 
     
 }
