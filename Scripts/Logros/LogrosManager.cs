@@ -13,7 +13,7 @@ public class LogrosManager : MonoBehaviour
 
     void Update()
     {
-        GameObject vaca = GameObject.Find("Vaca");
+        GameObject vaca = GameObject.Find("Vaca(Clone)");
 
 
         if (vaca != null)
