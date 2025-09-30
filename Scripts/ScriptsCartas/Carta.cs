@@ -32,7 +32,6 @@ public class CartasJson : MonoBehaviour
         if (gameObject.transform.childCount == 2)
             {
             numHijos = gameObject.transform.childCount;
-            print(numHijos);
             foreach (Transform child in transform)
                 {
                     hijo = child.gameObject;

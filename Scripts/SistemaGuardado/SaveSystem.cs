@@ -35,7 +35,7 @@ public class SaveSystem : MonoBehaviour
 
         string json = JsonUtility.ToJson(data, true);
         File.WriteAllText(Application.persistentDataPath + "/" + saveFileName, json);
-
+        print(Application.persistentDataPath + "/" + saveFileName);
         //PlayerPref
 
         PlayerPrefs.SetString("Monedas", monedas.text);

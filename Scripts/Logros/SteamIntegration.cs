@@ -30,14 +30,13 @@ public class SteamIntegration : MonoBehaviour
         var arc = new Steamworks.Data.Achievement(id);
         arc.Trigger();
 
-        print("Logro desbloqueado");
 
     }
     public  void LimpiarLogros(string id) 
     {
         var arc = new Steamworks.Data.Achievement(id);
         arc.Clear();
-        print("Logro bloqueado");
+
     }
 
 
