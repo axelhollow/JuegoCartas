@@ -489,10 +489,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db9867b0af4305c4c90bf61ec6747d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cartaEnum: 10
+  cartaEnum: 17
   slider: {fileID: 1305302888999103861}
   fusionCancelada: 0
-  ResultadoFusion: {fileID: 5363898381958202192, guid: fe48660b3da1d54419a07e9f77250243, type: 3}
+  ResultadoFusion: {fileID: 2100889302816273155, guid: a36297323b9512244a40a8dcd5c0d7ec, type: 3}
   numHijos: 0
   hijo: {fileID: 0}
 --- !u!114 &5103474267121456017

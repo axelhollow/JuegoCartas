@@ -492,7 +492,7 @@ MonoBehaviour:
   cartaEnum: 4
   slider: {fileID: 1305302888999103861}
   fusionCancelada: 0
-  ResultadoFusion: {fileID: 0}
+  ResultadoFusion: {fileID: 1159474320037564355, guid: 0cd957fe6cee2eb4bb5c6a2e6e148291, type: 3}
   numHijos: 0
   hijo: {fileID: 0}
 --- !u!114 &-8280902411288293004

@@ -537,7 +537,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db9867b0af4305c4c90bf61ec6747d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cartaEnum: 10
+  cartaEnum: 20
   slider: {fileID: 8236725283391472892}
   fusionCancelada: 0
   ResultadoFusion: {fileID: 5363898381958202192, guid: fe48660b3da1d54419a07e9f77250243, type: 3}

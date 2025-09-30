@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
+
 public class CartasJson : MonoBehaviour
 {
 
@@ -111,6 +112,38 @@ public class CartasJson : MonoBehaviour
             duration = 5f;
             ResultadoFusion = cartaComp2.ResultadoFusion;
         }
+        if (cartaComp1.cartaEnum == CardEnum.Flor && cartaComp2.cartaEnum == CardEnum.Flor)
+        {
+            tipoFusion = CardEnum.Ramo;
+            duration = 5f;
+            ResultadoFusion = cartaComp2.ResultadoFusion;
+        }
+        if (cartaComp1.cartaEnum == CardEnum.Panacea && cartaComp2.cartaEnum == CardEnum.Panacea)
+        {
+            tipoFusion = CardEnum.Medicina;
+            duration = 5f;
+            ResultadoFusion = cartaComp2.ResultadoFusion;
+        }
+        if (cartaComp1.cartaEnum == CardEnum.Engranaje && cartaComp2.cartaEnum == CardEnum.Engranaje)
+        {
+            tipoFusion = CardEnum.Blueprint;
+            duration = 5f;
+            ResultadoFusion = cartaComp2.ResultadoFusion;
+        }
+        if (cartaComp1.cartaEnum == CardEnum.Blueprint && cartaComp2.cartaEnum == CardEnum.Leche)
+        {
+            tipoFusion = CardEnum.Queseria;
+            duration = 5f;
+            ResultadoFusion = cartaComp2.ResultadoFusion;
+        }
+        if (cartaComp1.cartaEnum == CardEnum.Blueprint && cartaComp2.cartaEnum == CardEnum.Vaca)
+        {
+            tipoFusion = CardEnum.Matadero;
+            duration = 5f;
+            ResultadoFusion = cartaComp2.ResultadoFusion;
+        }
+
+
 
 
 

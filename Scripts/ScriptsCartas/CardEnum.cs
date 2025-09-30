@@ -16,6 +16,13 @@
         Queseria,
         Cocina,
         Tortilla,
-        Palomitas
+        Palomitas,
+        Flor,
+        Ramo,
+        Engranaje,
+        Blueprint,
+        Panacea,
+        Medicina,
+        Matadero
 }
 
