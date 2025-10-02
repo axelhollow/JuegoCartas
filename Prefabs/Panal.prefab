@@ -365,11 +365,12 @@ GameObject:
   - component: {fileID: 9135897490699165692}
   - component: {fileID: 4475040068497598450}
   - component: {fileID: 6429034079806001811}
-  - component: {fileID: 5103474267121456017}
   - component: {fileID: -8280902411288293004}
-  - component: {fileID: -4039558979927068933}
+  - component: {fileID: 6911438628609376052}
+  - component: {fileID: 4548161668265490398}
+  - component: {fileID: 764051308430270583}
   m_Layer: 0
-  m_Name: Heno
+  m_Name: Panal
   m_TagString: Draggable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -384,7 +385,7 @@ Transform:
   m_GameObject: {fileID: 5363898381958202192}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.012}
+  m_LocalPosition: {x: 3.694504, y: 0.40000007, z: -0.37987292}
   m_LocalScale: {x: 1.6, y: 0.15999994, z: 2.3999987}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -419,7 +420,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c11cc07747a21874d8b1f3e32894ee95, type: 2}
+  - {fileID: 2100000, guid: 7d1fc11be773d1749a84db8176322d9d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -476,7 +477,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stackOffset: 0.2
   agarrada: 0
-  valorCarta: 1
+  valorCarta: 2
 --- !u!114 &6429034079806001811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -489,29 +490,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db9867b0af4305c4c90bf61ec6747d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cartaEnum: 3
+  cartaEnum: 27
   slider: {fileID: 1305302888999103861}
   fusionCancelada: 0
-  ResultadoFusion: {fileID: 2193583494740372988, guid: a68223100c6c4db4ba6b22ac3a12fc0c, type: 3}
+  ResultadoFusion: {fileID: 0}
+  ResultadoFusion2: {fileID: 0}
   numHijos: 0
   hijo: {fileID: 0}
---- !u!114 &5103474267121456017
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5363898381958202192}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f65bc9593843afe43b261e8627315040, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectName: Heno
-  objectNameENG: Hay
-  description: Incomible para un ser humano, pero para una vaca...
-  descriptionENG: Impossible for a human to eat, but perfect for a cow...
-  valor: 1
 --- !u!114 &-8280902411288293004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -524,7 +509,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eaac98db78fb9a47bda1a3145dc8aca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-4039558979927068933
+--- !u!114 &6911438628609376052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5363898381958202192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f65bc9593843afe43b261e8627315040, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectName: Palomitas
+  objectNameENG: Popcorn
+  description: Snack ligero y crujiente
+  descriptionENG: A light and crunchy snack
+  valor: 7
+--- !u!114 &4548161668265490398
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -539,9 +541,28 @@ MonoBehaviour:
   targetRenderer: {fileID: 3806383199233221537}
   localizedMaterials:
   - language: 0
-    material: {fileID: 2100000, guid: 08b2c960bc7c12d4eb5804355a06b2e7, type: 2}
+    material: {fileID: 2100000, guid: bda8021adce45e64798e5dff21daeb2f, type: 2}
   - language: 1
-    material: {fileID: 2100000, guid: c11cc07747a21874d8b1f3e32894ee95, type: 2}
+    material: {fileID: 2100000, guid: 7d1fc11be773d1749a84db8176322d9d, type: 2}
+--- !u!114 &764051308430270583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5363898381958202192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db9867b0af4305c4c90bf61ec6747d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cartaEnum: 27
+  slider: {fileID: 0}
+  fusionCancelada: 0
+  ResultadoFusion: {fileID: 0}
+  ResultadoFusion2: {fileID: 0}
+  numHijos: 0
+  hijo: {fileID: 0}
 --- !u!1 &8041215697305764797
 GameObject:
   m_ObjectHideFlags: 0

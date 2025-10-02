@@ -23,6 +23,10 @@
         Blueprint,
         Panacea,
         Medicina,
-        Matadero
+        Matadero,
+        Semillera,
+        Abeja,
+        Miel,
+        Panal
 }
 

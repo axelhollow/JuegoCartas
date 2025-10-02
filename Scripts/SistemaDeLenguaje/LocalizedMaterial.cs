@@ -11,6 +11,7 @@ public class LocalizedMaterial : MonoBehaviour
     {
         public Language language;
         public Material material;
+       
     }
 
     public MaterialByLanguage[] localizedMaterials;

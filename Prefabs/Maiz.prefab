@@ -493,6 +493,7 @@ MonoBehaviour:
   slider: {fileID: 1305302888999103861}
   fusionCancelada: 0
   ResultadoFusion: {fileID: 5363898381958202192, guid: fe48660b3da1d54419a07e9f77250243, type: 3}
+  ResultadoFusion2: {fileID: 2193583494740372988, guid: a68223100c6c4db4ba6b22ac3a12fc0c, type: 3}
   numHijos: 0
   hijo: {fileID: 0}
 --- !u!114 &5103474267121456017

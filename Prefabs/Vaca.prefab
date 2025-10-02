@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 593436304873656108}
   - component: {fileID: 2696104303346921182}
   - component: {fileID: 4617705673059438285}
+  - component: {fileID: -7323980126435412580}
   m_Layer: 0
   m_Name: Vaca
   m_TagString: Draggable
@@ -301,8 +302,23 @@ MonoBehaviour:
   slider: {fileID: 0}
   fusionCancelada: 0
   ResultadoFusion: {fileID: 5585810638234355529, guid: fc719f1db4b4c5245bc7864e52f416a0, type: 3}
+  ResultadoFusion2: {fileID: 0}
   numHijos: 0
   hijo: {fileID: 0}
+--- !u!114 &-7323980126435412580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159474320037564355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b63d1798aa4d4d458dda994c4ad767f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  estaEnfermo: 0
+  logoEnfermo: {fileID: 2778592520925917844}
 --- !u!1 &1801791388099012680
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,7 +373,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5171508124957718621
 Transform:
   m_ObjectHideFlags: 0

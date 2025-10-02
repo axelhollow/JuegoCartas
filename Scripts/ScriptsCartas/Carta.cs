@@ -15,6 +15,7 @@ public class CartasJson : MonoBehaviour
     public bool fusionCancelada = false;
 
     public GameObject ResultadoFusion;
+    public GameObject ResultadoFusion2;
     public int numHijos;
     public GameObject hijo;
 
@@ -22,10 +23,12 @@ public class CartasJson : MonoBehaviour
     private void Awake()
     {
         numHijos = gameObject.transform.childCount;
-
+      
+        
     }
     private void Update()
     {
+        
        // numHijos = gameObject.transform.childCount;
         
 
@@ -65,6 +68,7 @@ public class CartasJson : MonoBehaviour
                 if (child.GetComponent<CartasJson>() != null) 
                 {
                     child.transform.SetParent(transform.parent.transform);
+                    
                 
                 }
                 
@@ -142,7 +146,37 @@ public class CartasJson : MonoBehaviour
             duration = 5f;
             ResultadoFusion = cartaComp2.ResultadoFusion;
         }
-
+        if (cartaComp1.cartaEnum == CardEnum.Blueprint && cartaComp2.cartaEnum == CardEnum.Heno)
+        {
+            tipoFusion = CardEnum.Semillera;
+            duration = 5f;
+            ResultadoFusion = cartaComp2.ResultadoFusion;
+        }
+        if (cartaComp1.cartaEnum == CardEnum.Blueprint && cartaComp2.cartaEnum == CardEnum.Maiz)
+        {
+            tipoFusion = CardEnum.Semillera;
+            duration = 5f;
+            ResultadoFusion = cartaComp2.ResultadoFusion2;
+        }
+        if (cartaComp1.cartaEnum == CardEnum.Blueprint && cartaComp2.cartaEnum == CardEnum.Flor)
+        {
+            tipoFusion = CardEnum.Semillera;
+            duration = 5f;
+            ResultadoFusion = cartaComp2.ResultadoFusion2;
+        }
+        if (cartaComp1.cartaEnum == CardEnum.Flor && cartaComp2.cartaEnum == CardEnum.Abeja)
+        {
+            tipoFusion = CardEnum.Miel;
+            duration = 5f;
+            ResultadoFusion = cartaComp2.ResultadoFusion;
+        }
+        if (cartaComp1.cartaEnum == CardEnum.Abeja && cartaComp2.cartaEnum == CardEnum.Abeja)
+        {
+            print("abejasss");
+            tipoFusion = CardEnum.Panal;
+            duration = 5f;
+            ResultadoFusion = cartaComp2.ResultadoFusion2;
+        }
 
 
 
