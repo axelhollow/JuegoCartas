@@ -4530,7 +4530,6 @@ MonoBehaviour:
   - {fileID: 5363898381958202192, guid: c5fb2c4c6e7f3bc4490de6fcd158f5bb, type: 3}
   - {fileID: 5363898381958202192, guid: 552b45f8f54e8294f97c25540f52bd18, type: 3}
   - {fileID: 5175943508272823692, guid: 3433fdf59a0f0124eb894cf3e3535402, type: 3}
-  - {fileID: 1159474320037564355, guid: 31bbdda4ba870b14e9116ac20dd267be, type: 3}
   - {fileID: 5175943508272823692, guid: 8ccdb5e2427b8a94cb8bc31414803de4, type: 3}
   - {fileID: 5585810638234355529, guid: fc719f1db4b4c5245bc7864e52f416a0, type: 3}
   - {fileID: 2026687694861726939, guid: b21567bb3c6614348b9eae393c903360, type: 3}
@@ -4540,6 +4539,7 @@ MonoBehaviour:
   - {fileID: 2193583494740372988, guid: a68223100c6c4db4ba6b22ac3a12fc0c, type: 3}
   - {fileID: 3126774926498801597, guid: 1174ff77dc3066a45bf6449cf5d67e2f, type: 3}
   - {fileID: 5320647774704214934, guid: f81dc00358b9daa4e80810acee85d85f, type: 3}
+  - {fileID: 5585810638234355529, guid: fc719f1db4b4c5245bc7864e52f416a0, type: 3}
   monedas: {fileID: 4680631660819440087}
   diaNumero: {fileID: 516375350}
   barraDiaValor: {fileID: 1428104973}
@@ -5837,6 +5837,63 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &1295001240
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 610844778292429164, guid: fc719f1db4b4c5245bc7864e52f416a0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.9904704
+      objectReference: {fileID: 0}
+    - target: {fileID: 610844778292429164, guid: fc719f1db4b4c5245bc7864e52f416a0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.8150005
+      objectReference: {fileID: 0}
+    - target: {fileID: 610844778292429164, guid: fc719f1db4b4c5245bc7864e52f416a0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.505735
+      objectReference: {fileID: 0}
+    - target: {fileID: 610844778292429164, guid: fc719f1db4b4c5245bc7864e52f416a0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 610844778292429164, guid: fc719f1db4b4c5245bc7864e52f416a0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 610844778292429164, guid: fc719f1db4b4c5245bc7864e52f416a0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 610844778292429164, guid: fc719f1db4b4c5245bc7864e52f416a0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 610844778292429164, guid: fc719f1db4b4c5245bc7864e52f416a0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 610844778292429164, guid: fc719f1db4b4c5245bc7864e52f416a0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 610844778292429164, guid: fc719f1db4b4c5245bc7864e52f416a0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5585810638234355529, guid: fc719f1db4b4c5245bc7864e52f416a0, type: 3}
+      propertyPath: m_Name
+      value: Matadero
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fc719f1db4b4c5245bc7864e52f416a0, type: 3}
 --- !u!1001 &1319983578
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10920,3 +10977,4 @@ SceneRoots:
   - {fileID: 1419498212}
   - {fileID: 1711131578}
   - {fileID: 2144004667}
+  - {fileID: 1295001240}

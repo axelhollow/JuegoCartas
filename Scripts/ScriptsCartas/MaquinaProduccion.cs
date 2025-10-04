@@ -64,7 +64,7 @@ public class MaquinaProduccion : MonoBehaviour
     {
         fabricando = true;
 
-        // Guardamos una copia de los hijos originales antes de modificar la jerarquía
+        // Guardamos una copia de los hijos originales antes de modificar la jerarquï¿½a
         List<Transform> hijosOriginales = new List<Transform>();
         foreach (Transform hijo in transform)
         {
@@ -89,7 +89,7 @@ public class MaquinaProduccion : MonoBehaviour
                         if (nivel > profundidadMaxima)
                             continue;
 
-                        // Copia temporal de hijos para evitar problemas al cambiar jerarquía
+                        // Copia temporal de hijos para evitar problemas al cambiar jerarquï¿½a
                         List<Transform> nietos = new List<Transform>();
                         foreach (Transform n in actual)
                         {
@@ -116,10 +116,7 @@ public class MaquinaProduccion : MonoBehaviour
                     numHijos = transform.childCount;
                 }
             }
-            else 
-            {
-                    print("EL CANVAS SE IGNORA"); 
-            }
+
             
 
 
@@ -159,7 +156,7 @@ public class MaquinaProduccion : MonoBehaviour
 
                         if (hit.collider.GetComponent<CartasJson>() != null)
                         {
-                             Debug.Log("Carta válida detectada debajo del hijo.");
+                             Debug.Log("Carta vï¿½lida detectada debajo del hijo.");
                             leche.transform.SetParent(hit.collider.transform);
                         }
                         else
@@ -169,7 +166,7 @@ public class MaquinaProduccion : MonoBehaviour
                     }
                     else
                     {
-                        Debug.Log("No se detectó nada debajo del hijo.");
+                        Debug.Log("No se detectï¿½ nada debajo del hijo.");
                     }
                     leche.transform.position = leche.transform.position + Vector3.down * 1f;
 
@@ -191,7 +188,7 @@ public class MaquinaProduccion : MonoBehaviour
     public void CancelarFusion()
     {
         fabricando=false;
-        // Detener la coroutine si está en ejecución
+        // Detener la coroutine si estï¿½ en ejecuciï¿½n
         if (fusionCoroutine != null)
         {
             StopCoroutine(fusionCoroutine);

@@ -138,10 +138,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db9867b0af4305c4c90bf61ec6747d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cartaEnum: 10
+  cartaEnum: 22
   slider: {fileID: 879888618124089402}
   fusionCancelada: 0
-  ResultadoFusion: {fileID: 5363898381958202192, guid: fe48660b3da1d54419a07e9f77250243, type: 3}
+  ResultadoFusion: {fileID: 1159474320037564355, guid: 4882a79205f241f46a36dd44bd78c9d9, type: 3}
+  ResultadoFusion2: {fileID: 1159474320037564355, guid: d4482f8577943674384ef785c650ddf8, type: 3}
   numHijos: 0
   hijo: {fileID: 0}
 --- !u!114 &2804642479261408714

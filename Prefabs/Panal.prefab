@@ -369,6 +369,7 @@ GameObject:
   - component: {fileID: 6911438628609376052}
   - component: {fileID: 4548161668265490398}
   - component: {fileID: 764051308430270583}
+  - component: {fileID: -7774254923520469070}
   m_Layer: 0
   m_Name: Panal
   m_TagString: Draggable
@@ -563,6 +564,28 @@ MonoBehaviour:
   ResultadoFusion2: {fileID: 0}
   numHijos: 0
   hijo: {fileID: 0}
+--- !u!114 &-7774254923520469070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5363898381958202192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3840e07c12a502c44a265e45f3144b8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numHijos: 0
+  lecheOBJ: {fileID: 5363898381958202192, guid: a8c1c86eff1e9294face8851ce9de73b, type: 3}
+  EnumObjetivo: 17
+  slider: {fileID: 1305302888999103861}
+  fabricando: 0
+  cartasAProcesar: []
+  fusionCancelada: 0
+  duration: 5
+  elapsed: 0
+  profundidadMaxima: 99
 --- !u!1 &8041215697305764797
 GameObject:
   m_ObjectHideFlags: 0

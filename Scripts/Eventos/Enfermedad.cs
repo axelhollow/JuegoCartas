@@ -10,9 +10,17 @@ public class Enfermedad : MonoBehaviour
 
     private void Update()
     {
-        if(estaEnfermo==true)
+        if (estaEnfermo == true)
         {
             logoEnfermo.gameObject.SetActive(true);
+            
+             var scriptMaquina = gameObject.GetComponent<MaquinaProduccion>();
+                if (scriptMaquina != null)
+                {
+                    print("Deja de producir");
+                    Destroy(scriptMaquina);
+
+                }
         }
     }
 

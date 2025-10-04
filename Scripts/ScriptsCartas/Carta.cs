@@ -42,9 +42,9 @@ public class CartasJson : MonoBehaviour
 
                     if (hijo.tag == "Draggable" && !cartasEnFusion.Contains(hijo) && hijo.transform.childCount==1 && gameObject.transform.childCount==2)
                     {
-                        cartasEnFusion.Add(gameObject); // Añadir las cartas al HashSet
+                        cartasEnFusion.Add(gameObject); // Aï¿½adir las cartas al HashSet
                         cartasEnFusion.Add(hijo);
-                        fusionCoroutine = StartCoroutine(FusionarConSlider(gameObject, hijo)); // Iniciar la fusión
+                        fusionCoroutine = StartCoroutine(FusionarConSlider(gameObject, hijo)); // Iniciar la fusiï¿½n
                         break;
                     }
 
@@ -172,39 +172,58 @@ public class CartasJson : MonoBehaviour
         }
         if (cartaComp1.cartaEnum == CardEnum.Abeja && cartaComp2.cartaEnum == CardEnum.Abeja)
         {
-            print("abejasss");
+
             tipoFusion = CardEnum.Panal;
             duration = 5f;
             ResultadoFusion = cartaComp2.ResultadoFusion2;
         }
 
+        if (cartaComp1.cartaEnum == CardEnum.Vaca && cartaComp2.cartaEnum == CardEnum.Medicina)
+        {
 
+            tipoFusion = CardEnum.Vaca;
+            duration = 5f;
+            ResultadoFusion = cartaComp2.ResultadoFusion;
+        }
+        if (cartaComp1.cartaEnum == CardEnum.Gallina && cartaComp2.cartaEnum == CardEnum.Medicina)
+        {
 
+            tipoFusion = CardEnum.Gallina;
+            duration = 5f;
+            ResultadoFusion = cartaComp2.ResultadoFusion2;
+        }
+        if (cartaComp1.cartaEnum == CardEnum.TierraCultivo && cartaComp2.cartaEnum == CardEnum.SemillaFlor)
+        {
+
+            tipoFusion = CardEnum.Flor;
+            duration = 5f;
+            ResultadoFusion = cartaComp2.ResultadoFusion;
+        }
 
 
         //Procesar la fusion
         if (tipoFusion != null)
         {
             slider.value = 0f;
-            slider.gameObject.SetActive(true); // Aseguramos que esté visible
+            slider.gameObject.SetActive(true); // Aseguramos que estï¿½ visible
 
             while (elapsed < duration)
             {
 
-                    #region FusionCancelada
-                    if (fusionCancelada) // Si la fusión ha sido cancelada, detenemos la coroutine
-                    {
-                        // Restaurar el slider y las cartas
-                        slider.value = 0f;
-                        slider.gameObject.SetActive(false); // Hacemos invisible el slider
-                        carta1.SetActive(true); // Reactivamos la carta 1
-                        carta2.SetActive(true); // Reactivamos la carta 2
+                #region FusionCancelada
+                if (fusionCancelada) // Si la fusiï¿½n ha sido cancelada, detenemos la coroutine
+                {
+                    // Restaurar el slider y las cartas
+                    slider.value = 0f;
+                    slider.gameObject.SetActive(false); // Hacemos invisible el slider
+                    carta1.SetActive(true); // Reactivamos la carta 1
+                    carta2.SetActive(true); // Reactivamos la carta 2
 
-                        cartasEnFusion.Remove(carta1); // Eliminar las cartas del HashSet si se canceló la fusión
-                        cartasEnFusion.Remove(carta2);
+                    cartasEnFusion.Remove(carta1); // Eliminar las cartas del HashSet si se cancelï¿½ la fusiï¿½n
+                    cartasEnFusion.Remove(carta2);
 
-                        yield break; // Salir de la coroutine si se cancela
-                    }
+                    yield break; // Salir de la coroutine si se cancela
+                }
                 #endregion
 
                 if (GameManager.EstaPausado != true)
@@ -212,8 +231,8 @@ public class CartasJson : MonoBehaviour
                     elapsed += Time.deltaTime;
                     slider.value = Mathf.Clamp01(elapsed / duration);
                 }
-                    yield return null;
-                
+                yield return null;
+
             }
 
             slider.value = 1f;
@@ -223,18 +242,18 @@ public class CartasJson : MonoBehaviour
             //guardar la posicion
             Vector3 posicion = carta1.transform.position;
 
-                Destroy(carta1);
-                Destroy(carta2);
+            Destroy(carta1);
+            Destroy(carta2);
 
-                GameObject nuevaCarta = Instantiate(ResultadoFusion);
-                nuevaCarta.transform.position = posicion;
+            GameObject nuevaCarta = Instantiate(ResultadoFusion);
+            nuevaCarta.transform.position = posicion;
 
-                cartasEnFusion.Remove(carta1);
-                cartasEnFusion.Remove(carta2);
+            cartasEnFusion.Remove(carta1);
+            cartasEnFusion.Remove(carta2);
 
             #endregion
         }
-        else 
+        else
         {
             //NO HAY FUSION PARA ESA CONVINACION
         }
@@ -246,7 +265,7 @@ public class CartasJson : MonoBehaviour
     {
         fusionCancelada = true;
 
-        // Detener la coroutine si está en ejecución
+        // Detener la coroutine si estï¿½ en ejecuciï¿½n
         if (fusionCoroutine != null)
         {
             StopCoroutine(fusionCoroutine);
@@ -267,7 +286,7 @@ public class CartasJson : MonoBehaviour
                         cartaComp.slider.gameObject.SetActive(false);
                     }
 
-                    // Volver a activar las cartas para que estén disponibles para futuras fusiones
+                    // Volver a activar las cartas para que estï¿½n disponibles para futuras fusiones
                     carta.SetActive(true);
                 }
                 catch(MissingReferenceException ex) 

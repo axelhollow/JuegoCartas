@@ -299,7 +299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cartaEnum: 8
-  slider: {fileID: 0}
+  slider: {fileID: 2442043939047655796}
   fusionCancelada: 0
   ResultadoFusion: {fileID: 5585810638234355529, guid: fc719f1db4b4c5245bc7864e52f416a0, type: 3}
   ResultadoFusion2: {fileID: 0}

@@ -25,9 +25,10 @@ public class GestionDeEnfermedad : MonoBehaviour
         {
             if (obj.name.Contains("Vaca") || obj.name.Contains("Gallina"))
             {
-               print("Encontrado: " + obj.name);
+                print("Encontrado: " + obj.name);
                 // Aquí puedes hacer algo con el objeto
                 obj.GetComponent<Enfermedad>().PonerEnfermo();
+               
             }
         }
 
