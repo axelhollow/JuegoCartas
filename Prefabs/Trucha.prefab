@@ -89,14 +89,11 @@ GameObject:
   - component: {fileID: 1791897303041773952}
   - component: {fileID: 7160845570450764302}
   - component: {fileID: 3242400201711474076}
-  - component: {fileID: -5831666667328084423}
-  - component: {fileID: -2523024689070117186}
-  - component: {fileID: 5572713964413448992}
-  - component: {fileID: -3614736413747927408}
-  - component: {fileID: 564541582416435328}
-  - component: {fileID: 7317008966432521606}
+  - component: {fileID: 8400453942804276622}
+  - component: {fileID: 2041145779166549115}
+  - component: {fileID: 11061241731224990}
   m_Layer: 0
-  m_Name: Gallina
+  m_Name: Trucha
   m_TagString: Draggable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -113,7 +110,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.550824, y: -0.8449995, z: 1.8635278}
   m_LocalScale: {x: 1.6, y: 0.15999994, z: 2.3999987}
-  m_ConstrainProportionsScale: 1
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8474435893364557143}
   m_Father: {fileID: 0}
@@ -146,7 +143,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d2a46ec8ef9844f4fb1c5fdb89254f79, type: 2}
+  - {fileID: 2100000, guid: e0cd8c64b11aca7438af75db2c2f9bed, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -203,7 +200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stackOffset: 0.2
   agarrada: 0
-  valorCarta: 3
+  valorCarta: 10
 --- !u!114 &3242400201711474076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,7 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eaac98db78fb9a47bda1a3145dc8aca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-5831666667328084423
+--- !u!114 &8400453942804276622
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -225,33 +222,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1159474320037564355}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3840e07c12a502c44a265e45f3144b8f, type: 3}
+  m_Script: {fileID: 11500000, guid: db9867b0af4305c4c90bf61ec6747d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numHijos: 0
-  lecheOBJ: {fileID: 5363898381958202192, guid: c5fb2c4c6e7f3bc4490de6fcd158f5bb, type: 3}
-  EnumObjetivo: 10
-  slider: {fileID: 2442043939047655796}
-  fabricando: 0
-  cartasAProcesar: []
+  cartaEnum: 5
+  slider: {fileID: 0}
   fusionCancelada: 0
-  duration: 3
-  elapsed: 0
-  profundidadMaxima: 99
---- !u!114 &-2523024689070117186
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1159474320037564355}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dc9ab97158dab046babedfa80be4f01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  carta: 9
---- !u!114 &5572713964413448992
+  ResultadoFusion: {fileID: 0}
+  ResultadoFusion2: {fileID: 0}
+  numHijos: 0
+  hijo: {fileID: 0}
+--- !u!114 &2041145779166549115
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -263,12 +244,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f65bc9593843afe43b261e8627315040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectName: Gallina
-  objectNameENG: Hen
-  description: Le encanta el maiz
-  descriptionENG: Loves corn!
-  valor: 3
---- !u!114 &-3614736413747927408
+  objectName: Queso
+  objectNameENG: Cheese
+  description: Delicioso y muy valioso
+  descriptionENG: "Yummy and of great value.\u201D"
+  valor: 10
+--- !u!114 &11061241731224990
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -283,42 +264,9 @@ MonoBehaviour:
   targetRenderer: {fileID: 2955738454994641240}
   localizedMaterials:
   - language: 0
-    material: {fileID: 2100000, guid: 09b724ec77d8adb4aac8477ee17ed310, type: 2}
+    material: {fileID: 2100000, guid: ea429911bd17aa44e91f19d0c4e8d695, type: 2}
   - language: 1
-    material: {fileID: 2100000, guid: d2a46ec8ef9844f4fb1c5fdb89254f79, type: 2}
---- !u!114 &564541582416435328
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1159474320037564355}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b63d1798aa4d4d458dda994c4ad767f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  estaEnfermo: 0
-  logoEnfermo: {fileID: 6471331946058532800}
---- !u!114 &7317008966432521606
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1159474320037564355}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db9867b0af4305c4c90bf61ec6747d6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cartaEnum: 9
-  slider: {fileID: 2442043939047655796}
-  fusionCancelada: 0
-  ResultadoFusion: {fileID: 0}
-  ResultadoFusion2: {fileID: 0}
-  numHijos: 0
-  hijo: {fileID: 0}
+    material: {fileID: 2100000, guid: e0cd8c64b11aca7438af75db2c2f9bed, type: 2}
 --- !u!1 &1801791388099012680
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,112 +504,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &6471331946058532800
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8138635731855271741}
-  - component: {fileID: 5096207982125505528}
-  - component: {fileID: 5582892122742574419}
-  - component: {fileID: 8043876476736853790}
-  m_Layer: 0
-  m_Name: Enfermedad
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &8138635731855271741
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6471331946058532800}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0.7071068, w: 0}
-  m_LocalPosition: {x: -1.2520717, y: 4.969395, z: -12.899823}
-  m_LocalScale: {x: 1.2915608, y: 4.0532355, z: 3.628575}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8474435893364557143}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!33 &5096207982125505528
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6471331946058532800}
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &5582892122742574419
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6471331946058532800}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 694a02a30481ba9479e0c097e05f3d6d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &8043876476736853790
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6471331946058532800}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &7765220093572542524
 GameObject:
   m_ObjectHideFlags: 0
@@ -694,7 +536,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3390419073649940743}
-  - {fileID: 8138635731855271741}
   m_Father: {fileID: 5542588060398058923}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

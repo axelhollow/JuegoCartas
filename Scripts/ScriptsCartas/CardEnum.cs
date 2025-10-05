@@ -29,6 +29,8 @@ public enum CardEnum
     Miel,
     Panal,
     Carne,
-    SemillaFlor
+    SemillaFlor,
+    Caña,
+    Lago
 }
 

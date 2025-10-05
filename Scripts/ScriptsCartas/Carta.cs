@@ -9,6 +9,7 @@ public class CartasJson : MonoBehaviour
 {
 
     public CardEnum cartaEnum;
+    public List<GameObject> elementosPesca;
     public Slider slider;
     public HashSet<GameObject> cartasEnFusion = new HashSet<GameObject>();
     public Coroutine fusionCoroutine = null;  // Referencia a la coroutine activa para poder cancelarla
@@ -199,6 +200,13 @@ public class CartasJson : MonoBehaviour
             duration = 5f;
             ResultadoFusion = cartaComp2.ResultadoFusion;
         }
+        if (cartaComp1.cartaEnum == CardEnum.Lago && cartaComp2.cartaEnum == CardEnum.Caña)
+        {
+
+            tipoFusion = CardEnum.Caña;
+            duration = 5f;
+            ResultadoFusion = randomizarPesca();
+        }
 
 
         //Procesar la fusion
@@ -260,6 +268,11 @@ public class CartasJson : MonoBehaviour
 
 
     }
+    public GameObject randomizarPesca()
+    {
+        int indice = Random.Range(0, 7);
+        return elementosPesca[indice];
+    }
 
     public void CancelarFusion()
     {
@@ -289,16 +302,16 @@ public class CartasJson : MonoBehaviour
                     // Volver a activar las cartas para que est�n disponibles para futuras fusiones
                     carta.SetActive(true);
                 }
-                catch(MissingReferenceException ex) 
+                catch (MissingReferenceException ex)
                 {
-                    print("Carta: " + gameObject.name + " destruida "+ex);
+                    print("Carta: " + gameObject.name + " destruida " + ex);
                 }
             }
         }
 
         cartasEnFusion.Remove(hijo);
         cartasEnFusion.Remove(gameObject);
-        hijo = null;    
+        hijo = null;
         fusionCancelada = false;
     }
    
