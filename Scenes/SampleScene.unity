@@ -1242,6 +1242,9 @@ MonoBehaviour:
   estacionActual: 1
   diaEstacion: 1
   textoEstacion: {fileID: 2076846220}
+  listacartasPrimavera:
+  - {fileID: 5363898381958202192, guid: 2da995e10d9af284e89f5152a72dbb0f, type: 3}
+  - {fileID: 5175943508272823692, guid: 8a5c4b6fa91b98146a1c3c0480f4b6fc, type: 3}
   EstacionFill: {fileID: 111676320}
   particulaDestruccionPrefab: {fileID: 6813416509558619124, guid: 3b7f2c753d435d647a80f1f047a113e3, type: 3}
   maxDays: 100

@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using static CartasJson;
 using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
+using System.Collections.Generic;
 
 public class DayCycleManager : MonoBehaviour
 {
@@ -39,6 +40,7 @@ public class DayCycleManager : MonoBehaviour
     public int estacionActual=1;
     public int diaEstacion=1;
     public GameObject textoEstacion;
+   public List<GameObject> listacartasPrimavera;
 
     public GameObject EstacionFill;
 
@@ -113,8 +115,6 @@ public class DayCycleManager : MonoBehaviour
                 ShowEndOfDaySummary();
                 //OBJETIVO DEL DIA
                 CalcularObjetivoDelDia();
-                print(diaEstacion);
-                print(estacionActual);
             }
 
             if (dayProgressSlider != null)
@@ -136,6 +136,10 @@ public class DayCycleManager : MonoBehaviour
         {
             diaEstacion = 1;
             EstacionUpdate();
+        }
+        if (estacionActual == 1)
+        {
+            SpawnDeEstcion(listacartasPrimavera);
         }
        
     }
@@ -183,6 +187,21 @@ public class DayCycleManager : MonoBehaviour
                 break;
         }
 
+    }
+
+    void SpawnDeEstcion(List<GameObject> listacartas)
+    {
+        int numero = UnityEngine.Random.Range(1, 3);
+        print("Sale: " + numero);
+        if (numero == 2)
+        {
+            print("Generando recurso");
+            int longilist = listacartas.Count;
+            int cartaElegida = UnityEngine.Random.Range(0, longilist);
+            GameObject recursoEstcion = listacartas[cartaElegida];
+            Vector3 posicion = new Vector3(-6.99047f, -0.8150005f, -2.505735f);
+            Instantiate(recursoEstcion, posicion, recursoEstcion.transform.rotation);
+        }
     }
    void ObjetivoDelDia() 
       {
