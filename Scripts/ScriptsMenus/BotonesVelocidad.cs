@@ -18,20 +18,20 @@ public class BotonesVelocidad : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            // Acción para la tecla 1
-            Debug.Log("Pulsaste 1");
+            //  tecla 1
+
             JuegoEnPausa(true);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            // Acción para la tecla 2
-            Debug.Log("Pulsaste 2");
+            // tecla 2
+
             SetTiempo(1f);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            // Acción para la tecla 3
-            Debug.Log("Pulsaste 3");
+            //  tecla 3
+
             SetTiempo(2f);
         }
     }
@@ -77,11 +77,11 @@ public class BotonesVelocidad : MonoBehaviour
 
     public void ActualizarColores()
     {
-        // Obtener referencias al TextMeshProUGUI de cada botón
+        // Obtener referencias al TextMeshProUGUI de cada botï¿½n
         var textoNormal = botonNormal.GetComponentInChildren<TextMeshProUGUI>();
         var textoRapido = botonRapido.GetComponentInChildren<TextMeshProUGUI>();
 
-        // Colorear según la escala de tiempo actual
+        // Colorear segï¿½n la escala de tiempo actual
         if (Time.timeScale == 1f) 
         {
             textoNormal.color= colorActivo;

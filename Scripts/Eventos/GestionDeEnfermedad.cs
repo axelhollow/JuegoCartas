@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GestionDeEnfermedad : MonoBehaviour
 {
+    public GameObject textoEstacion;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,17 +20,21 @@ public class GestionDeEnfermedad : MonoBehaviour
 
     public void ActivarEnfermedad()
     {
-     // Busca todos los objetos en la escena
-        GameObject[] todos = FindObjectsOfType<GameObject>();
-
-        foreach (GameObject obj in todos)
+        // Busca todos los objetos en la escena, si es otoño
+        string estcion = textoEstacion.GetComponent<TextMeshProUGUI>().text;
+        if (estcion == "Otoño")
         {
-            if (obj.name.Contains("Vaca") || obj.name.Contains("Gallina"))
+            GameObject[] todos = FindObjectsOfType<GameObject>();
+
+            foreach (GameObject obj in todos)
             {
-                print("Encontrado: " + obj.name);
-                // Aquí puedes hacer algo con el objeto
-                obj.GetComponent<Enfermedad>().PonerEnfermo();
-               
+                if (obj.name.Contains("Vaca") || obj.name.Contains("Gallina"))
+                {
+                    print("Encontrado: " + obj.name);
+                    // Aquí puedes hacer algo con el objeto
+                    obj.GetComponent<Enfermedad>().PonerEnfermo();
+
+                }
             }
         }
 

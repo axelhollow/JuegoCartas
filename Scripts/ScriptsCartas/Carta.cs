@@ -278,14 +278,14 @@ public class CartasJson : MonoBehaviour
     {
         fusionCancelada = true;
 
-        // Detener la coroutine si est� en ejecuci�n
+
         if (fusionCoroutine != null)
         {
             StopCoroutine(fusionCoroutine);
             fusionCoroutine = null;
         }
 
-        // Obtener los sliders activos
+
         if (cartasEnFusion != null && cartasEnFusion.Count() > 0)
         {
             foreach (GameObject carta in cartasEnFusion)

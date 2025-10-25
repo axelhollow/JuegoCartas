@@ -35,6 +35,12 @@ public class DayCycleManager : MonoBehaviour
     private float timer = 0f;
     public int currentDay;
 
+    [Header("Estacion")]
+    public int estacionActual=1;
+    public int diaEstacion=1;
+    public GameObject textoEstacion;
+
+    public GameObject EstacionFill;
 
     public event Action OnDayEnded;
 
@@ -96,16 +102,19 @@ public class DayCycleManager : MonoBehaviour
         {
             timer += Time.deltaTime;
 
-            if (timer >= dayDuration || timer+tiempodediausado>=dayDuration)
+            if (timer >= dayDuration || timer + tiempodediausado >= dayDuration)
             {
                 tiempodediausado = 0f;
                 timer = 0f;
                 currentDay++;
                 UpdateDayUI();
+                DiaEstacionUpdate();
                 OnDayEnded?.Invoke();
                 ShowEndOfDaySummary();
                 //OBJETIVO DEL DIA
                 CalcularObjetivoDelDia();
+                print(diaEstacion);
+                print(estacionActual);
             }
 
             if (dayProgressSlider != null)
@@ -119,26 +128,82 @@ public class DayCycleManager : MonoBehaviour
         if (dayCounterText != null)
             dayCounterText.text = ""+currentDay;
     }
-    void ObjetivoDelDia() 
+
+    void DiaEstacionUpdate()
     {
-        switch (currentDay) 
+        diaEstacion++;
+        if (diaEstacion > 3)
+        {
+            diaEstacion = 1;
+            EstacionUpdate();
+        }
+       
+    }
+
+    void EstacionUpdate()
+    {
+        estacionActual++;
+        if (estacionActual > 4)
+        {
+            estacionActual = 1;
+        }
+
+        Image image = EstacionFill.GetComponent<Image>();
+        Color color;
+        switch (estacionActual)
         {
             case 1:
+                if (ColorUtility.TryParseHtmlString("#8EE68E", out color))
                 {
-                    objetivo = currentDay;
-                    textoObjetivoActual.text = objetivo.ToString();
-                    break;
+                    textoEstacion.GetComponent<TextMeshProUGUI>().text = "Primvera";
+                    image.color = color;
                 }
+                break;
             case 2:
+                if (ColorUtility.TryParseHtmlString("#ffd445ff", out color))
                 {
-                    objetivo = currentDay * 2;
-                    textoObjetivoActual.text = objetivo.ToString(); 
-                    break;
+                    textoEstacion.GetComponent<TextMeshProUGUI>().text = "Verano";
+                    image.color = color;
                 }
+                break;
+            case 3:
+                if (ColorUtility.TryParseHtmlString("#ff932fff", out color))
+                {
+                    textoEstacion.GetComponent<TextMeshProUGUI>().text = "Otoño";
+                    image.color = color;
+                }
+                break;
+            case 4:
+
+                if (ColorUtility.TryParseHtmlString("#4BB2D9", out color))
+                {
+                    textoEstacion.GetComponent<TextMeshProUGUI>().text = "Invierno";
+                    image.color = color;
+                }
+                break;
         }
-        
-    
+
     }
+   void ObjetivoDelDia() 
+      {
+          switch (currentDay) 
+          {
+              case 1:
+                  {
+                      objetivo = currentDay;
+                      textoObjetivoActual.text = objetivo.ToString();
+                      break;
+                  }
+              case 2:
+                  {
+                      objetivo = currentDay * 2;
+                      textoObjetivoActual.text = objetivo.ToString(); 
+                      break;
+                  }
+          }
+
+
+      }
 
     public void CalcularObjetivoDelDia()
     {
@@ -155,17 +220,17 @@ public class DayCycleManager : MonoBehaviour
             {
                 nuevoSprite = Resources.Load<Sprite>($"Sprites/UI/CartasObjetivo/{objetivoCarta.ToString()}");
             }
-            if (LanguageManager.Instance.idiomaActual == "en") 
+            if (LanguageManager.Instance.idiomaActual == "en")
             {
                 nuevoSprite = Resources.Load<Sprite>($"Sprites/UI/CartasObjetivoEng/{objetivoCarta.ToString()}");
 
             }
-            
 
-                imagenUI.sprite = nuevoSprite;
+
+            imagenUI.sprite = nuevoSprite;
             imagenUI.gameObject.SetActive(true);
         }
-        else 
+        else
         {
             objetivoCarta = CardEnum.Rojo;
             imagenUI.gameObject.SetActive(false);
@@ -278,6 +343,9 @@ public class DayCycleManager : MonoBehaviour
         }
     }
 
+/// <summary>
+/// Boton continuar el juego en el boton del resumen del dia
+/// </summary>
     public void ContinuarJuego()
     {
         //Dejar como boton activo el x1
@@ -285,7 +353,7 @@ public class DayCycleManager : MonoBehaviour
         Color colorVerdeClaro = new Color(142f / 255f, 230f / 255f, 142f / 255f);
 
 
-        BottonPause.GetComponentInChildren<TextMeshProUGUI>().color=Color.white;
+        BottonPause.GetComponentInChildren<TextMeshProUGUI>().color = Color.white;
         BottonPlay.GetComponentInChildren<TextMeshProUGUI>().color = colorVerdeClaro;
         BotonX2.GetComponentInChildren<TextMeshProUGUI>().color = Color.white;
 
