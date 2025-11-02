@@ -40,7 +40,11 @@ public class DayCycleManager : MonoBehaviour
     public int estacionActual=1;
     public int diaEstacion=1;
     public GameObject textoEstacion;
-   public List<GameObject> listacartasPrimavera;
+    public List<GameObject> listacartasPrimavera;
+
+    public List<GameObject> listacartasVerano;
+    public List<GameObject> listacartasOtonyo;
+   public List<GameObject> listacartasInvierno;
 
     public GameObject EstacionFill;
 
@@ -141,6 +145,10 @@ public class DayCycleManager : MonoBehaviour
         {
             SpawnDeEstcion(listacartasPrimavera);
         }
+        if (estacionActual == 2)
+        {
+            SpawnDeEstcion(listacartasPrimavera);
+        }
        
     }
 
@@ -199,8 +207,23 @@ public class DayCycleManager : MonoBehaviour
             int longilist = listacartas.Count;
             int cartaElegida = UnityEngine.Random.Range(0, longilist);
             GameObject recursoEstcion = listacartas[cartaElegida];
-            Vector3 posicion = new Vector3(-6.99047f, -0.8150005f, -2.505735f);
-            Instantiate(recursoEstcion, posicion, recursoEstcion.transform.rotation);
+
+
+            Vector3 posicion1 = new Vector3(-7.65f, -0.8450004f, -3.5F);
+            Vector3 posicion2 = new Vector3(-6.99047f, -0.8150005f, 3.35f);
+            Vector3 posicion3 = new Vector3(7.65f, -0.8150005f, 3.35f);
+            Vector3 posicion4 = new Vector3(7.65f, -0.8150005f, -3.35f);
+            Vector3 posicion5 = new Vector3(0.13f, -0.845f, 0.42f);
+
+            Vector3[] posiciones = new Vector3[5];
+            posiciones[0] = posicion1;
+            posiciones[1] = posicion2;
+            posiciones[2] = posicion3;
+            posiciones[3] = posicion4;
+            posiciones[4] = posicion5;
+            int intPosicion = UnityEngine.Random.Range(1, 6);
+
+            Instantiate(recursoEstcion, posiciones[intPosicion], recursoEstcion.transform.rotation);
         }
     }
    void ObjetivoDelDia() 
