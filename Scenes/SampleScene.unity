@@ -1209,6 +1209,7 @@ GameObject:
   - component: {fileID: 222756106}
   - component: {fileID: 222756107}
   - component: {fileID: 222756105}
+  - component: {fileID: 222756108}
   m_Layer: 0
   m_Name: DayCycleManager
   m_TagString: Untagged
@@ -1334,6 +1335,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fdbdd628c0024c9408f5635734024b1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textoEstacion: {fileID: 2076846220}
+--- !u!114 &222756108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222756104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ffc7ae818786924b81f5c8a353d5b51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   textoEstacion: {fileID: 2076846220}

@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 
 
 public class CartasJson : MonoBehaviour
@@ -29,28 +30,36 @@ public class CartasJson : MonoBehaviour
     }
     private void Update()
     {
-        
-       // numHijos = gameObject.transform.childCount;
-        
+
+        // numHijos = gameObject.transform.childCount;
+
 
         //Fusion
         if (gameObject.transform.childCount == 2)
-            {
+        {
             numHijos = gameObject.transform.childCount;
             foreach (Transform child in transform)
+            {
+                hijo = child.gameObject;
+
+                if (hijo.tag == "Draggable" && !cartasEnFusion.Contains(hijo) && hijo.transform.childCount == 1 && gameObject.transform.childCount == 2)
                 {
-                    hijo = child.gameObject;
-
-                    if (hijo.tag == "Draggable" && !cartasEnFusion.Contains(hijo) && hijo.transform.childCount==1 && gameObject.transform.childCount==2)
-                    {
-                        cartasEnFusion.Add(gameObject); // A�adir las cartas al HashSet
-                        cartasEnFusion.Add(hijo);
-                        fusionCoroutine = StartCoroutine(FusionarConSlider(gameObject, hijo)); // Iniciar la fusi�n
-                        break;
-                    }
-
+                    cartasEnFusion.Add(gameObject);
+                    cartasEnFusion.Add(hijo);
+                    fusionCoroutine = StartCoroutine(FusionarConSlider(gameObject, hijo)); // Iniciar la fusi�n
+                    break;
                 }
+
             }
+        }
+        
+        if(gameObject.transform.childCount == 3 && gameObject.transform.GetChild(0).name=="Invierno")
+        {
+            print("DETECTA TIERRA INVIERNO");
+            cartasEnFusion.Add(gameObject);
+            cartasEnFusion.Add(gameObject.transform.GetChild(2).GameObject());
+            fusionCoroutine = StartCoroutine(FusionarConSlider(gameObject, gameObject.transform.GetChild(2).GameObject())); // Iniciar la fusi�n
+        }
         
 
         //CancelarFusion
