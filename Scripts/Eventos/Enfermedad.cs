@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Esta en el boton del menu continuar juego del menu fin del dia
+/// </summary>
 public class Enfermedad : MonoBehaviour
 {
-   public bool estaEnfermo=false;
-   public GameObject logoEnfermo;
+    public bool estaEnfermo = false;
+    public GameObject logoEnfermo;
 
 
     private void Update()
@@ -13,43 +16,43 @@ public class Enfermedad : MonoBehaviour
         if (estaEnfermo == true)
         {
             logoEnfermo.gameObject.SetActive(true);
-            
-             var scriptMaquina = gameObject.GetComponent<MaquinaProduccion>();
-                if (scriptMaquina != null)
-                {
-                    print("Deja de producir");
-                    Destroy(scriptMaquina);
 
-                }
+            var scriptMaquina = gameObject.GetComponent<MaquinaProduccion>();
+            if (scriptMaquina != null)
+            {
+                print("Deja de producir");
+                Destroy(scriptMaquina);
+
+            }
         }
     }
 
     public void PonerEnfermo()
     {
-       
-         // Generar un número aleatorio entre 1 y 10 (incluye el 10)
+
+        // Generar un número aleatorio entre 1 y 10 (incluye el 10)
         int numero = Random.Range(1, 3);
 
-       print("El número generado es: " + numero);
+        print("El número generado es: " + numero);
 
 
 
         if (numero == 1)
         {
             print("¡Salió el 1!");
-            estaEnfermo=true;
+            estaEnfermo = true;
 
         }
         else
         {
 
-            print("¡Salió el "+numero);
+            print("¡Salió el " + numero);
         }
-        
+
     }
 
 
 
-    
+
 
 }
