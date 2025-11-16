@@ -20,16 +20,12 @@ public class CongelarTierras : MonoBehaviour
                 if (obj.name.Contains("FarmLand"))
                 {
 
-                    Transform canvasInvierno = obj.transform.Find("Invierno");
-                    if (canvasInvierno != null)
+                    Transform invierno = obj.transform.Find("Canvas/Invierno");
+                    if (invierno != null)
                     {
-                        Canvas c = canvasInvierno.GetComponent<Canvas>();
-                        if (c != null)
-                        {
-                            print("activar canvas");
-                            c.gameObject.SetActive(true);
-                        }
-                            
+                        print(invierno.gameObject.name);
+                            invierno.gameObject.SetActive(true);
+
                     }
                 }
             }

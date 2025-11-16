@@ -10880,7 +10880,7 @@ GameObject:
   - component: {fileID: 2076846223}
   - component: {fileID: 2076846222}
   m_Layer: 5
-  m_Name: Texto Estacion
+  m_Name: TextoEstacion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

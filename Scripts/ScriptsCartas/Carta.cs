@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
-
+using TMPro;
 
 public class CartasJson : MonoBehaviour
 {
@@ -21,6 +21,8 @@ public class CartasJson : MonoBehaviour
     public int numHijos;
     public GameObject hijo;
 
+    public TextMeshProUGUI textoEstacion;
+
 
     private void Awake()
     {
@@ -28,6 +30,13 @@ public class CartasJson : MonoBehaviour
       
         
     }
+
+    private void Start()
+    {
+         textoEstacion = GameObject.Find("Canvas/Estciones/TextoEstacion").GetComponent<TextMeshProUGUI>();
+                                          
+    }
+
     private void Update()
     {
 
@@ -46,20 +55,13 @@ public class CartasJson : MonoBehaviour
                 {
                     cartasEnFusion.Add(gameObject);
                     cartasEnFusion.Add(hijo);
-                    fusionCoroutine = StartCoroutine(FusionarConSlider(gameObject, hijo)); // Iniciar la fusi�n
+                    fusionCoroutine = StartCoroutine(FusionarConSlider(gameObject, hijo)); 
                     break;
                 }
 
             }
         }
         
-        if(gameObject.transform.childCount == 3 && gameObject.transform.GetChild(0).name=="Invierno")
-        {
-            print("DETECTA TIERRA INVIERNO");
-            cartasEnFusion.Add(gameObject);
-            cartasEnFusion.Add(gameObject.transform.GetChild(2).GameObject());
-            fusionCoroutine = StartCoroutine(FusionarConSlider(gameObject, gameObject.transform.GetChild(2).GameObject())); // Iniciar la fusi�n
-        }
         
 
         //CancelarFusion
@@ -102,16 +104,16 @@ public class CartasJson : MonoBehaviour
             tipoFusion=CardEnum.Morado;
             ResultadoFusion = cartaComp2.ResultadoFusion;
         }
-        if (cartaComp1.cartaEnum == CardEnum.TierraCultivo && cartaComp2.cartaEnum == CardEnum.SemillaHeno)
+        if (cartaComp1.cartaEnum == CardEnum.TierraCultivo && cartaComp2.cartaEnum == CardEnum.SemillaHeno && textoEstacion.text!="Invierno")
         {
             tipoFusion = CardEnum.Heno;
-            duration = 5f;
+            duration = 1f;
             ResultadoFusion = cartaComp2.ResultadoFusion;
         }
-        if (cartaComp1.cartaEnum == CardEnum.TierraCultivo && cartaComp2.cartaEnum == CardEnum.SemillaMaiz)
+        if (cartaComp1.cartaEnum == CardEnum.TierraCultivo && cartaComp2.cartaEnum == CardEnum.SemillaMaiz && textoEstacion.text!="Invierno")
         {
             tipoFusion = CardEnum.Maiz;
-            duration = 5f;
+            duration = 1f;
             ResultadoFusion = cartaComp2.ResultadoFusion;
         }
         if (cartaComp1.cartaEnum == CardEnum.Cocina && cartaComp2.cartaEnum == CardEnum.Huevo)
