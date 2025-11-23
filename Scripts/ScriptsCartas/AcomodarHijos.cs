@@ -17,11 +17,12 @@ public class AcomodarHijos : MonoBehaviour
             //Ordenar a los hijos
             for (int i = 0; i < transform.childCount; i++)
             {
+                if(transform.GetChild(i).name=="Canvas")continue;
                 Transform hijo = transform.GetChild(i);
                 Vector3 nuevaPos = transform.position;
 
                 nuevaPos.y += alturaEntreHijos * (i + 1);           // Apila en altura
-                nuevaPos.z += escaleraOffset * (i + 1);             // Desplaza hacia atrás (como escalera)
+                nuevaPos.z += escaleraOffset * (i + 1);             // Desplaza hacia atrï¿½s (como escalera)
 
                 hijo.position = nuevaPos;
             }

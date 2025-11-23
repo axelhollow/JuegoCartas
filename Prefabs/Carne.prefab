@@ -490,12 +490,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cartaEnum: 28
+  elementosPesca: []
   slider: {fileID: 1305302888999103861}
   fusionCancelada: 0
   ResultadoFusion: {fileID: 0}
   ResultadoFusion2: {fileID: 0}
   numHijos: 0
   hijo: {fileID: 0}
+  textoEstacion: {fileID: 0}
 --- !u!114 &-8280902411288293004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -520,10 +522,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f65bc9593843afe43b261e8627315040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectName: Tortilla
-  objectNameENG: Omelette
-  description: Esponjosa tortilla hecha con huevos frescos
-  descriptionENG: A fluffy omelette made with fresh eggs
+  objectName: Carne
+  objectNameENG: Meet
+  description: Filete magro de carne, muy rico al punto
+  descriptionENG: Lean steak, very tasty cooked to perfection
   valor: 7
 --- !u!114 &4548161668265490398
 MonoBehaviour:
@@ -540,7 +542,7 @@ MonoBehaviour:
   targetRenderer: {fileID: 3806383199233221537}
   localizedMaterials:
   - language: 0
-    material: {fileID: 2100000, guid: d50ea4e92bb30b04fad5e7dcf264f705, type: 2}
+    material: {fileID: 2100000, guid: ec35cf4ac5eaeec42baa1acaeb17fda6, type: 2}
   - language: 1
     material: {fileID: 2100000, guid: 951f7bd1da877054bacb0c99711991c4, type: 2}
 --- !u!1 &8041215697305764797

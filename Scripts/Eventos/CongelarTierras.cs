@@ -30,6 +30,26 @@ public class CongelarTierras : MonoBehaviour
                 }
             }
         }
+        if(textoEstacion.GetComponent<TextMeshProUGUI>().text!="Invierno")
+        {
+      
+             GameObject[] todos = FindObjectsOfType<GameObject>();
+
+            foreach (GameObject obj in todos)
+            {
+                if (obj.name.Contains("FarmLand"))
+                {
+
+                    Transform invierno = obj.transform.Find("Canvas/Invierno");
+                    if (invierno != null)
+                    {
+                        print(invierno.gameObject.name);
+                            invierno.gameObject.SetActive(false);
+
+                    }
+                }
+            }
+        }
         
     }
 }

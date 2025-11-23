@@ -490,12 +490,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cartaEnum: 25
+  elementosPesca: []
   slider: {fileID: 1305302888999103861}
   fusionCancelada: 0
   ResultadoFusion: {fileID: 5363898381958202192, guid: a8c1c86eff1e9294face8851ce9de73b, type: 3}
   ResultadoFusion2: {fileID: 5363898381958202192, guid: d65f8cfc44ea006449be7b07602dbbca, type: 3}
   numHijos: 0
   hijo: {fileID: 0}
+  textoEstacion: {fileID: 0}
 --- !u!114 &5103474267121456017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -508,11 +510,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f65bc9593843afe43b261e8627315040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectName: "Ma\xEDz"
-  objectNameENG: Corn
-  description: Alimentar gallinas o hacer unas palomitas, ambas buenas opciones
-  descriptionENG: Feed hens or make popcorn, both great options
-  valor: 1
+  objectName: Abeja
+  objectNameENG: Bee
+  description: Convierten el polen de las flores en dulce miel
+  descriptionENG: It turns flower pollen into sweet honey
+  valor: 3
 --- !u!114 &-8280902411288293004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -540,7 +542,7 @@ MonoBehaviour:
   targetRenderer: {fileID: 3806383199233221537}
   localizedMaterials:
   - language: 0
-    material: {fileID: 2100000, guid: c25fbebb453cc8e45bf361367b6bfa0b, type: 2}
+    material: {fileID: 2100000, guid: d8c44f56291b50a4dbe943abfc1ba693, type: 2}
   - language: 1
     material: {fileID: 2100000, guid: 6d9bd8f555f05dc40a79656791e270ad, type: 2}
 --- !u!1 &8041215697305764797

@@ -226,12 +226,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cartaEnum: 5
+  elementosPesca: []
   slider: {fileID: 0}
   fusionCancelada: 0
   ResultadoFusion: {fileID: 0}
   ResultadoFusion2: {fileID: 0}
   numHijos: 0
   hijo: {fileID: 0}
+  textoEstacion: {fileID: 0}
 --- !u!114 &2041145779166549115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,11 +246,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f65bc9593843afe43b261e8627315040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectName: Queso
-  objectNameENG: Cheese
-  description: Delicioso y muy valioso
-  descriptionENG: "Yummy and of great value.\u201D"
-  valor: 10
+  objectName: Anguila
+  objectNameENG: Eel
+  description: Viscosa y peligrosa
+  descriptionENG: Viscous and dangerous
+  valor: 12
 --- !u!114 &11061241731224990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,7 +268,7 @@ MonoBehaviour:
   - language: 0
     material: {fileID: 2100000, guid: e06d40389b7d47b40a5c70dd55a79951, type: 2}
   - language: 1
-    material: {fileID: 2100000, guid: fe19f413f8ba76a4089085b3d1976040, type: 2}
+    material: {fileID: 2100000, guid: 677feb4d321044440b4323a638be304a, type: 2}
 --- !u!1 &1801791388099012680
 GameObject:
   m_ObjectHideFlags: 0

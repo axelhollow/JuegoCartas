@@ -152,6 +152,9 @@ public class DayCycleManager : MonoBehaviour
        
     }
 
+    #region estaciones
+    
+
     void EstacionUpdate()
     {
         estacionActual++;
@@ -196,7 +199,7 @@ public class DayCycleManager : MonoBehaviour
         }
 
     }
-
+#endregion
     void SpawnDeEstcion(List<GameObject> listacartas)
     {
         int numero = UnityEngine.Random.Range(1, 3);
