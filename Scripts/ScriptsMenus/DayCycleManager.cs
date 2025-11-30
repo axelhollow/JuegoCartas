@@ -170,21 +170,42 @@ public class DayCycleManager : MonoBehaviour
             case 1:
                 if (ColorUtility.TryParseHtmlString("#8EE68E", out color))
                 {
-                    textoEstacion.GetComponent<TextMeshProUGUI>().text = "Primvera";
+                    if(LanguageManager.Instance.idiomaActual == "es")
+                    {
+                        textoEstacion.GetComponent<TextMeshProUGUI>().text = "Primavera";
+                    }
+                    if(LanguageManager.Instance.idiomaActual == "en")
+                    {
+                         textoEstacion.GetComponent<TextMeshProUGUI>().text = "Spring";
+                    }
                     image.color = color;
                 }
                 break;
             case 4:
                 if (ColorUtility.TryParseHtmlString("#ffd445ff", out color))
                 {
-                    textoEstacion.GetComponent<TextMeshProUGUI>().text = "Verano";
+                    if(LanguageManager.Instance.idiomaActual == "es")
+                    {
+                        textoEstacion.GetComponent<TextMeshProUGUI>().text = "Verano";
+                    }
+                    if(LanguageManager.Instance.idiomaActual == "en")
+                    {
+                         textoEstacion.GetComponent<TextMeshProUGUI>().text = "Summer";
+                    }
                     image.color = color;
                 }
                 break;
             case 3:
                 if (ColorUtility.TryParseHtmlString("#ff932fff", out color))
                 {
-                    textoEstacion.GetComponent<TextMeshProUGUI>().text = "Otoño";
+                    if(LanguageManager.Instance.idiomaActual == "es")
+                    {
+                        textoEstacion.GetComponent<TextMeshProUGUI>().text = "Otoño";
+                    }
+                    if(LanguageManager.Instance.idiomaActual == "en")
+                    {
+                         textoEstacion.GetComponent<TextMeshProUGUI>().text = "Autumn";
+                    }
                     image.color = color;
                 }
                 break;
@@ -192,7 +213,14 @@ public class DayCycleManager : MonoBehaviour
 
                 if (ColorUtility.TryParseHtmlString("#4BB2D9", out color))
                 {
-                    textoEstacion.GetComponent<TextMeshProUGUI>().text = "Invierno";
+                    if(LanguageManager.Instance.idiomaActual == "es")
+                    {
+                        textoEstacion.GetComponent<TextMeshProUGUI>().text = "Invierno";
+                    }
+                    if(LanguageManager.Instance.idiomaActual == "en")
+                    {
+                         textoEstacion.GetComponent<TextMeshProUGUI>().text = "Winter";
+                    }
                     image.color = color;
                 }
                 break;

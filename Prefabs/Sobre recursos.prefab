@@ -339,8 +339,8 @@ MonoBehaviour:
   - {fileID: 5175943508272823692, guid: 8ccdb5e2427b8a94cb8bc31414803de4, type: 3}
   - {fileID: 5175943508272823692, guid: 3433fdf59a0f0124eb894cf3e3535402, type: 3}
   - {fileID: 5175943508272823692, guid: 8a5c4b6fa91b98146a1c3c0480f4b6fc, type: 3}
-  - {fileID: 5320647774704214934, guid: f81dc00358b9daa4e80810acee85d85f, type: 3}
-  - {fileID: 1159474320037564355, guid: 31bbdda4ba870b14e9116ac20dd267be, type: 3}
+  - {fileID: 5363898381958202192, guid: 64677ed5f005a5048970112501745cf1, type: 3}
+  - {fileID: 5363898381958202192, guid: a8c1c86eff1e9294face8851ce9de73b, type: 3}
   rangoX: 2
   rangoZ: 2
   tiempoEntreClicks: 0.3

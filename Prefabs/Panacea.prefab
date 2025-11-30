@@ -538,11 +538,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cartaEnum: 21
+  elementosPesca: []
   slider: {fileID: 8236725283391472892}
   fusionCancelada: 0
   ResultadoFusion: {fileID: 2026687694861726939, guid: b21567bb3c6614348b9eae393c903360, type: 3}
+  ResultadoFusion2: {fileID: 0}
   numHijos: 0
   hijo: {fileID: 0}
+  textoEstacion: {fileID: 0}
 --- !u!114 &2336153489244508806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -587,7 +590,7 @@ MonoBehaviour:
   targetRenderer: {fileID: 2060507206336231393}
   localizedMaterials:
   - language: 0
-    material: {fileID: 2100000, guid: c25fbebb453cc8e45bf361367b6bfa0b, type: 2}
+    material: {fileID: 2100000, guid: 77c233769e8cf934b897b481b18a2abc, type: 2}
   - language: 1
     material: {fileID: 2100000, guid: 77c233769e8cf934b897b481b18a2abc, type: 2}
 --- !u!1 &8942654403725069930

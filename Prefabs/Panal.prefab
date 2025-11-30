@@ -492,12 +492,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cartaEnum: 27
+  elementosPesca: []
   slider: {fileID: 1305302888999103861}
   fusionCancelada: 0
   ResultadoFusion: {fileID: 0}
   ResultadoFusion2: {fileID: 0}
   numHijos: 0
   hijo: {fileID: 0}
+  textoEstacion: {fileID: 0}
 --- !u!114 &-8280902411288293004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -542,7 +544,7 @@ MonoBehaviour:
   targetRenderer: {fileID: 3806383199233221537}
   localizedMaterials:
   - language: 0
-    material: {fileID: 2100000, guid: bda8021adce45e64798e5dff21daeb2f, type: 2}
+    material: {fileID: 2100000, guid: 73a10fee81de9c14e8e3a08d58568e87, type: 2}
   - language: 1
     material: {fileID: 2100000, guid: 7d1fc11be773d1749a84db8176322d9d, type: 2}
 --- !u!114 &764051308430270583
@@ -558,12 +560,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cartaEnum: 27
+  elementosPesca: []
   slider: {fileID: 0}
   fusionCancelada: 0
   ResultadoFusion: {fileID: 0}
   ResultadoFusion2: {fileID: 0}
   numHijos: 0
   hijo: {fileID: 0}
+  textoEstacion: {fileID: 0}
 --- !u!114 &-7774254923520469070
 MonoBehaviour:
   m_ObjectHideFlags: 0
