@@ -81,8 +81,8 @@ public class DayCycleManager : MonoBehaviour
 
         tiempodediausado = PlayerPrefs.GetFloat("DiaBarra", 0f);
 
-        recResultadoText = textResultado.GetComponent<RectTransform>();
-        posicionGuardada = textResultado.GetComponent<RectTransform>().anchoredPosition;
+       // recResultadoText = textResultado.GetComponent<RectTransform>();
+        //posicionGuardada = textResultado.GetComponent<RectTransform>().anchoredPosition;
         recCartasText = objetivoCartaTXT.GetComponent<RectTransform>();
 
 
