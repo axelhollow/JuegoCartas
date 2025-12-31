@@ -490,12 +490,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cartaEnum: 17
+  elementosPesca: []
   slider: {fileID: 1305302888999103861}
   fusionCancelada: 0
   ResultadoFusion: {fileID: 2100889302816273155, guid: a36297323b9512244a40a8dcd5c0d7ec, type: 3}
   ResultadoFusion2: {fileID: 2193583494740372988, guid: a68223100c6c4db4ba6b22ac3a12fc0c, type: 3}
   numHijos: 0
   hijo: {fileID: 0}
+  textoEstacion: {fileID: 0}
 --- !u!114 &5103474267121456017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -508,10 +510,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f65bc9593843afe43b261e8627315040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectName: "Ma\xEDz"
-  objectNameENG: Corn
-  description: Alimentar gallinas o hacer unas palomitas, ambas buenas opciones
-  descriptionENG: Feed hens or make popcorn, both great options
+  objectName: Flor
+  objectNameENG: Flower
+  description: Una bonita flor, regalo de la primavera
+  descriptionENG: A beautiful flower, a gift of spring
   valor: 1
 --- !u!114 &-8280902411288293004
 MonoBehaviour:

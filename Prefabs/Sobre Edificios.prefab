@@ -367,7 +367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f65bc9593843afe43b261e8627315040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectName: "Pack de producci\xF3n"
+  objectName: "Pack producci\xF3n"
   objectNameENG: Production pack
   description: "Contiene cartas de producci\xF3n o cartas relacionadas"
   descriptionENG: Includes production cards and other related cards.

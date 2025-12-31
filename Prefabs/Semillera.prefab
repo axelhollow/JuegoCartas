@@ -139,11 +139,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cartaEnum: 10
+  elementosPesca: []
   slider: {fileID: 6863075068773795062}
   fusionCancelada: 0
   ResultadoFusion: {fileID: 5363898381958202192, guid: fe48660b3da1d54419a07e9f77250243, type: 3}
+  ResultadoFusion2: {fileID: 0}
   numHijos: 0
   hijo: {fileID: 0}
+  textoEstacion: {fileID: 0}
 --- !u!114 &8474129216870086703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,11 +159,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f65bc9593843afe43b261e8627315040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectName: "Ma\xEDz"
-  objectNameENG: Corn
-  description: Alimentar gallinas o hacer unas palomitas, ambas buenas opciones
-  descriptionENG: Feed hens or make popcorn, both great options
-  valor: 1
+  objectName: Semillera
+  objectNameENG: Seedbed
+  description: Transforma cutivos en semillas
+  descriptionENG: Transform crops into seeds
+  valor: 10
 --- !u!114 &9105286875939735222
 MonoBehaviour:
   m_ObjectHideFlags: 0

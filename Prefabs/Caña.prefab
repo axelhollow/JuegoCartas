@@ -240,6 +240,7 @@ MonoBehaviour:
   ResultadoFusion2: {fileID: 0}
   numHijos: 0
   hijo: {fileID: 0}
+  textoEstacion: {fileID: 0}
 --- !u!114 &2041145779166549115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,11 +253,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f65bc9593843afe43b261e8627315040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectName: Queso
-  objectNameENG: Cheese
-  description: Delicioso y muy valioso
-  descriptionENG: "Yummy and of great value.\u201D"
-  valor: 10
+  objectName: "Ca\xF1a de pesca"
+  objectNameENG: Fishing rod
+  description: 'Usala para pescar algo '
+  descriptionENG: Use it to catch something
+  valor: 5
 --- !u!114 &11061241731224990
 MonoBehaviour:
   m_ObjectHideFlags: 0

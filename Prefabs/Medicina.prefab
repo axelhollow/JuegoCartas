@@ -139,12 +139,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cartaEnum: 22
+  elementosPesca: []
   slider: {fileID: 879888618124089402}
   fusionCancelada: 0
   ResultadoFusion: {fileID: 1159474320037564355, guid: 4882a79205f241f46a36dd44bd78c9d9, type: 3}
   ResultadoFusion2: {fileID: 1159474320037564355, guid: d4482f8577943674384ef785c650ddf8, type: 3}
   numHijos: 0
   hijo: {fileID: 0}
+  textoEstacion: {fileID: 0}
 --- !u!114 &2804642479261408714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,11 +159,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f65bc9593843afe43b261e8627315040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectName: "Ma\xEDz"
-  objectNameENG: Corn
-  description: Alimentar gallinas o hacer unas palomitas, ambas buenas opciones
-  descriptionENG: Feed hens or make popcorn, both great options
-  valor: 1
+  objectName: Medicina
+  objectNameENG: Medicine
+  description: Cura todo tipo de animales
+  descriptionENG: It cures all types of animals
+  valor: 7
 --- !u!114 &959042549450657359
 MonoBehaviour:
   m_ObjectHideFlags: 0

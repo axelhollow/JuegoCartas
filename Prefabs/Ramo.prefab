@@ -234,11 +234,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f65bc9593843afe43b261e8627315040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectName: "Ma\xEDz"
-  objectNameENG: Corn
-  description: Alimentar gallinas o hacer unas palomitas, ambas buenas opciones
-  descriptionENG: Feed hens or make popcorn, both great options
-  valor: 1
+  objectName: Ramo
+  objectNameENG: Bouquet
+  description: Un ramo de bonitas flores, que alcanza un buen precio
+  descriptionENG: A bouquet of beautiful flowers, which is reasonably priced
+  valor: 10
 --- !u!114 &5883615574744330519
 MonoBehaviour:
   m_ObjectHideFlags: 0

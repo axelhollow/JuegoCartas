@@ -341,12 +341,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cartaEnum: 23
+  elementosPesca: []
   slider: {fileID: 4848072463227555619}
   fusionCancelada: 0
   ResultadoFusion: {fileID: 0}
   ResultadoFusion2: {fileID: 0}
   numHijos: 0
   hijo: {fileID: 0}
+  textoEstacion: {fileID: 0}
 --- !u!114 &7888685698247093063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,11 +361,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f65bc9593843afe43b261e8627315040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectName: "Ma\xEDz"
-  objectNameENG: Corn
-  description: Alimentar gallinas o hacer unas palomitas, ambas buenas opciones
-  descriptionENG: Feed hens or make popcorn, both great options
-  valor: 1
+  objectName: Matadero
+  objectNameENG: Slaughterhouse
+  description: El cielo de las vacas
+  descriptionENG: Cow Heaven
+  valor: 7
 --- !u!114 &3733415999956798470
 MonoBehaviour:
   m_ObjectHideFlags: 0
