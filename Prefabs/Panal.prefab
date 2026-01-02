@@ -526,8 +526,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectName: Panal
   objectNameENG: Honeycomb
-  description: "A\xF1ade abejas para que produzcan miel"
-  descriptionENG: Add bees so they produce honey.
+  description: Convierte el polen de las flores en miel
+  descriptionENG: It turns flower pollen into honey
   valor: 7
 --- !u!114 &4548161668265490398
 MonoBehaviour:
