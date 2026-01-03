@@ -74,6 +74,17 @@ public class DayCycleManager : MonoBehaviour
 
     float tiempodediausado;
 
+
+
+    public void ReseteDeMisionesYEstaciones()
+    {
+                imagenUI.gameObject.SetActive(false);
+                currentDay=1;
+                UpdateDayUI();
+                 CalcularObjetivoDelDia();
+
+    }
+
     void Start()
     {
 
@@ -252,7 +263,7 @@ public class DayCycleManager : MonoBehaviour
             posiciones[2] = posicion3;
             posiciones[3] = posicion4;
             posiciones[4] = posicion5;
-            int intPosicion = UnityEngine.Random.Range(1, 6);
+            int intPosicion = UnityEngine.Random.Range(1, 5);
 
             Instantiate(recursoEstcion, posiciones[intPosicion], recursoEstcion.transform.rotation);
         }
@@ -351,7 +362,8 @@ public class DayCycleManager : MonoBehaviour
                 print("ganaste");
                 printVictoria(true);
             }
-            else 
+            //PERDER
+            /*else 
             {
                 if (LanguageManager.Instance.idiomaActual == "es")
                 {
@@ -366,9 +378,9 @@ public class DayCycleManager : MonoBehaviour
                 objetivoCartaTXT.gameObject.SetActive(true);
                 objetivoCartaTXT.text = $"1 carta de {objetivoCarta}";
 
-            }
+            }*/
         }
-        if(objetivoCarta == CardEnum.Rojo)
+      /*  if(objetivoCarta == CardEnum.Rojo)
         {
             if (cantidadMonedas >= objetivo)
             {
@@ -388,7 +400,7 @@ public class DayCycleManager : MonoBehaviour
                     recResultadoText.anchoredPosition = recCartasText.anchoredPosition;
 
             }
-        }
+        }*/
     }
 
     void printVictoria(bool carta) 

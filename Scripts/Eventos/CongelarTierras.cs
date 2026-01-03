@@ -23,7 +23,7 @@ public class CongelarTierras : MonoBehaviour
                     Transform invierno = obj.transform.Find("Canvas/Invierno");
                     if (invierno != null)
                     {
-                        print(invierno.gameObject.name);
+                      
                             invierno.gameObject.SetActive(true);
 
                     }
@@ -43,7 +43,6 @@ public class CongelarTierras : MonoBehaviour
                     Transform invierno = obj.transform.Find("Canvas/Invierno");
                     if (invierno != null)
                     {
-                        print(invierno.gameObject.name);
                             invierno.gameObject.SetActive(false);
 
                     }

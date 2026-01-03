@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -11,6 +12,11 @@ public class SaveSystem : MonoBehaviour
     public TextMeshProUGUI monedas;
     public TextMeshProUGUI diaNumero;
     public Slider barraDiaValor;
+    public TextMeshProUGUI textoEstacion;
+
+    public GameObject cicloDiaOBJ;
+
+    public Image ColorEstacion;
     public void Save()
     {
         SaveData data = new SaveData();
@@ -42,6 +48,14 @@ public class SaveSystem : MonoBehaviour
         PlayerPrefs.SetString("NumDia", diaNumero.text);
         float procentajeDia = barraDiaValor.value;
         PlayerPrefs.SetFloat("DiaBarra", procentajeDia);
+        PlayerPrefs.SetString("Estacion", textoEstacion.text);
+        string hex = "#" + ColorUtility.ToHtmlStringRGBA(ColorEstacion.color);
+        PlayerPrefs.SetString("ColorEstacion", hex);
+        print("Color: "+ColorEstacion.color.ToString());
+
+        PlayerPrefs.SetInt("DiaEstacion", cicloDiaOBJ.GetComponent<DayCycleManager>().diaEstacion);
+        PlayerPrefs.SetInt("EstacionActual", cicloDiaOBJ.GetComponent<DayCycleManager>().estacionActual);
+
         PlayerPrefs.Save();
     }
 }

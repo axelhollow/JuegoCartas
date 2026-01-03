@@ -686,6 +686,9 @@ MonoBehaviour:
   monedas: {fileID: 4680631660819440087}
   diaNumero: {fileID: 516375350}
   barraDiaValor: {fileID: 1428104973}
+  textoEstacion: {fileID: 2076846223}
+  cicloDiaOBJ: {fileID: 222756104}
+  ColorEstacion: {fileID: 111676322}
 --- !u!114 &140144986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1394,11 +1397,11 @@ Transform:
   m_GameObject: {fileID: 222756104}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.7076416, y: -45.486145, z: 5.2332063}
+  m_LocalPosition: {x: -6.087064, y: -42.60065, z: 5.2501836}
   m_LocalScale: {x: 3.975155, y: 3.975155, z: 3.975155}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1007442900}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &222756107
 MonoBehaviour:
@@ -5288,7 +5291,8 @@ Transform:
   m_LocalPosition: {x: 1.3794224, y: -2.8854933, z: -0.01697725}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 222756106}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1007442901
@@ -6950,7 +6954,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1388111806
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12168,7 +12172,6 @@ SceneRoots:
   - {fileID: 963194228}
   - {fileID: 705507995}
   - {fileID: 70559133}
-  - {fileID: 222756106}
   - {fileID: 86267070}
   - {fileID: 1089303962}
   - {fileID: 1487547624}

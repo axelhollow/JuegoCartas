@@ -8,11 +8,13 @@ public class LoadSystem : MonoBehaviour
 {
     public string saveFileName = "saveData.json";
 
-    // Lista de prefabs disponibles. Asegúrate de asignarlos desde el Inspector.
+    // Lista de prefabs disponibles. Asegï¿½rate de asignarlos desde el Inspector.
     public List<GameObject> prefabs;
     public TextMeshProUGUI monedas;
     public TextMeshProUGUI diaNumero;
     public Slider barraDiaValor;
+
+    
 
     private void Start()
     {
@@ -22,10 +24,34 @@ public class LoadSystem : MonoBehaviour
     public void Load()
     {
         string path = Application.persistentDataPath + "/" + saveFileName;
-
+    print(path);
         if (!File.Exists(path))
         {
-            Debug.LogWarning("No se encontró archivo de guardado.");
+            //Datos en escena y player prefab
+            Debug.LogWarning("No se encontrï¿½ archivo de guardado.");
+            EliminarObjetosExistentes();
+            monedas.text="0";
+            diaNumero.text="1";
+            barraDiaValor.value=0;
+            PlayerPrefs.SetString("Monedas", "0");
+            PlayerPrefs.SetString("NumDia", "1");
+            float procentajeDia = 0;
+            PlayerPrefs.SetFloat("DiaBarra", procentajeDia);
+            PlayerPrefs.Save();
+
+            //Datos de misiones y estaciones (reseteo)
+            DayCycleManager hijo = GetComponentInChildren<DayCycleManager>();
+            hijo.ReseteDeMisionesYEstaciones();
+            hijo. textoEstacion.GetComponent<TextMeshProUGUI>().text ="Primavera";
+            Color color;
+            ColorUtility.TryParseHtmlString("#8EE68E", out color);
+            hijo. EstacionFill.GetComponent<Image>().color=color;
+            PlayerPrefs.SetString("Estacion","Primavera");
+            PlayerPrefs.SetString("ColorEstacion","#8EE68E");
+            PlayerPrefs.SetString("DiaEstacion","1");
+            PlayerPrefs.SetString("EstacionActual","1");
+            hijo.estacionActual=1;
+            hijo.diaEstacion=1;
             return;
         }
 
@@ -35,7 +61,7 @@ public class LoadSystem : MonoBehaviour
         // 2. Convertir JSON a objetos
         SaveData data = JsonUtility.FromJson<SaveData>(json);
 
-        // 3. Limpiar escena si es necesario (opcional)
+        // 3. Limpiar escena si es necesario
         EliminarObjetosExistentes();
 
         // 4. Instanciar los objetos desde los datos guardados
@@ -57,10 +83,15 @@ public class LoadSystem : MonoBehaviour
 
 
         //PlayerPref
-      
-       monedas.text=PlayerPrefs.GetString("Monedas","0");
-       
-       diaNumero.text= PlayerPrefs.GetString("NumDia","1");
+        DayCycleManager hijo_AUX = GetComponentInChildren<DayCycleManager>();
+        hijo_AUX. textoEstacion.GetComponent<TextMeshProUGUI>().text =PlayerPrefs.GetString("Estacion","0");
+        Color color_aux;
+        ColorUtility.TryParseHtmlString(PlayerPrefs.GetString("ColorEstacion"), out color_aux);
+        hijo_AUX. EstacionFill.GetComponent<Image>().color=color_aux;
+        monedas.text=PlayerPrefs.GetString("Monedas","0");
+        diaNumero.text= PlayerPrefs.GetString("NumDia","1"); 
+        hijo_AUX.diaEstacion= PlayerPrefs.GetInt("DiaEstacion",1);
+        hijo_AUX.estacionActual= PlayerPrefs.GetInt("EstacionActual", 1);
 
         Debug.Log("Carga completada.");
     }
