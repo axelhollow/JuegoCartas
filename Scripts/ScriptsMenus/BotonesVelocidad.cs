@@ -34,6 +34,11 @@ public class BotonesVelocidad : MonoBehaviour
 
             SetTiempo(2f);
         }
+
+        if(Time.timeScale==0f)
+        {
+            JuegoEnPausa(true);
+        }
     }
 
     void Start()

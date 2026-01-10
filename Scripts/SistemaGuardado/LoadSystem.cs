@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.IO;
 using TMPro;
+using System.Globalization;
 using UnityEngine.UI;
  
 public class LoadSystem : MonoBehaviour
@@ -25,6 +26,7 @@ public class LoadSystem : MonoBehaviour
     {
         string path = Application.persistentDataPath + "/" + saveFileName;
     print(path);
+    //PARTIDA NUEVA
         if (!File.Exists(path))
         {
             //Datos en escena y player prefab
@@ -32,11 +34,12 @@ public class LoadSystem : MonoBehaviour
             EliminarObjetosExistentes();
             monedas.text="0";
             diaNumero.text="1";
-            barraDiaValor.value=0;
+            barraDiaValor.value=0f;
             PlayerPrefs.SetString("Monedas", "0");
             PlayerPrefs.SetString("NumDia", "1");
-            float procentajeDia = 0;
-            PlayerPrefs.SetFloat("DiaBarra", procentajeDia);
+            PlayerPrefs.SetFloat("DiaBarra", 0f);
+
+
             PlayerPrefs.Save();
 
             //Datos de misiones y estaciones (reseteo)
@@ -87,13 +90,28 @@ public class LoadSystem : MonoBehaviour
         hijo_AUX. textoEstacion.GetComponent<TextMeshProUGUI>().text =PlayerPrefs.GetString("Estacion","0");
         Color color_aux;
         ColorUtility.TryParseHtmlString(PlayerPrefs.GetString("ColorEstacion"), out color_aux);
-        hijo_AUX. EstacionFill.GetComponent<Image>().color=color_aux;
+        hijo_AUX. EstacionFill.GetComponent<Image>().color=ParseRGBA(color_aux.ToString());
         monedas.text=PlayerPrefs.GetString("Monedas","0");
         diaNumero.text= PlayerPrefs.GetString("NumDia","1"); 
         hijo_AUX.diaEstacion= PlayerPrefs.GetInt("DiaEstacion",1);
         hijo_AUX.estacionActual= PlayerPrefs.GetInt("EstacionActual", 1);
 
         Debug.Log("Carga completada.");
+    }
+
+      Color ParseRGBA(string texto)
+    {
+        // Quita "RGBA(" y ")"
+        texto = texto.Replace("RGBA(", "").Replace(")", "");
+
+        string[] valores = texto.Split(',');
+
+        float r = float.Parse(valores[0], CultureInfo.InvariantCulture);
+        float g = float.Parse(valores[1], CultureInfo.InvariantCulture);
+        float b = float.Parse(valores[2], CultureInfo.InvariantCulture);
+        float a = float.Parse(valores[3], CultureInfo.InvariantCulture);
+
+        return new Color(r, g, b, a);
     }
 
     private void EliminarObjetosExistentes()

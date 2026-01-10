@@ -33,7 +33,7 @@ public class DayCycleManager : MonoBehaviour
     [Header("Canvas UI")]
     public Canvas canvasUI;
 
-    private float timer = 0f;
+    public float timer = 0f;
     public int currentDay;
 
     [Header("Estacion")]
@@ -81,7 +81,9 @@ public class DayCycleManager : MonoBehaviour
                 imagenUI.gameObject.SetActive(false);
                 currentDay=1;
                 UpdateDayUI();
-                 CalcularObjetivoDelDia();
+                CalcularObjetivoDelDia();
+                timer=0;
+                tiempodediausado=0;
 
     }
 
