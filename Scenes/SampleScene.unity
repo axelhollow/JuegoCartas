@@ -1318,6 +1318,7 @@ MonoBehaviour:
   textoObjetivoActual: {fileID: 974763893}
   monedasActuales: {fileID: 4680631660819440087}
   canvasUI: {fileID: 1089303961}
+  timer: 0
   currentDay: 0
   estacionActual: 1
   diaEstacion: 1
@@ -4755,67 +4756,6 @@ MonoBehaviour:
   velocidadMovimiento: 10
   limiteX: {x: -3.7, y: 3.7}
   limiteZ: {x: -3.7, y: 3.7}
---- !u!1001 &967583347
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 11061241731224990, guid: 043d0b88c93703e47a32e193b4328e49, type: 3}
-      propertyPath: localizedMaterials.Array.data[1].material
-      value: 
-      objectReference: {fileID: 2100000, guid: 08ab65e60a43dc44fadb3ebad6839a3a, type: 2}
-    - target: {fileID: 1159474320037564355, guid: 043d0b88c93703e47a32e193b4328e49, type: 3}
-      propertyPath: m_Name
-      value: "Ca\xF1a"
-      objectReference: {fileID: 0}
-    - target: {fileID: 5542588060398058923, guid: 043d0b88c93703e47a32e193b4328e49, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 8.461528
-      objectReference: {fileID: 0}
-    - target: {fileID: 5542588060398058923, guid: 043d0b88c93703e47a32e193b4328e49, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.81499857
-      objectReference: {fileID: 0}
-    - target: {fileID: 5542588060398058923, guid: 043d0b88c93703e47a32e193b4328e49, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.3841352
-      objectReference: {fileID: 0}
-    - target: {fileID: 5542588060398058923, guid: 043d0b88c93703e47a32e193b4328e49, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5542588060398058923, guid: 043d0b88c93703e47a32e193b4328e49, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5542588060398058923, guid: 043d0b88c93703e47a32e193b4328e49, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5542588060398058923, guid: 043d0b88c93703e47a32e193b4328e49, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5542588060398058923, guid: 043d0b88c93703e47a32e193b4328e49, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5542588060398058923, guid: 043d0b88c93703e47a32e193b4328e49, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5542588060398058923, guid: 043d0b88c93703e47a32e193b4328e49, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 043d0b88c93703e47a32e193b4328e49, type: 3}
 --- !u!1 &968919232
 GameObject:
   m_ObjectHideFlags: 0
@@ -5288,7 +5228,7 @@ Transform:
   m_GameObject: {fileID: 1007442898}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.3794224, y: -2.8854933, z: -0.01697725}
+  m_LocalPosition: {x: 1.3794224, y: 89, z: -0.01697725}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5333,7 +5273,6 @@ MonoBehaviour:
   - {fileID: 2100889302816273155, guid: a36297323b9512244a40a8dcd5c0d7ec, type: 3}
   - {fileID: 2193583494740372988, guid: a68223100c6c4db4ba6b22ac3a12fc0c, type: 3}
   - {fileID: 3126774926498801597, guid: 1174ff77dc3066a45bf6449cf5d67e2f, type: 3}
-  - {fileID: 5320647774704214934, guid: f81dc00358b9daa4e80810acee85d85f, type: 3}
   - {fileID: 5585810638234355529, guid: fc719f1db4b4c5245bc7864e52f416a0, type: 3}
   monedas: {fileID: 4680631660819440087}
   diaNumero: {fileID: 516375350}
@@ -12199,4 +12138,3 @@ SceneRoots:
   - {fileID: 1711131578}
   - {fileID: 2144004667}
   - {fileID: 1295001240}
-  - {fileID: 967583347}
