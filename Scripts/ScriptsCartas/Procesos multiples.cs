@@ -10,8 +10,8 @@ using UnityEngine.UI;
 public class Procesosmultiples : MonoBehaviour
 {
     public int numHijos;
-    public GameObject lecheOBJ;
-    public CardEnum EnumObjetivo;
+    public GameObject obj_producido;
+    public List<CardEnum> ListaObjetosAceptados;
     public Slider slider;
     public bool fabricando=false;
     public List<GameObject> cartasAProcesar = new List<GameObject>();
@@ -28,34 +28,21 @@ public class Procesosmultiples : MonoBehaviour
     private void Awake()
     {
         numHijos = transform.childCount;
-
-        switch (EnumObjetivo) 
-        {
-            case CardEnum.Leche: duration = 2;break;
-            case CardEnum.Queso: duration = 5;break;
-        
-        }
     }
 
     // Update is called once per frame
     void Update()
     {
-
         if(numHijos<1)numHijos = 1;
 
-            if (transform.childCount > numHijos && fabricando == false)
-            {
-
-
-                fusionCoroutine = StartCoroutine("procesarHijos");
-
-            }
-        
+        if (transform.childCount > numHijos && fabricando == false)
+        {
+            fusionCoroutine = StartCoroutine("procesarHijos");
+        }
         if(transform.childCount < numHijos && fabricando==true) 
         {
             CancelarFusion();
         }
-
         
     }
 
@@ -65,7 +52,7 @@ public class Procesosmultiples : MonoBehaviour
     {
         fabricando = true;
 
-        // Guardamos una copia de los hijos originales antes de modificar la jerarqu�a
+        // Guardamos una copia de los hijos originales antes de modificar la jerarquia
         List<Transform> hijosOriginales = new List<Transform>();
         foreach (Transform hijo in transform)
         {
@@ -77,7 +64,7 @@ public class Procesosmultiples : MonoBehaviour
             // Hijo correcto
             if (hijo.GetComponent<CartasJson>() != null)
             {
-                if (hijo.GetComponent<CartasJson>().cartaEnum == EnumObjetivo)
+                if (ListaObjetosAceptados.Contains(hijo.GetComponent<CartasJson>().cartaEnum))
                 {
                     Queue<(Transform nodo, int nivel)> cola = new Queue<(Transform, int)>();
                     cola.Enqueue((hijo, 0));
@@ -90,7 +77,7 @@ public class Procesosmultiples : MonoBehaviour
                         if (nivel > profundidadMaxima)
                             continue;
 
-                        // Copia temporal de hijos para evitar problemas al cambiar jerarqu�a
+                        // Copia temporal de hijos para evitar problemas al cambiar jerarquia
                         List<Transform> nietos = new List<Transform>();
                         foreach (Transform n in actual)
                         {
@@ -101,7 +88,7 @@ public class Procesosmultiples : MonoBehaviour
                         {
                             if (nieto.TryGetComponent<CartasJson>(out CartasJson carta))
                             {
-                                if (carta.cartaEnum == EnumObjetivo)
+                                if (ListaObjetosAceptados.Contains(carta.cartaEnum))
                                 {
                                     cartasAProcesar.Insert(0, nieto.gameObject);
                                     nieto.gameObject.transform.SetParent(transform);
@@ -121,66 +108,71 @@ public class Procesosmultiples : MonoBehaviour
             
 
 
-            foreach (GameObject item in cartasAProcesar)
-            {
-
-                elapsed = 0;
-
-                slider.gameObject.SetActive(true);
-
-                while (elapsed < duration && fabricando)
+                foreach (GameObject item in cartasAProcesar)
                 {
-
-                    if (GameManager.EstaPausado != true)
-                    {
-                        elapsed += Time.deltaTime;
-                        slider.value = Mathf.Clamp01(elapsed / duration);
-                       
-                    }
-                    yield return null;
-                }
-
-                slider.gameObject.SetActive(false);
-
-                //Instanciamos la leche
-                GameObject leche = Instantiate(lecheOBJ);
-                AudioManager.Instance.PlaySFX("Listo");
-                Vector3 direccion = Vector3.down;
-                    RaycastHit hit;
-                    
-                    leche.transform.position = transform.position + Vector3.up * 1f;
-                    leche.transform.position = leche.transform.position + Vector3.right * 2f;
-                    Vector3 origen = leche.transform.position;
-                    Debug.DrawRay(origen, direccion * 5, Color.red, 2f);
-                    if (Physics.Raycast(origen, Vector3.down, out hit, 5f))
+                    for(int i=0;i<2;i++)
                     {
 
-                        if (hit.collider.GetComponent<CartasJson>() != null)
+                        elapsed = 0;
+
+                        slider.gameObject.SetActive(true);
+
+                        while (elapsed < duration && fabricando)
                         {
-                             Debug.Log("Carta v�lida detectada debajo del hijo.");
-                            leche.transform.SetParent(hit.collider.transform);
+
+                            if (GameManager.EstaPausado != true)
+                            {
+                                elapsed += Time.deltaTime;
+                                slider.value = Mathf.Clamp01(elapsed / duration);
+                            
+                            }
+                            yield return null;
                         }
-                        else
-                        {
-                            Debug.Log("No es una carta");
+
+                        slider.value = 0;
+                        elapsed = 0;
+
+                        //Instanciamos la leche
+                        GameObject leche = Instantiate(obj_producido); //cambiar por una lista
+                        AudioManager.Instance.PlaySFX("Listo");
+                        Vector3 direccion = Vector3.down;
+                            RaycastHit hit;
+                            
+                            leche.transform.position = transform.position + Vector3.up * 1f;
+                            leche.transform.position = leche.transform.position + Vector3.right * 2f;
+                            Vector3 origen = leche.transform.position;
+                            Debug.DrawRay(origen, direccion * 5, Color.red, 2f);
+                            if (Physics.Raycast(origen, Vector3.down, out hit, 5f))
+                            {
+
+                                if (hit.collider.GetComponent<CartasJson>() != null)
+                                {
+                                    Debug.Log("Carta v�lida detectada debajo del hijo.");
+                                    leche.transform.SetParent(hit.collider.transform);
+                                }
+                                else
+                                {
+                                    Debug.Log("No es una carta");
+                                }
+                            }
+                            else
+                            {
+                                Debug.Log("No se detect� nada debajo del hijo.");
+                            }
+                            leche.transform.position = leche.transform.position + Vector3.down * 1f;
+                            gameObject.GetComponent<BoxCollider>().enabled=false;   
+                            item.SetActive(false);    
+         
                         }
-                    }
-                    else
-                    {
-                        Debug.Log("No se detect� nada debajo del hijo.");
-                    }
-                    leche.transform.position = leche.transform.position + Vector3.down * 1f;
-
-
-
-
-
-                //Destruimos el objeto necesario para crear el otro(el heno en caso de la leche)
-                Destroy(item);
+                                    
                 numHijos--;
-            }
-        }
+                Destroy(item);    
+                gameObject.GetComponent<BoxCollider>().enabled=true;  
 
+                    }
+
+        }
+        
         cartasAProcesar.Clear();
         fabricando = false;
     }

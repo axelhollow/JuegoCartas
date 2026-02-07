@@ -95,19 +95,6 @@ public class DragAndDropController : MonoBehaviour
                     selectedObject.transform.SetParent(hit.collider.gameObject.transform.parent);
                 }
             }
-            //Metodo simple video
-            //if (hit.collider.CompareTag("Mercado"))
-            //{
-            //    print("mercado golpeado");
-
-            //    if (valorCarta>-1)
-            //    {
-            //        int valor_actual = int.Parse(monedas.text.ToString()) + valorCarta;
-            //        monedas.text = valor_actual.ToString();
-            //        Destroy(gameObject);
-            //    }
-
-            //}
 
             //Metodo correcto
             if (hit.collider.CompareTag("Mercado"))
