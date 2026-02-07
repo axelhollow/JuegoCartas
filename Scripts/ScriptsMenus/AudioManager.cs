@@ -17,7 +17,7 @@ public class AudioManager : MonoBehaviour
 
     void Awake()
     {
-        // Singleton: sólo una instancia
+        // Singleton: sï¿½lo una instancia
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject); // Eliminar duplicados

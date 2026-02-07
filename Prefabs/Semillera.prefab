@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3076273426513511049}
   - component: {fileID: 6037844438258706695}
   - component: {fileID: 8474129216870086703}
+  - component: {fileID: 6591692198596649305}
   - component: {fileID: 9105286875939735222}
   - component: {fileID: 6802793596664309465}
   m_Layer: 0
@@ -164,6 +165,28 @@ MonoBehaviour:
   description: Transforma cutivos en semillas
   descriptionENG: Transform crops into seeds
   valor: 10
+--- !u!114 &6591692198596649305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2193583494740372988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3840e07c12a502c44a265e45f3144b8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numHijos: 0
+  lecheOBJ: {fileID: 1159474320037564355, guid: 6e9344c390d8b3649ada7fe9b5b81760, type: 3}
+  EnumObjetivo: 10
+  slider: {fileID: 0}
+  fabricando: 0
+  cartasAProcesar: []
+  fusionCancelada: 0
+  duration: 5
+  elapsed: 0
+  profundidadMaxima: 99
 --- !u!114 &9105286875939735222
 MonoBehaviour:
   m_ObjectHideFlags: 0
