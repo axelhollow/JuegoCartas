@@ -31,6 +31,6 @@ public enum CardEnum
     Carne,
     SemillaFlor,
     Caña,
-    Lago
+    Lago,
 }
 

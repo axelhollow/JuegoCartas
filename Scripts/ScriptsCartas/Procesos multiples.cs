@@ -10,7 +10,8 @@ using UnityEngine.UI;
 public class Procesosmultiples : MonoBehaviour
 {
     public int numHijos;
-    public GameObject obj_producido;
+    public List<GameObject> lista_resultados=new();
+    public string objetivo_actual;
     public List<CardEnum> ListaObjetosAceptados;
     public Slider slider;
     public bool fabricando=false;
@@ -66,6 +67,7 @@ public class Procesosmultiples : MonoBehaviour
             {
                 if (ListaObjetosAceptados.Contains(hijo.GetComponent<CartasJson>().cartaEnum))
                 {
+                    objetivo_actual=hijo.GetComponent<CartasJson>().cartaEnum.ToString();
                     Queue<(Transform nodo, int nivel)> cola = new Queue<(Transform, int)>();
                     cola.Enqueue((hijo, 0));
                     cartasAProcesar.Insert(0, hijo.gameObject);
@@ -133,7 +135,12 @@ public class Procesosmultiples : MonoBehaviour
                         elapsed = 0;
 
                         //Instanciamos la leche
-                        GameObject leche = Instantiate(obj_producido); //cambiar por una lista
+                        GameObject leche=new();
+                        if(objetivo_actual=="Maiz")leche = Instantiate(lista_resultados[0]);
+                        if(objetivo_actual=="Heno")leche = Instantiate(lista_resultados[1]);
+                        if(objetivo_actual=="Panacea")leche = Instantiate(lista_resultados[2]);
+                        if(objetivo_actual=="Flor")leche = Instantiate(lista_resultados[3]);
+                        
                         AudioManager.Instance.PlaySFX("Listo");
                         Vector3 direccion = Vector3.down;
                             RaycastHit hit;

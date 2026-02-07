@@ -524,7 +524,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stackOffset: 0.2
   agarrada: 0
-  valorCarta: 1
+  valorCarta: 5
 --- !u!114 &6454915853023838353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -562,7 +562,7 @@ MonoBehaviour:
   objectNameENG: Panacea
   description: Una planta medicinal que cura todo
   descriptionENG: A medicinal plant that cures everything
-  valor: 3
+  valor: 5
 --- !u!114 &7594543911081421382
 MonoBehaviour:
   m_ObjectHideFlags: 0

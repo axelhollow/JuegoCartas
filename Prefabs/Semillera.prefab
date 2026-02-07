@@ -178,8 +178,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numHijos: 0
-  obj_producido: {fileID: 1159474320037564355, guid: 6e9344c390d8b3649ada7fe9b5b81760, type: 3}
-  ListaObjetosAceptados: 0a000000000000000000000000000000
+  lista_resultados:
+  - {fileID: 1159474320037564355, guid: 6e9344c390d8b3649ada7fe9b5b81760, type: 3}
+  - {fileID: 1159474320037564355, guid: c0915af6c04180b49bdff9d4d205e429, type: 3}
+  - {fileID: 5363898381958202192, guid: 5d0037324d8804246b73c82ed7fdccb7, type: 3}
+  - {fileID: 1159474320037564355, guid: 5db630a68ee91bf41be3327bae07773e, type: 3}
+  objetivo_actual: 
+  ListaObjetosAceptados: 0a000000030000001500000011000000
   slider: {fileID: 6863075068773795062}
   fabricando: 0
   cartasAProcesar: []
