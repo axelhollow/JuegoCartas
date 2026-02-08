@@ -25,6 +25,7 @@ public class DayCycleManager : MonoBehaviour
     public TextMeshProUGUI textResultado;
     public TextMeshProUGUI textoObjetivoActual; // Contador en tiempo real
     public TextMeshProUGUI monedasActuales;
+    public bool objetivoActivado=false;
     RectTransform recResultadoText;
     private Vector2 posicionGuardada;
     RectTransform recCartasText;
@@ -131,6 +132,7 @@ public class DayCycleManager : MonoBehaviour
                 OnDayEnded?.Invoke();
                 ShowEndOfDaySummary();
                 //OBJETIVO DEL DIA
+                 objetivoActivado=false;
                 CalcularObjetivoDelDia();
             }
 
@@ -156,11 +158,11 @@ public class DayCycleManager : MonoBehaviour
         }
         if (estacionActual == 1)
         {
-            SpawnDeEstcion(listacartasPrimavera);
+           // SpawnDeEstcion(listacartasPrimavera);
         }
         if (estacionActual == 2)
         {
-            SpawnDeEstcion(listacartasPrimavera);
+            //SpawnDeEstcion(listacartasPrimavera);
         }
        
     }
@@ -299,29 +301,64 @@ public class DayCycleManager : MonoBehaviour
         objetivo = Mathf.RoundToInt(valor);
         textoObjetivoActual.text = objetivo.ToString();
 
-        if (currentDay >= 2 && currentDay < 3)
+        #region Objetivos_diarios
+        if (currentDay == 2)
+        {
+            objetivoCarta = CardEnum.Heno;
+            if (LanguageManager.Instance.idiomaActual == "es")
+            {
+                nuevoSprite = Resources.Load<Sprite>($"Sprites/UI/CartasObjetivo/{objetivoCarta.ToString()}");
+                print("Objetivo: "+objetivoCarta.ToString());
+                objetivoActivado=true;
+            }
+           /* if (LanguageManager.Instance.idiomaActual == "en")
+            {
+                nuevoSprite = Resources.Load<Sprite>($"Sprites/UI/CartasObjetivoEng/{objetivoCarta.ToString()}");
+
+            }*/
+            imagenUI.sprite = nuevoSprite;
+            imagenUI.gameObject.SetActive(true);
+        }
+        if (currentDay == 4)
         {
             objetivoCarta = CardEnum.Vaca;
             if (LanguageManager.Instance.idiomaActual == "es")
             {
                 nuevoSprite = Resources.Load<Sprite>($"Sprites/UI/CartasObjetivo/{objetivoCarta.ToString()}");
+                print("Objetivo: "+objetivoCarta.ToString());
+                 objetivoActivado=true;
             }
-            if (LanguageManager.Instance.idiomaActual == "en")
+           /* if (LanguageManager.Instance.idiomaActual == "en")
             {
                 nuevoSprite = Resources.Load<Sprite>($"Sprites/UI/CartasObjetivoEng/{objetivoCarta.ToString()}");
 
-            }
-
-
+            }*/
             imagenUI.sprite = nuevoSprite;
             imagenUI.gameObject.SetActive(true);
         }
-        else
+
+
+       if(objetivoActivado==false)
         {
             objetivoCarta = CardEnum.Rojo;
             imagenUI.gameObject.SetActive(false);
         }
 
+
+
+
+
+
+
+        
+        
+        
+        
+        
+        
+        
+
+        #endregion
 
     }
 
@@ -425,8 +462,8 @@ public class DayCycleManager : MonoBehaviour
         {
             recResultadoText.anchoredPosition = posicionGuardada;
             textResultado.text = "Objetivo cumplido";
-            objetivoCartaTXT.gameObject.SetActive(true);
-            objetivoCartaTXT.text = $"1 carta de {objetivoCarta}";
+            /*objetivoCartaTXT.gameObject.SetActive(true);
+            objetivoCartaTXT.text = $"1 carta de {objetivoCarta}";*/
         }
     }
 

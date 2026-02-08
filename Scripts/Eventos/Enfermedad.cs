@@ -30,8 +30,8 @@ public class Enfermedad : MonoBehaviour
     public void PonerEnfermo()
     {
 
-        // Generar un número aleatorio entre 1 y 10 (incluye el 10)
-        int numero = Random.Range(1, 3);
+        // Generar un número aleatorio entre 1 y 5 (incluye el 5)
+        int numero = Random.Range(1, 6);
 
         print("El número generado es: " + numero);
 
