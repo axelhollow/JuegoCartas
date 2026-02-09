@@ -344,22 +344,7 @@ public class DayCycleManager : MonoBehaviour
             imagenUI.gameObject.SetActive(false);
         }
 
-
-
-
-
-
-
-        
-        
-        
-        
-        
-        
-        
-
         #endregion
-
     }
 
     public bool ComprobarSiTieneLaCarta(CardEnum cartaObjetivoEnum) 
@@ -399,7 +384,7 @@ public class DayCycleManager : MonoBehaviour
             if (ComprobarSiTieneLaCarta(objetivoCarta)==true && cantidadMonedas >= objetivo)
             {
                 print("ganaste");
-                printVictoria(true);
+                printVictoria();
             }
             //PERDER
             /*else 
@@ -442,29 +427,14 @@ public class DayCycleManager : MonoBehaviour
         }*/
     }
 
-    void printVictoria(bool carta) 
+    void printVictoria() 
     {
-        if (carta==false)
-        {
-            objetivoCartaTXT.gameObject.SetActive(false);
+
             if (LanguageManager.Instance.idiomaActual == "es")
             {
                 textResultado.text = "Objetivo cumplido";
             }
-            if (LanguageManager.Instance.idiomaActual == "en")
-            {
-                textResultado.text = "Objective complete";
-            }
-
-            recResultadoText.anchoredPosition = recCartasText.anchoredPosition;
-        }
-        else
-        {
-            recResultadoText.anchoredPosition = posicionGuardada;
-            textResultado.text = "Objetivo cumplido";
-            /*objetivoCartaTXT.gameObject.SetActive(true);
-            objetivoCartaTXT.text = $"1 carta de {objetivoCarta}";*/
-        }
+        
     }
 
 /// <summary>
