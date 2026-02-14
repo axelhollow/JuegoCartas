@@ -18,7 +18,7 @@ public class DayCycleManager : MonoBehaviour
     public TextMeshProUGUI dayCounterText;
 
     [Header("Resumen del día")]
-    public GameObject panelResumenDia;
+
     public TextMeshProUGUI textMonedas;
     public TextMeshProUGUI textObjetivo;
     public TextMeshProUGUI objetivoCartaTXT;
@@ -33,7 +33,12 @@ public class DayCycleManager : MonoBehaviour
 
     [Header("Canvas UI")]
     public Canvas canvasUI;
+        [Header("Canvas Victoria")]
+    public GameObject panelResumenDia;
 
+            [Header("Canvas Derrota")]
+    public Canvas canvasDerrota;
+[Header("Dia")]
     public float timer = 0f;
     public int currentDay;
 
@@ -112,6 +117,11 @@ public class DayCycleManager : MonoBehaviour
         //desactivamos el panel del final del dia
         if (panelResumenDia != null)
             panelResumenDia.SetActive(false);
+
+        if(canvasDerrota!=null)
+        {
+            canvasDerrota.gameObject.SetActive(false);
+        }
         //calcular el objevtivo del día 1
         CalcularObjetivoDelDia();
     }
@@ -361,6 +371,7 @@ public class DayCycleManager : MonoBehaviour
         return false;
     }
 
+#region Victoria o derota
     void ShowEndOfDaySummary()
     {
         Time.timeScale = 0f;
@@ -373,10 +384,6 @@ public class DayCycleManager : MonoBehaviour
         {
             textObjetivo.text = objetivo + " monedas";
         }
-        if (LanguageManager.Instance.idiomaActual == "en")
-        {
-            textObjetivo.text = objetivo + " coins";
-        }
 
         if (objetivoCarta != CardEnum.Rojo) 
         {
@@ -387,22 +394,12 @@ public class DayCycleManager : MonoBehaviour
                 printVictoria();
             }
             //PERDER
-            /*else 
+            else 
             {
-                if (LanguageManager.Instance.idiomaActual == "es")
-                {
-                    textResultado.text = "No cumpliste el objetivo";
-                }
-                if (LanguageManager.Instance.idiomaActual == "en")
-                {
-                    textResultado.text = "Objective failed";
-                }
-                recResultadoText.anchoredPosition = posicionGuardada;
+                print("Perdiste");
+                    printDerrota();
 
-                objetivoCartaTXT.gameObject.SetActive(true);
-                objetivoCartaTXT.text = $"1 carta de {objetivoCarta}";
-
-            }*/
+            }
         }
       /*  if(objetivoCarta == CardEnum.Rojo)
         {
@@ -426,7 +423,7 @@ public class DayCycleManager : MonoBehaviour
             }
         }*/
     }
-
+#endregion
     void printVictoria() 
     {
 
@@ -436,6 +433,15 @@ public class DayCycleManager : MonoBehaviour
             }
         
     }
+
+   void printDerrota()
+    {
+        
+                    if (LanguageManager.Instance.idiomaActual == "es")
+            {
+                textResultado.text = "Objetivo NO cumplido";
+            }
+    } 
 
 /// <summary>
 /// Boton continuar el juego en el boton del resumen del dia
