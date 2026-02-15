@@ -76,7 +76,6 @@ public class LoadSystem : MonoBehaviour
             {
                 Vector3 position = new Vector3(objData.posX, objData.posY, objData.posZ);
                 GameObject newObj = Instantiate(prefab, position, Quaternion.identity);
-                print(objData.prefabName + " cargado");
             }
             else
             {

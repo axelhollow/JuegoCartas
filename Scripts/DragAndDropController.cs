@@ -99,7 +99,6 @@ public class DragAndDropController : MonoBehaviour
             //Metodo correcto
             if (hit.collider.CompareTag("Mercado"))
             {
-                print("mercado golpeado");
 
                 List<Transform> allObjectsToSell = GetAllDescendantsBreadthFirst(transform);
                 allObjectsToSell.Add(transform); // Añade el objeto padre al final

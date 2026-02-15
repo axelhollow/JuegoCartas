@@ -17,18 +17,12 @@ public class DayCycleManager : MonoBehaviour
     public Slider dayProgressSlider;
     public TextMeshProUGUI dayCounterText;
 
-    [Header("Resumen del día")]
+  
 
-    public TextMeshProUGUI textMonedas;
-    public TextMeshProUGUI textObjetivo;
-    public TextMeshProUGUI objetivoCartaTXT;
     public TextMeshProUGUI textResultado;
     public TextMeshProUGUI textoObjetivoActual; // Contador en tiempo real
     public TextMeshProUGUI monedasActuales;
     public bool objetivoActivado=false;
-    RectTransform recResultadoText;
-    private Vector2 posicionGuardada;
-    RectTransform recCartasText;
 
 
     [Header("Canvas UI")]
@@ -97,15 +91,7 @@ public class DayCycleManager : MonoBehaviour
     {
 
         currentDay=int.Parse(PlayerPrefs.GetString("NumDia", "1").Replace("Día","").Trim());
-
         tiempodediausado = PlayerPrefs.GetFloat("DiaBarra", 0f);
-
-       // recResultadoText = textResultado.GetComponent<RectTransform>();
-        //posicionGuardada = textResultado.GetComponent<RectTransform>().anchoredPosition;
-        recCartasText = objetivoCartaTXT.GetComponent<RectTransform>();
-
-
-        objetivoCartaTXT.gameObject.SetActive(false);
         imagenUI.gameObject.SetActive(false);
         UpdateDayUI();
 
@@ -282,26 +268,7 @@ public class DayCycleManager : MonoBehaviour
             Instantiate(recursoEstcion, posiciones[intPosicion], recursoEstcion.transform.rotation);
         }
     }
-   void ObjetivoDelDia() 
-      {
-          switch (currentDay) 
-          {
-              case 1:
-                  {
-                      objetivo = currentDay;
-                      textoObjetivoActual.text = objetivo.ToString();
-                      break;
-                  }
-              case 2:
-                  {
-                      objetivo = currentDay * 2;
-                      textoObjetivoActual.text = objetivo.ToString(); 
-                      break;
-                  }
-          }
-
-
-      }
+ 
 
     public void CalcularObjetivoDelDia()
     {
@@ -321,11 +288,6 @@ public class DayCycleManager : MonoBehaviour
                 print("Objetivo: "+objetivoCarta.ToString());
                 objetivoActivado=true;
             }
-           /* if (LanguageManager.Instance.idiomaActual == "en")
-            {
-                nuevoSprite = Resources.Load<Sprite>($"Sprites/UI/CartasObjetivoEng/{objetivoCarta.ToString()}");
-
-            }*/
             imagenUI.sprite = nuevoSprite;
             imagenUI.gameObject.SetActive(true);
         }
@@ -338,11 +300,6 @@ public class DayCycleManager : MonoBehaviour
                 print("Objetivo: "+objetivoCarta.ToString());
                  objetivoActivado=true;
             }
-           /* if (LanguageManager.Instance.idiomaActual == "en")
-            {
-                nuevoSprite = Resources.Load<Sprite>($"Sprites/UI/CartasObjetivoEng/{objetivoCarta.ToString()}");
-
-            }*/
             imagenUI.sprite = nuevoSprite;
             imagenUI.gameObject.SetActive(true);
         }
@@ -351,6 +308,7 @@ public class DayCycleManager : MonoBehaviour
        if(objetivoActivado==false)
         {
             objetivoCarta = CardEnum.Rojo;
+            print("No hay carta objetivo");
             imagenUI.gameObject.SetActive(false);
         }
 
@@ -359,16 +317,20 @@ public class DayCycleManager : MonoBehaviour
 
     public bool ComprobarSiTieneLaCarta(CardEnum cartaObjetivoEnum) 
     {
+listaCartasObjetivo = GameObject.FindObjectsOfType<CartaObjetivo>(true);
 
-        listaCartasObjetivo = GameObject.FindObjectsOfType<CartaObjetivo>(true);
-        var cartasObjetivo = listaCartasObjetivo.Where(c => c.carta == cartaObjetivoEnum && c.gameObject.activeInHierarchy).ToList();
-        print("Carta objetivo: " + cartaObjetivoEnum);
-        if (cartasObjetivo != null)
-        {
-            print("tiene la carta");
-            return true;
-        }
-        return false;
+bool tieneCarta = listaCartasObjetivo
+    .Any(c => c.carta == cartaObjetivoEnum && c.gameObject.activeInHierarchy);
+
+print("Carta objetivo: " + cartaObjetivoEnum);
+
+if (tieneCarta && cartaObjetivoEnum == objetivoCarta)
+{
+    print("tiene la carta");
+    return true;
+}
+
+return false;
     }
 
 #region Victoria o derota
@@ -376,52 +338,48 @@ public class DayCycleManager : MonoBehaviour
     {
         Time.timeScale = 0f;
         canvasUI.gameObject.SetActive(false);
-        panelResumenDia.SetActive(true);
-
-
+        panelResumenDia.gameObject.SetActive(false);
+        canvasDerrota.gameObject.SetActive(false);
+        //recuoeramos la cantidad de monedas que tenemos
         int cantidadMonedas = int.Parse(monedasActuales.text);
-        if (LanguageManager.Instance.idiomaActual == "es")
-        {
-            textObjetivo.text = objetivo + " monedas";
-        }
 
+
+        // Objetico monedas + cartas
         if (objetivoCarta != CardEnum.Rojo) 
         {
 
             if (ComprobarSiTieneLaCarta(objetivoCarta)==true && cantidadMonedas >= objetivo)
             {
                 print("ganaste");
+                panelResumenDia.SetActive(true);
                 printVictoria();
             }
             //PERDER
-            else 
+           if(ComprobarSiTieneLaCarta(objetivoCarta)==false || cantidadMonedas <= objetivo)
             {
                 print("Perdiste");
+                canvasDerrota.gameObject.SetActive(true);
                     printDerrota();
 
             }
         }
-      /*  if(objetivoCarta == CardEnum.Rojo)
+
+        // objetivo solo monedas
+      if(objetivoCarta == CardEnum.Rojo)
         {
             if (cantidadMonedas >= objetivo)
             {
-                printVictoria(false);
+                panelResumenDia.SetActive(true);
+                printVictoria();
+                
             }
             else 
             {
-                objetivoCartaTXT.gameObject.SetActive(false);
-                if (LanguageManager.Instance.idiomaActual == "es")
-                {
-                    textResultado.text = "No cumpliste el objetivo";
-                }
-                if (LanguageManager.Instance.idiomaActual == "en")
-                {
-                    textResultado.text = "Objective failed";
-                }
-                    recResultadoText.anchoredPosition = recCartasText.anchoredPosition;
+                printDerrota();
+                canvasDerrota.gameObject.SetActive(true);
 
             }
-        }*/
+        }
     }
 #endregion
     void printVictoria() 
@@ -437,7 +395,7 @@ public class DayCycleManager : MonoBehaviour
    void printDerrota()
     {
         
-                    if (LanguageManager.Instance.idiomaActual == "es")
+            if (LanguageManager.Instance.idiomaActual == "es")
             {
                 textResultado.text = "Objetivo NO cumplido";
             }

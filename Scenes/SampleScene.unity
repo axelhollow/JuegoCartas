@@ -1393,9 +1393,6 @@ MonoBehaviour:
   dayDuration: 20
   dayProgressSlider: {fileID: 1428104973}
   dayCounterText: {fileID: 516375350}
-  textMonedas: {fileID: 2137059445}
-  textObjetivo: {fileID: 1205976694}
-  objetivoCartaTXT: {fileID: 983232532}
   textResultado: {fileID: 1914763726}
   textoObjetivoActual: {fileID: 974763893}
   monedasActuales: {fileID: 4680631660819440087}
@@ -5760,6 +5757,8 @@ GameObject:
   - component: {fileID: 1012079690}
   - component: {fileID: 1012079689}
   - component: {fileID: 1012079688}
+  - component: {fileID: 1012079692}
+  - component: {fileID: 1012079691}
   - component: {fileID: 1012079687}
   m_Layer: 0
   m_Name: BotonContinuar
@@ -5845,9 +5844,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1012079687}
-        m_TargetAssemblyTypeName: GestionDeEnfermedad, Assembly-CSharp
-        m_MethodName: ActivarEnfermedad
+      - m_Target: {fileID: 1012079692}
+        m_TargetAssemblyTypeName: NuevaPartida, Assembly-CSharp
+        m_MethodName: Init
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5857,16 +5856,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 222756105}
-        m_TargetAssemblyTypeName: DayCycleManager, Assembly-CSharp
-        m_MethodName: ContinuarJuego
-        m_Mode: 1
+      - m_Target: {fileID: 1012079691}
+        m_TargetAssemblyTypeName: ManejadorDeEscenas, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: MainMenu
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1012079689
@@ -5907,6 +5906,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1012079685}
   m_CullTransparentMesh: 1
+--- !u!114 &1012079691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012079685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96d038f2281ef8b43810b2fa0e907188, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1012079692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012079685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9695efb6ded07d548b6d6e2e5b5ce2bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveFileName: saveData.json
 --- !u!1 &1042669754
 GameObject:
   m_ObjectHideFlags: 0
