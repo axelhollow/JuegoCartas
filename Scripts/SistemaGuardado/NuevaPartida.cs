@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEngine.UI;
 public class NuevaPartida : MonoBehaviour
 {
+    public Button boton_continuar;
         public string saveFileName = "saveData.json";
     // Start is called before the first frame update
 
@@ -17,6 +19,7 @@ public class NuevaPartida : MonoBehaviour
                  File.Delete(path);
                  print("archivo de guardado eliminado");
         }
+        boton_continuar.interactable=true;
 
     }
 

@@ -629,6 +629,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 343394911}
+  - component: {fileID: 343394916}
   - component: {fileID: 343394914}
   - component: {fileID: 343394913}
   - component: {fileID: 343394912}
@@ -764,6 +765,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 96d038f2281ef8b43810b2fa0e907188, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &343394916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343394910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20b953dadd63e29459cd2b38ad8b106f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &377543010
@@ -1230,6 +1243,9 @@ MonoBehaviour:
   monedas: {fileID: 0}
   diaNumero: {fileID: 0}
   barraDiaValor: {fileID: 0}
+  textoEstacion: {fileID: 0}
+  cicloDiaOBJ: {fileID: 0}
+  ColorEstacion: {fileID: 0}
 --- !u!114 &403120028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1360,6 +1376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9695efb6ded07d548b6d6e2e5b5ce2bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boton_continuar: {fileID: 343394912}
   saveFileName: saveData.json
 --- !u!1 &424802258
 GameObject:

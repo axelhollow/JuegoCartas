@@ -5743,6 +5743,8 @@ MonoBehaviour:
   - {fileID: 5585810638234355529, guid: fc719f1db4b4c5245bc7864e52f416a0, type: 3}
   monedas: {fileID: 4680631660819440087}
   diaNumero: {fileID: 516375350}
+  textoEstacion: {fileID: 2076846223}
+  ColorEstacion: {fileID: 111676322}
   barraDiaValor: {fileID: 1428104973}
 --- !u!1 &1012079685
 GameObject:
@@ -12599,7 +12601,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 10
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

@@ -1,29 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Hacks : MonoBehaviour
+public class BotonContinuar : MonoBehaviour
 {
+   
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameObject.GetComponent<Button>().interactable=false;
     }
 
     // Update is called once per frame
     void Update()
     {
         
-    }
-
-    public void Dia1() 
-    {
-        PlayerPrefs.SetString("NumDia","1");
-
-        PlayerPrefs.SetFloat("DiaBarra", 0f);
-
-        PlayerPrefs.DeleteAll();
-        PlayerPrefs.Save();
-
     }
 }

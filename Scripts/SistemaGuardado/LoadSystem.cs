@@ -13,6 +13,10 @@ public class LoadSystem : MonoBehaviour
     public List<GameObject> prefabs;
     public TextMeshProUGUI monedas;
     public TextMeshProUGUI diaNumero;
+
+    public TextMeshProUGUI textoEstacion;
+
+    public Image ColorEstacion;
     public Slider barraDiaValor;
 
     
@@ -32,12 +36,20 @@ public class LoadSystem : MonoBehaviour
             //Datos en escena y player prefab
             Debug.LogWarning("No se encontr� archivo de guardado.");
             EliminarObjetosExistentes();
-            monedas.text="0";
+            monedas.text="10";
             diaNumero.text="1";
             barraDiaValor.value=0f;
+            textoEstacion.text="Primavera";
+
+            string hex = "#" + ColorUtility.ToHtmlStringRGBA(ColorEstacion.color);
+            PlayerPrefs.SetString("ColorEstacion", hex);
+            print("Color: "+ColorEstacion.color.ToString());
+
             PlayerPrefs.SetString("Monedas", "0");
             PlayerPrefs.SetString("NumDia", "1");
             PlayerPrefs.SetFloat("DiaBarra", 0f);
+            PlayerPrefs.SetString("Estacion","Primavera");
+
 
 
             PlayerPrefs.Save();
