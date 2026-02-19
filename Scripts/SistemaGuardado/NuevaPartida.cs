@@ -11,6 +11,7 @@ public class NuevaPartida : MonoBehaviour
 
     public void Init()
     {
+        boton_continuar.interactable=true;
         string path = Application.persistentDataPath + "/" + saveFileName;
         print(path);
         //si el archivo de guardado exite se sobreescribe (se borra que es mas facil)
@@ -19,7 +20,18 @@ public class NuevaPartida : MonoBehaviour
                  File.Delete(path);
                  print("archivo de guardado eliminado");
         }
-        boton_continuar.interactable=true;
+       
+        if (!PlayerPrefs.HasKey("PrimerArranque"))
+            {
+                Debug.Log("Es la primera vez que se ejecuta en este equipo");
+
+                PlayerPrefs.SetInt("PrimerArranque", 1);
+                PlayerPrefs.Save();
+            }
+        else
+            {
+                Debug.Log("Ya se había ejecutado antes");
+            }
 
     }
 

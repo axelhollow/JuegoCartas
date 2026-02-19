@@ -9,12 +9,15 @@ public class BotonContinuar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameObject.GetComponent<Button>().interactable=false;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+       if(PlayerPrefs.HasKey("PrimerArranque"))
+        {
+        gameObject.GetComponent<Button>().interactable=true;
+        }
     }
 }
