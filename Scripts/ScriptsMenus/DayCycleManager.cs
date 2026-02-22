@@ -303,6 +303,18 @@ public class DayCycleManager : MonoBehaviour
             imagenUI.sprite = nuevoSprite;
             imagenUI.gameObject.SetActive(true);
         }
+         if (currentDay == 6)
+        {
+            objetivoCarta = CardEnum.Leche;
+            if (LanguageManager.Instance.idiomaActual == "es")
+            {
+                nuevoSprite = Resources.Load<Sprite>($"Sprites/UI/CartasObjetivo/{objetivoCarta.ToString()}");
+                print("Objetivo: "+objetivoCarta.ToString());
+                 objetivoActivado=true;
+            }
+            imagenUI.sprite = nuevoSprite;
+            imagenUI.gameObject.SetActive(true);
+        }
 
 
        if(objetivoActivado==false)

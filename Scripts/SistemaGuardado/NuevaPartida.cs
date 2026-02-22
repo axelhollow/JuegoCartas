@@ -11,7 +11,8 @@ public class NuevaPartida : MonoBehaviour
 
     public void Init()
     {
-        boton_continuar.interactable=true;
+        if(boton_continuar!=null)boton_continuar.interactable=true;
+
         string path = Application.persistentDataPath + "/" + saveFileName;
         print(path);
         //si el archivo de guardado exite se sobreescribe (se borra que es mas facil)
