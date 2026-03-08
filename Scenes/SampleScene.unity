@@ -1389,7 +1389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce54d7fe5fb50fb4394c86430ce8522c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dayDuration: 20
+  dayDuration: 10
   dayProgressSlider: {fileID: 1428104973}
   dayCounterText: {fileID: 516375350}
   textResultado: {fileID: 1914763726}
@@ -5748,6 +5748,7 @@ MonoBehaviour:
   textoEstacion: {fileID: 2076846223}
   ColorEstacion: {fileID: 111676322}
   barraDiaValor: {fileID: 1428104973}
+  sobrePartidaNueva: {fileID: 3126774926498801597, guid: 3125f5293e789524bb615e46d71442bf, type: 3}
 --- !u!1 &1012079685
 GameObject:
   m_ObjectHideFlags: 0

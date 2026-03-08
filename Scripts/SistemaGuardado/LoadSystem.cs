@@ -19,6 +19,8 @@ public class LoadSystem : MonoBehaviour
     public Image ColorEstacion;
     public Slider barraDiaValor;
 
+    public GameObject sobrePartidaNueva;
+
     
 
     private void Start()
@@ -30,6 +32,9 @@ public class LoadSystem : MonoBehaviour
     {
         string path = Application.persistentDataPath + "/" + saveFileName;
     print(path);
+    #region partida nueva
+        
+  
     //PARTIDA NUEVA
         if (!File.Exists(path))
         {
@@ -67,8 +72,14 @@ public class LoadSystem : MonoBehaviour
             PlayerPrefs.SetString("EstacionActual","1");
             hijo.estacionActual=1;
             hijo.diaEstacion=1;
+            Vector3 centroPantalla = new Vector3(2.27f, 0, 0f);
+            Instantiate(sobrePartidaNueva, centroPantalla, Quaternion.identity);
+            print("se instancio el sobre: "+sobrePartidaNueva);
             return;
         }
+      #endregion
+
+      #region Cargar Partida
 
         // 1. Leer JSON
         string json = File.ReadAllText(path);
@@ -106,8 +117,9 @@ public class LoadSystem : MonoBehaviour
         diaNumero.text= PlayerPrefs.GetString("NumDia","1"); 
         hijo_AUX.diaEstacion= PlayerPrefs.GetInt("DiaEstacion",1);
         hijo_AUX.estacionActual= PlayerPrefs.GetInt("EstacionActual", 1);
-
+        Time.timeScale=1f;
         Debug.Log("Carga completada.");
+        #endregion
     }
 
       Color ParseRGBA(string texto)

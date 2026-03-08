@@ -192,7 +192,7 @@ public class DayCycleManager : MonoBehaviour
                     image.color = color;
                 }
                 break;
-            case 4:
+            case 2:
                 if (ColorUtility.TryParseHtmlString("#ffd445ff", out color))
                 {
                     if(LanguageManager.Instance.idiomaActual == "es")
@@ -220,7 +220,7 @@ public class DayCycleManager : MonoBehaviour
                     image.color = color;
                 }
                 break;
-            case 2:
+            case 4:
 
                 if (ColorUtility.TryParseHtmlString("#4BB2D9", out color))
                 {

@@ -35,10 +35,12 @@ public class BotonesVelocidad : MonoBehaviour
             SetTiempo(2f);
         }
 
-        if(Time.timeScale==0f)
+        
+        /*if(Time.timeScale==0f)
         {
             JuegoEnPausa(true);
-        }
+        }*/
+
     }
 
     void Start()
@@ -49,7 +51,7 @@ public class BotonesVelocidad : MonoBehaviour
 
 
 
-        botonPausa.onClick.AddListener(() => JuegoEnPausa(true));
+        botonPausa.onClick.AddListener(() => JuegoEnPausa(false));
         botonNormal.onClick.AddListener(() => SetTiempo(1f));
         botonRapido.onClick.AddListener(() => SetTiempo(2f));
 
