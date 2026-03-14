@@ -1410,54 +1410,27 @@ MonoBehaviour:
   listacartasInvierno: []
   EstacionFill: {fileID: 111676320}
   particulaDestruccionPrefab: {fileID: 6813416509558619124, guid: 3b7f2c753d435d647a80f1f047a113e3, type: 3}
-  maxDays: 100
+  maxDays: 500
   curvaObjetivo:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.0011177063
-      value: 1.8968391
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
+      time: 0
+      value: 1.8778992
+      inSlope: 563.22205
+      outSlope: 563.22205
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.12238863
-      value: 32.424805
-      inSlope: -142.827
-      outSlope: -142.827
-      tangentMode: 0
+      time: 1.1937408
+      value: 674.21906
+      inSlope: 563.22205
+      outSlope: 563.22205
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.3685596
-    - serializedVersion: 3
-      time: 0.38418818
-      value: 200.43723
-      inSlope: -291.6781
-      outSlope: -291.6781
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.29044133
-    - serializedVersion: 3
-      time: 0.64216095
-      value: 303.4123
-      inSlope: -346.53262
-      outSlope: -346.53262
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.6553975
-    - serializedVersion: 3
-      time: 1.0032959
-      value: 500.00385
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -1808,16 +1781,16 @@ RectTransform:
   m_GameObject: {fileID: 280787252}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0424, y: 2.349995, z: 1.0424}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 388940026}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.5, y: 266}
+  m_AnchoredPosition: {x: 10, y: 242}
   m_SizeDelta: {x: 261.0237, y: 82.0591}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &280787254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1838,7 +1811,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Objetivo del d\xEDa"
+  m_text: Impuestos
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 04579b7017898284eaa1be94718c9d77, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 04579b7017898284eaa1be94718c9d77, type: 2}
@@ -1901,7 +1874,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 12.508209, y: 0, z: 31.329735, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -5051,14 +5024,14 @@ RectTransform:
   m_GameObject: {fileID: 848478354}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.7777, y: 1.7777, z: 3.8561866}
+  m_LocalScale: {x: 1.7777, y: 3.984286, z: 3.8561866}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 388940026}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -105, y: 103.4}
+  m_AnchoredPosition: {x: -118, y: -49}
   m_SizeDelta: {x: 70.571, y: 92.8964}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &848478356
@@ -5286,14 +5259,14 @@ RectTransform:
   m_GameObject: {fileID: 974763891}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0849, y: 2.5895567, z: 1.0849}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 388940026}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 11, y: 82}
+  m_AnchoredPosition: {x: -8, y: -89}
   m_SizeDelta: {x: 106.8972, y: 96.0961}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &974763893
@@ -5316,7 +5289,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 000
+  m_text: 111
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5343,14 +5316,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 58.8
+  m_fontSize: 65.9
   m_fontSizeBase: 43.4
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 25.2
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -5379,7 +5352,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 4.1694946, z: 0.13096626, w: 0}
+  m_margin: {x: 6.5770454, y: 4.1694946, z: -9.484516, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -9238,7 +9211,7 @@ RectTransform:
   m_GameObject: {fileID: 1633510673}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.43, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 388940026}
@@ -9271,7 +9244,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0c115b17353eb6d47ac1a8948735a745, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0a7887a0ec88285439c4a378d5d99dcd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11097,7 +11070,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1961095007
 RectTransform:
   m_ObjectHideFlags: 0

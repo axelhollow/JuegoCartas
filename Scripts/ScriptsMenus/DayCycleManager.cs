@@ -57,7 +57,7 @@ public class DayCycleManager : MonoBehaviour
     public GameObject particulaDestruccionPrefab;
 
     [Header("Configuración")]
-    public int maxDays = 100;
+    public int maxDays;
     public AnimationCurve curvaObjetivo;
 
     [Header("CartaOjetivo")]
@@ -279,6 +279,7 @@ public class DayCycleManager : MonoBehaviour
         textoObjetivoActual.text = objetivo.ToString();
 
         #region Objetivos_diarios
+        /*
         if (currentDay == 2)
         {
             objetivoCarta = CardEnum.Heno;
@@ -315,7 +316,18 @@ public class DayCycleManager : MonoBehaviour
             imagenUI.sprite = nuevoSprite;
             imagenUI.gameObject.SetActive(true);
         }
-
+        if (currentDay == 8)
+        {
+            objetivoCarta = CardEnum.Maiz;
+            if (LanguageManager.Instance.idiomaActual == "es")
+            {
+                nuevoSprite = Resources.Load<Sprite>($"Sprites/UI/CartasObjetivo/{objetivoCarta.ToString()}");
+                print("Objetivo: "+objetivoCarta.ToString());
+                 objetivoActivado=true;
+            }
+            imagenUI.sprite = nuevoSprite;
+            imagenUI.gameObject.SetActive(true);
+        }
 
        if(objetivoActivado==false)
         {
@@ -323,11 +335,12 @@ public class DayCycleManager : MonoBehaviour
             print("No hay carta objetivo");
             imagenUI.gameObject.SetActive(false);
         }
-
+         */
         #endregion
+       
     }
 
-    public bool ComprobarSiTieneLaCarta(CardEnum cartaObjetivoEnum) 
+    /*public bool ComprobarSiTieneLaCarta(CardEnum cartaObjetivoEnum) 
     {
 listaCartasObjetivo = GameObject.FindObjectsOfType<CartaObjetivo>(true);
 
@@ -344,6 +357,7 @@ if (tieneCarta && cartaObjetivoEnum == objetivoCarta)
 
 return false;
     }
+    */
 
 #region Victoria o derota
     void ShowEndOfDaySummary()
@@ -357,9 +371,9 @@ return false;
 
 
         // Objetico monedas + cartas
-        if (objetivoCarta != CardEnum.Rojo) 
+       /* if (objetivoCarta != CardEnum.Rojo) 
         {
-
+            print(objetivoCarta);
             if (ComprobarSiTieneLaCarta(objetivoCarta)==true && cantidadMonedas >= objetivo)
             {
                 print("ganaste");
@@ -367,20 +381,22 @@ return false;
                 printVictoria();
             }
             //PERDER
-           if(ComprobarSiTieneLaCarta(objetivoCarta)==false || cantidadMonedas <= objetivo)
+           if(ComprobarSiTieneLaCarta(objetivoCarta)==false || cantidadMonedas < objetivo)
             {
-                print("Perdiste");
+                print("Perdiste, NO TIENES "+objetivoCarta);
                 canvasDerrota.gameObject.SetActive(true);
                     printDerrota();
 
             }
-        }
+        }*/
 
         // objetivo solo monedas
       if(objetivoCarta == CardEnum.Rojo)
         {
             if (cantidadMonedas >= objetivo)
             {
+                int monedasFinales=cantidadMonedas-objetivo;
+                monedasActuales.text=monedasFinales+"";
                 panelResumenDia.SetActive(true);
                 printVictoria();
                 
