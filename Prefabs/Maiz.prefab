@@ -385,7 +385,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.012}
-  m_LocalScale: {x: 1.6, y: 0.15999994, z: 2.3999987}
+  m_LocalScale: {x: 2.0371175, y: 0.5693743, z: 2.9436347}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7939365860605889005}
@@ -490,12 +490,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cartaEnum: 10
+  elementosPesca: []
   slider: {fileID: 1305302888999103861}
   fusionCancelada: 0
   ResultadoFusion: {fileID: 5363898381958202192, guid: fe48660b3da1d54419a07e9f77250243, type: 3}
   ResultadoFusion2: {fileID: 2193583494740372988, guid: a68223100c6c4db4ba6b22ac3a12fc0c, type: 3}
   numHijos: 0
   hijo: {fileID: 0}
+  textoEstacion: {fileID: 0}
 --- !u!114 &5103474267121456017
 MonoBehaviour:
   m_ObjectHideFlags: 0
