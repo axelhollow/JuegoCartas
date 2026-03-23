@@ -10,6 +10,8 @@ public class BotonesVelocidad : MonoBehaviour
     private Button botonNormal;
     private Button botonRapido;
 
+    public GameObject panelPausa;
+
     public Color colorActivo;
     public Color colorInactivo = Color.white;
 
@@ -36,22 +38,23 @@ public class BotonesVelocidad : MonoBehaviour
         }
 
         
-        /*if(Time.timeScale==0f)
+        if(Time.timeScale==0f)
         {
             JuegoEnPausa(true);
-        }*/
+        }
 
     }
 
     void Start()
     {
+        panelPausa.SetActive(false);
         botonPausa = GameObject.Find("BottonPause").GetComponent<Button>();
         botonNormal = GameObject.Find("BottonPlay").GetComponent<Button>();
         botonRapido = GameObject.Find("BottonX2").GetComponent<Button>();
 
 
 
-        botonPausa.onClick.AddListener(() => JuegoEnPausa(false));
+        botonPausa.onClick.AddListener(() => JuegoEnPausa(true));
         botonNormal.onClick.AddListener(() => SetTiempo(1f));
         botonRapido.onClick.AddListener(() => SetTiempo(2f));
 
@@ -93,14 +96,19 @@ public class BotonesVelocidad : MonoBehaviour
         {
             textoNormal.color= colorActivo;
             textoRapido.color = colorInactivo;
+            panelPausa.SetActive(false);
         }
         if (Time.timeScale == 2f)
         {
             textoRapido.color =colorActivo;
             textoNormal.color = colorInactivo;
+            panelPausa.SetActive(false);
         }
         if (GameManager.EstaPausado == true) 
         {
+            var textoPausa = botonPausa.GetComponentInChildren<TextMeshProUGUI>();
+            panelPausa.SetActive(true);
+            textoPausa.color = colorActivo;
             textoNormal.color = colorInactivo;
             textoRapido.color = colorInactivo;
         }
