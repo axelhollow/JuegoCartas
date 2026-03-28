@@ -526,7 +526,7 @@ MonoBehaviour:
   objectNameENG: Meet
   description: Filete magro de carne, muy rico al punto
   descriptionENG: Lean steak, very tasty cooked to perfection
-  valor: 7
+  valor: 5
 --- !u!114 &4548161668265490398
 MonoBehaviour:
   m_ObjectHideFlags: 0

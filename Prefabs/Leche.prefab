@@ -527,7 +527,7 @@ MonoBehaviour:
   objectNameENG: Milk
   description: Oro blanco, del cual se puede hacer queso
   descriptionENG: White gold, the base ingredient for cheese
-  valor: 2
+  valor: 5
 --- !u!114 &-6580753195069915622
 MonoBehaviour:
   m_ObjectHideFlags: 0
