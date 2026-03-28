@@ -7,7 +7,11 @@ using UnityEngine.UI;
  
 public class LoadSystem : MonoBehaviour
 {
+
+
     public string saveFileName = "saveData.json";
+
+    public GameObject panel_1_Tutorial;
 
     // Lista de prefabs disponibles. Aseg�rate de asignarlos desde el Inspector.
     public List<GameObject> prefabs;
@@ -25,7 +29,6 @@ public class LoadSystem : MonoBehaviour
 
     private void Start()
     {
-
         Load();
     }
     public void Load()
@@ -38,8 +41,9 @@ public class LoadSystem : MonoBehaviour
     //PARTIDA NUEVA
         if (!File.Exists(path))
         {
+
             //Datos en escena y player prefab
-            Debug.LogWarning("No se encontr� archivo de guardado.");
+            Debug.LogWarning("Iniciando partida nueva.");
             EliminarObjetosExistentes();
             monedas.text="10";
             diaNumero.text="1";
@@ -48,8 +52,6 @@ public class LoadSystem : MonoBehaviour
 
             string hex = "#" + ColorUtility.ToHtmlStringRGBA(ColorEstacion.color);
             PlayerPrefs.SetString("ColorEstacion", hex);
-            print("Color: "+ColorEstacion.color.ToString());
-
             PlayerPrefs.SetString("Monedas", "0");
             PlayerPrefs.SetString("NumDia", "1");
             PlayerPrefs.SetFloat("DiaBarra", 0f);
@@ -74,8 +76,17 @@ public class LoadSystem : MonoBehaviour
             hijo.diaEstacion=1;
             Vector3 centroPantalla = new Vector3(2.27f, 0, 0f);
             Instantiate(sobrePartidaNueva, centroPantalla, Quaternion.identity);
-            print("se instancio el sobre: "+sobrePartidaNueva);
-            return;
+
+
+        #region tutorial
+        //El tiempo debe permanecer en pausa para que el tutorial no te haga perder el juego
+        Time.timeScale=0;
+                    panel_1_Tutorial.gameObject.SetActive(true);
+        #endregion
+
+
+                        return;
+
         }
       #endregion
 
@@ -117,7 +128,6 @@ public class LoadSystem : MonoBehaviour
         diaNumero.text= PlayerPrefs.GetString("NumDia","1"); 
         hijo_AUX.diaEstacion= PlayerPrefs.GetInt("DiaEstacion",1);
         hijo_AUX.estacionActual= PlayerPrefs.GetInt("EstacionActual", 1);
-        Time.timeScale=1f;
         Debug.Log("Carga completada.");
         #endregion
     }
@@ -146,4 +156,5 @@ public class LoadSystem : MonoBehaviour
         foreach (GameObject obj in draggable) Destroy(obj);
         foreach (GameObject obj in sobres) Destroy(obj);
     }
+
 }
