@@ -200,7 +200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stackOffset: 0.2
   agarrada: 0
-  valorCarta: 1
+  valorCarta: 0
 --- !u!114 &3242400201711474076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,7 +229,7 @@ MonoBehaviour:
   objectNameENG: Farmland
   description: Tierra fertil donde plantar tus semillas
   descriptionENG: A fertile field for planting seeds and growing crops
-  valor: 1
+  valor: 0
 --- !u!114 &8400453942804276622
 MonoBehaviour:
   m_ObjectHideFlags: 0
