@@ -200,7 +200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stackOffset: 0.2
   agarrada: 0
-  valorCarta: 5
+  valorCarta: 6
 --- !u!114 &3242400201711474076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,7 +251,7 @@ MonoBehaviour:
   objectNameENG: Breeding
   description: 1+1=3
   descriptionENG: 1+1=3
-  valor: 10
+  valor: 6
 --- !u!114 &-7348939175424189366
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -125,7 +125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stackOffset: 0.2
   agarrada: 0
-  valorCarta: 1
+  valorCarta: 7
 --- !u!114 &1231405552138620968
 MonoBehaviour:
   m_ObjectHideFlags: 0

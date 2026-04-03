@@ -477,7 +477,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stackOffset: 0.2
   agarrada: 0
-  valorCarta: 2
+  valorCarta: 3
 --- !u!114 &6429034079806001811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -527,7 +527,7 @@ MonoBehaviour:
   objectNameENG: Milk
   description: Oro blanco, del cual se puede hacer queso
   descriptionENG: White gold, the base ingredient for cheese
-  valor: 5
+  valor: 3
 --- !u!114 &-6580753195069915622
 MonoBehaviour:
   m_ObjectHideFlags: 0

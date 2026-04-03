@@ -200,7 +200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stackOffset: 0.2
   agarrada: 0
-  valorCarta: 10
+  valorCarta: 15
 --- !u!114 &3242400201711474076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,7 +250,7 @@ MonoBehaviour:
   objectNameENG: Ness
   description: El legendario monstruo del lago
   descriptionENG: The legendary lake monster
-  valor: 10
+  valor: 15
 --- !u!114 &11061241731224990
 MonoBehaviour:
   m_ObjectHideFlags: 0

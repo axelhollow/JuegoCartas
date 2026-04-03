@@ -327,7 +327,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stackOffset: 0.2
   agarrada: 0
-  valorCarta: 1
+  valorCarta: 6
 --- !u!114 &4812279877625759610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -365,7 +365,7 @@ MonoBehaviour:
   objectNameENG: Slaughterhouse
   description: El cielo de las vacas
   descriptionENG: Cow Heaven
-  valor: 7
+  valor: 6
 --- !u!114 &3733415999956798470
 MonoBehaviour:
   m_ObjectHideFlags: 0

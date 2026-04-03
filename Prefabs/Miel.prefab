@@ -477,7 +477,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stackOffset: 0.2
   agarrada: 0
-  valorCarta: 2
+  valorCarta: 5
 --- !u!114 &6429034079806001811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -527,7 +527,7 @@ MonoBehaviour:
   objectNameENG: Honey
   description: Dulce, natural y valioso
   descriptionENG: Sweet, natural and valuable
-  valor: 7
+  valor: 5
 --- !u!114 &4548161668265490398
 MonoBehaviour:
   m_ObjectHideFlags: 0

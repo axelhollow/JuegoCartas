@@ -250,7 +250,7 @@ MonoBehaviour:
   objectNameENG: Eel
   description: Viscosa y peligrosa
   descriptionENG: Viscous and dangerous
-  valor: 12
+  valor: 10
 --- !u!114 &11061241731224990
 MonoBehaviour:
   m_ObjectHideFlags: 0

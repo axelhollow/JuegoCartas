@@ -126,7 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stackOffset: 0.2
   agarrada: 0
-  valorCarta: 1
+  valorCarta: 2
 --- !u!114 &6037844438258706695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,7 +164,7 @@ MonoBehaviour:
   objectNameENG: Seedbed
   description: Transforma cutivos en semillas
   descriptionENG: Transform crops into seeds
-  valor: 10
+  valor: 2
 --- !u!114 &4496740433196474188
 MonoBehaviour:
   m_ObjectHideFlags: 0

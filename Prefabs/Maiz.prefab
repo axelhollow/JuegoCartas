@@ -476,7 +476,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stackOffset: 0.2
   agarrada: 0
-  valorCarta: 3
+  valorCarta: 1
 --- !u!114 &6429034079806001811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -514,7 +514,7 @@ MonoBehaviour:
   objectNameENG: Corn
   description: Alimentar gallinas o hacer unas palomitas, ambas buenas opciones
   descriptionENG: Feed hens or make popcorn, both great options
-  valor: 3
+  valor: 1
 --- !u!114 &-8280902411288293004
 MonoBehaviour:
   m_ObjectHideFlags: 0

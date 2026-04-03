@@ -200,7 +200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stackOffset: 0.2
   agarrada: 0
-  valorCarta: 1
+  valorCarta: 5
 --- !u!114 &1433971764524718355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,7 +238,7 @@ MonoBehaviour:
   objectNameENG: Bouquet
   description: Un ramo de bonitas flores, que alcanza un buen precio
   descriptionENG: A bouquet of beautiful flowers, which is reasonably priced
-  valor: 10
+  valor: 5
 --- !u!114 &5883615574744330519
 MonoBehaviour:
   m_ObjectHideFlags: 0

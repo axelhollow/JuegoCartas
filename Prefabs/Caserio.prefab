@@ -200,7 +200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stackOffset: 0.2
   agarrada: 0
-  valorCarta: 5
+  valorCarta: 4
 --- !u!114 &3242400201711474076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,7 +251,7 @@ MonoBehaviour:
   objectNameENG: 'Cheesery '
   description: El lugar magico donde se crea el queso
   descriptionENG: The magical place where cheese is made
-  valor: 5
+  valor: 4
 --- !u!114 &-7348939175424189366
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -562,7 +562,7 @@ MonoBehaviour:
   objectNameENG: Gears
   description: Uno no vale para nada, pero dos...
   descriptionENG: One is useless, but two...
-  valor: 2
+  valor: 1
 --- !u!114 &7594543911081421382
 MonoBehaviour:
   m_ObjectHideFlags: 0

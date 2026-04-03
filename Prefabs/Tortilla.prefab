@@ -476,7 +476,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stackOffset: 0.2
   agarrada: 0
-  valorCarta: 2
+  valorCarta: 8
 --- !u!114 &6429034079806001811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -526,7 +526,7 @@ MonoBehaviour:
   objectNameENG: Meet
   description: Un buen trozo de carne, delicioso en su punto
   descriptionENG: A good piece of meat, delicious when cooked just right
-  valor: 7
+  valor: 8
 --- !u!114 &4548161668265490398
 MonoBehaviour:
   m_ObjectHideFlags: 0

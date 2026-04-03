@@ -200,7 +200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stackOffset: 0.2
   agarrada: 0
-  valorCarta: 5
+  valorCarta: 2
 --- !u!114 &3242400201711474076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,7 +250,7 @@ MonoBehaviour:
   objectNameENG: 'Kitchen '
   description: Convierte tus cultivos en deliciosos platos
   descriptionENG: Convert crops into tasty meals
-  valor: 5
+  valor: 2
 --- !u!114 &5414291659317846291
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -477,7 +477,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stackOffset: 0.2
   agarrada: 0
-  valorCarta: 5
+  valorCarta: 6
 --- !u!114 &6429034079806001811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -527,7 +527,7 @@ MonoBehaviour:
   objectNameENG: Egg
   description: Divertido y rico en proteinas
   descriptionENG: Enjoyable and protein-rich!
-  valor: 5
+  valor: 6
 --- !u!114 &4548161668265490398
 MonoBehaviour:
   m_ObjectHideFlags: 0

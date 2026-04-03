@@ -476,7 +476,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stackOffset: 0.2
   agarrada: 0
-  valorCarta: 2
+  valorCarta: 12
 --- !u!114 &6429034079806001811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -526,7 +526,7 @@ MonoBehaviour:
   objectNameENG: Treasure
   description: ' No tan delicioso como un pez pero mucho mas valioso '
   descriptionENG: ' Not as delicious as a fish, but much more valuable.'
-  valor: 7
+  valor: 12
 --- !u!114 &4548161668265490398
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -476,7 +476,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stackOffset: 0.2
   agarrada: 0
-  valorCarta: 1
+  valorCarta: 2
 --- !u!114 &6429034079806001811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -514,7 +514,7 @@ MonoBehaviour:
   objectNameENG: Flower
   description: Una bonita flor, regalo de la primavera
   descriptionENG: A beautiful flower, a gift of spring
-  valor: 1
+  valor: 2
 --- !u!114 &-8280902411288293004
 MonoBehaviour:
   m_ObjectHideFlags: 0

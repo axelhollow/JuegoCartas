@@ -476,7 +476,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stackOffset: 0.2
   agarrada: 0
-  valorCarta: 2
+  valorCarta: 6
 --- !u!114 &6429034079806001811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -526,7 +526,7 @@ MonoBehaviour:
   objectNameENG: Meet
   description: Filete magro de carne, muy rico al punto
   descriptionENG: Lean steak, very tasty cooked to perfection
-  valor: 5
+  valor: 6
 --- !u!114 &4548161668265490398
 MonoBehaviour:
   m_ObjectHideFlags: 0
