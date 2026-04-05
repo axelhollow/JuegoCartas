@@ -91,7 +91,7 @@ public class CartasJson : MonoBehaviour
     IEnumerator FusionarConSlider(GameObject carta1, GameObject carta2)
     {
 
-        float duration = 1f;
+        float duration = 5f;
         float elapsed = 0f;
         CartasJson cartaComp1 = carta1.GetComponent<CartasJson>();
         CartasJson cartaComp2 = carta2.GetComponent<CartasJson>();
@@ -107,13 +107,13 @@ public class CartasJson : MonoBehaviour
         if (cartaComp1.cartaEnum == CardEnum.TierraCultivo && cartaComp2.cartaEnum == CardEnum.SemillaHeno && textoEstacion.text!="Invierno")
         {
             tipoFusion = CardEnum.Heno;
-            duration = 1f;
+            duration = 5f;
             ResultadoFusion = cartaComp2.ResultadoFusion;
         }
         if (cartaComp1.cartaEnum == CardEnum.TierraCultivo && cartaComp2.cartaEnum == CardEnum.SemillaMaiz && textoEstacion.text!="Invierno")
         {
             tipoFusion = CardEnum.Maiz;
-            duration = 1f;
+            duration = 5f;
             ResultadoFusion = cartaComp2.ResultadoFusion;
         }
         if (cartaComp1.cartaEnum == CardEnum.Cocina && cartaComp2.cartaEnum == CardEnum.Huevo)

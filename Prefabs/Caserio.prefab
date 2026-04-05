@@ -232,7 +232,7 @@ MonoBehaviour:
   fabricando: 0
   cartasAProcesar: []
   fusionCancelada: 0
-  duration: 0
+  duration: 20
   elapsed: 0
   profundidadMaxima: 99
 --- !u!114 &5310321536320151851

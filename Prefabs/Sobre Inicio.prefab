@@ -336,7 +336,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stackOffset: 0.2
   agarrada: 0
-  valorCarta: 3
+  valorCarta: 5
 --- !u!114 &7290984836991250133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -349,11 +349,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f65bc9593843afe43b261e8627315040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectName: Pack de semillas
+  objectName: Pack inicio
   objectNameENG: Seeds pack
-  description: Contiene cartas de semillas o cartas relacionadas
+  description: Contiene algunas cartas con las que empezar tu aventura
   descriptionENG: Includes animal cards and other related cards.
-  valor: 3
+  valor: 5
 --- !u!114 &-3790212198310430145
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -358,7 +358,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stackOffset: 0.2
   agarrada: 0
-  valorCarta: 10
+  valorCarta: 15
 --- !u!114 &6270219526225512055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -375,7 +375,7 @@ MonoBehaviour:
   objectNameENG: Resource Pack
   description: 'Todo lo que necesitas, la naturaleza te lo da '
   descriptionENG: Nature provides everything you need
-  valor: 10
+  valor: 15
 --- !u!1 &3142410750967766722
 GameObject:
   m_ObjectHideFlags: 0

@@ -30,8 +30,8 @@ public class MaquinaProduccion : MonoBehaviour
 
         switch (EnumObjetivo) 
         {
-            case CardEnum.Leche: duration = 2;break;
-            case CardEnum.Queso: duration = 5;break;
+            case CardEnum.Leche: duration = 12;break;
+            case CardEnum.Queso: duration = 12;break;
         
         }
     }

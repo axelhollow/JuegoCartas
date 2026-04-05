@@ -277,7 +277,7 @@ public class DayCycleManager : MonoBehaviour
         float valor = curvaObjetivo.Evaluate(t); ; // Evaluar la curva
         objetivo = Mathf.RoundToInt(valor);
         textoObjetivoActual.text = objetivo.ToString();
-
+        Debug.Log($"Día {currentDay} → Impuesto: {objetivo}");
         #region Objetivos_diarios
         /*
         if (currentDay == 2)
