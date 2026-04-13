@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SobreInicio : MonoBehaviour
+public class SobreInicioOff : MonoBehaviour
 {
 [SerializeField]
     List<GameObject> listaCartas = new List<GameObject>();

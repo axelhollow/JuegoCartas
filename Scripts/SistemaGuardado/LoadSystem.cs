@@ -25,7 +25,11 @@ public class LoadSystem : MonoBehaviour
 
     public GameObject sobrePartidaNueva;
 
-    
+    public GameObject mercado;
+    public GameObject packsemillas1;
+    public GameObject packsemillas2;
+public GameObject packsemillas3;
+    public GameObject packsemillas4;
 
     private void Start()
     {
@@ -78,6 +82,7 @@ public class LoadSystem : MonoBehaviour
             Instantiate(sobrePartidaNueva, centroPantalla, Quaternion.identity);
 
 
+
         #region tutorial
         //El tiempo debe permanecer en pausa para que el tutorial no te haga perder el juego
         Time.timeScale=0;
@@ -116,7 +121,13 @@ public class LoadSystem : MonoBehaviour
                 Debug.LogWarning("Prefab no encontrado: " + objData.prefabName);
             }
         }
+        
 
+        mercado.SetActive(true);
+        packsemillas1.gameObject.SetActive(true);
+        packsemillas2.gameObject.SetActive(true);
+        packsemillas3.gameObject.SetActive(true);
+        packsemillas4.gameObject.SetActive(true);
 
         //PlayerPref
         DayCycleManager hijo_AUX = GetComponentInChildren<DayCycleManager>();
