@@ -14,7 +14,10 @@ public class SteamIntegration : MonoBehaviour
     {
         try
         {
-            Steamworks.SteamClient.Init(3934350);
+           
+                  Steamworks.SteamClient.Init(3934350);
+            
+          
 
         }
         catch (System.Exception e)
