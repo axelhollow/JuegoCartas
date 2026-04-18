@@ -9,7 +9,7 @@ public class SobreInicioOff : MonoBehaviour
     private Vector3 puntoBase;          // Punto base fijo (usaremos Y y Z de este)
     public float rangoX;          // Rango m�ximo para aleatorizar X (+- rangoX)
     public float rangoZ;
-
+    public int cantidadCarta;
     private float tiempoUltimoClick = 0f;
     public float tiempoEntreClicks = 0.3f; // Tiempo m�ximo entre clics para considerarlo doble clic
     void OnMouseDown()
@@ -21,7 +21,7 @@ public class SobreInicioOff : MonoBehaviour
 
             foreach(GameObject carta in listaCartas)
             {
-            for(int i = 1; i <= 3; i++)
+            for(int i = 1; i <= cantidadCarta; i++)
                 {
                                  InstanciarEnXaleatorio(carta);
                 }

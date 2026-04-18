@@ -367,10 +367,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   listaCartas:
-  - {fileID: 1159474320037564355, guid: c0915af6c04180b49bdff9d4d205e429, type: 3}
+  - {fileID: 1159474320037564355, guid: 6e9344c390d8b3649ada7fe9b5b81760, type: 3}
   - {fileID: 1159474320037564355, guid: 22b89c421fe8a754794a0a1c1f8b0c85, type: 3}
+  - {fileID: 1159474320037564355, guid: d4482f8577943674384ef785c650ddf8, type: 3}
   rangoX: 2
   rangoZ: 2
+  cantidadCarta: 1
   tiempoEntreClicks: 0.3
 --- !u!1 &3142410750967766722
 GameObject:

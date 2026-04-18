@@ -116,6 +116,12 @@ public class CartasJson : MonoBehaviour
             duration = 5f;
             ResultadoFusion = cartaComp2.ResultadoFusion;
         }
+       /* if (cartaComp1.cartaEnum == CardEnum.Blueprint && cartaComp2.cartaEnum == CardEnum.Carne)
+        {
+            tipoFusion = CardEnum.Cocina;
+            duration = 5f;
+            ResultadoFusion = cartaComp2.ResultadoFusion;
+        }*/
         if (cartaComp1.cartaEnum == CardEnum.Cocina && cartaComp2.cartaEnum == CardEnum.Huevo)
         {
             tipoFusion = CardEnum.Tortilla;

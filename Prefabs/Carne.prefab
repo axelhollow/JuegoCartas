@@ -493,8 +493,8 @@ MonoBehaviour:
   elementosPesca: []
   slider: {fileID: 1305302888999103861}
   fusionCancelada: 0
-  ResultadoFusion: {fileID: 0}
-  ResultadoFusion2: {fileID: 0}
+  ResultadoFusion: {fileID: 1159474320037564355, guid: dc978aa77af27a44b926e382214fd13f, type: 3}
+  ResultadoFusion2: {fileID: 1159474320037564355, guid: dc978aa77af27a44b926e382214fd13f, type: 3}
   numHijos: 0
   hijo: {fileID: 0}
   textoEstacion: {fileID: 0}

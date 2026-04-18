@@ -1,69 +1,85 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ResolutionSelector : MonoBehaviour
 {
-    public Dropdown resolutionDropdown;
+    public TMP_Dropdown resolutionDropdown;
     public Toggle fullscreenToggle;
 
-    Resolution[] resolutions;
+    struct ResOption
+    {
+        public int width;
+        public int height;
+        public string label;
+
+        public ResOption(int w, int h, string l)
+        {
+            width = w;
+            height = h;
+            label = l;
+        }
+    }
+
+List<ResOption> resolutions = new List<ResOption>()
+{
+    new ResOption(1280, 720,  "1280 x 720"),
+    new ResOption(1600, 900,  "1600 x 900"),
+    new ResOption(1920, 1080, "1920 x 1080"),
+    new ResOption(2560, 1440, "2560 x 1440")
+};
 
     void Start()
     {
-        resolutions = Screen.resolutions;
-
         resolutionDropdown.ClearOptions();
 
         List<string> options = new List<string>();
-        int currentResolutionIndex = 0;
+        int currentIndex = 0;
 
-        for (int i = 0; i < resolutions.Length; i++)
+        for (int i = 0; i < resolutions.Count; i++)
         {
-            string option = resolutions[i].width + " x " + resolutions[i].height;
-            options.Add(option);
+            options.Add(resolutions[i].label);
 
-            if (resolutions[i].width == Screen.currentResolution.width &&
-                resolutions[i].height == Screen.currentResolution.height)
+            if (Screen.width == resolutions[i].width &&
+                Screen.height == resolutions[i].height)
             {
-                currentResolutionIndex = i;
+                currentIndex = i;
             }
         }
 
         resolutionDropdown.AddOptions(options);
 
-        // Cargar resolución guardada
+        // Cargar guardado
         if (PlayerPrefs.HasKey("ResolutionIndex"))
         {
-            currentResolutionIndex = PlayerPrefs.GetInt("ResolutionIndex");
+            currentIndex = PlayerPrefs.GetInt("ResolutionIndex");
         }
 
-        resolutionDropdown.value = currentResolutionIndex;
+        resolutionDropdown.value = currentIndex;
         resolutionDropdown.RefreshShownValue();
-
         resolutionDropdown.onValueChanged.AddListener(SetResolution);
 
         // FULLSCREEN
         bool isFullscreen = Screen.fullScreen;
-
-        if (PlayerPrefs.HasKey("Fullscreen"))
-        {
-            isFullscreen = PlayerPrefs.GetInt("Fullscreen") == 1;
-        }
-
         fullscreenToggle.isOn = isFullscreen;
         Screen.fullScreen = isFullscreen;
-
         fullscreenToggle.onValueChanged.AddListener(SetFullscreen);
 
-        // Aplicar resolución al inicio
-        SetResolution(currentResolutionIndex);
+        ApplyResolution(currentIndex);
     }
+
+void ApplyResolution(int index)
+{
+    if (index < 0 || index >= resolutions.Count) return;
+
+    var r = resolutions[index];
+    Screen.SetResolution(r.width, r.height, fullscreenToggle.isOn);
+}
 
     public void SetResolution(int index)
     {
-        Resolution res = resolutions[index];
-        Screen.SetResolution(res.width, res.height, Screen.fullScreen);
+        ApplyResolution(index);
 
         PlayerPrefs.SetInt("ResolutionIndex", index);
         PlayerPrefs.Save();
@@ -72,6 +88,8 @@ public class ResolutionSelector : MonoBehaviour
     public void SetFullscreen(bool isFullscreen)
     {
         Screen.fullScreen = isFullscreen;
+
+        ApplyResolution(resolutionDropdown.value);
 
         PlayerPrefs.SetInt("Fullscreen", isFullscreen ? 1 : 0);
         PlayerPrefs.Save();
