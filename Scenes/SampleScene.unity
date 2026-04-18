@@ -4068,9 +4068,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f65bc9593843afe43b261e8627315040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectName: Pack recursos
+  objectName: Sobre de pesca
   objectNameENG: Resources pack
-  description: Contiene cartas de recursos basicos
+  description: "Contiene ca\xF1as de pesca y lagos donde pescar"
   descriptionENG: Includes basic production cards
   valor: 15
 --- !u!114 &532813982
@@ -4883,7 +4883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f65bc9593843afe43b261e8627315040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectName: Pack de animales
+  objectName: Sobre de granja
   objectNameENG: Animals pack
   description: Contiene cartas de animales o cartas relacionadas
   descriptionENG: Includes animal cards and other related cards.
@@ -6026,6 +6026,7 @@ MonoBehaviour:
   packsemillas2: {fileID: 696033252}
   packsemillas3: {fileID: 1140368086}
   packsemillas4: {fileID: 532813980}
+  hover_detector: {fileID: 1487547623}
 --- !u!1 &1012079685
 GameObject:
   m_ObjectHideFlags: 0
@@ -6953,7 +6954,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f65bc9593843afe43b261e8627315040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectName: Pack recursos
+  objectName: Sobre de recursos
   objectNameENG: Resources pack
   description: Contiene cartas de recursos basicos
   descriptionENG: Includes basic production cards
@@ -13485,7 +13486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f65bc9593843afe43b261e8627315040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectName: Pack de semillas
+  objectName: Sobre de semillas
   objectNameENG: Seeds pack
   description: Contiene cartas de semillas o cartas relacionadas
   descriptionENG: Includes animal cards and other related cards.

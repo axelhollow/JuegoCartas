@@ -31,6 +31,7 @@ public class LoadSystem : MonoBehaviour
 public GameObject packsemillas3;
     public GameObject packsemillas4;
 
+public GameObject hover_detector;
     private void Start()
     {
         Load();
@@ -128,6 +129,7 @@ public GameObject packsemillas3;
         packsemillas2.gameObject.SetActive(true);
         packsemillas3.gameObject.SetActive(true);
         packsemillas4.gameObject.SetActive(true);
+        hover_detector.gameObject.SetActive(true);
 
         //PlayerPref
         DayCycleManager hijo_AUX = GetComponentInChildren<DayCycleManager>();
