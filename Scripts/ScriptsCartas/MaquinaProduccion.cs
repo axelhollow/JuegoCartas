@@ -50,9 +50,19 @@ public class MaquinaProduccion : MonoBehaviour
 
             }
         
-        if(transform.childCount < numHijos && fabricando==true) 
+        if(transform.childCount < 2 && fabricando==true) 
         {
             CancelarFusion();
+        }
+
+        if(fabricando)
+        {
+            slider.gameObject.SetActive(true);
+
+        }
+        if(!fabricando)
+        {
+            slider.gameObject.SetActive(false);
         }
 
         
@@ -60,10 +70,11 @@ public class MaquinaProduccion : MonoBehaviour
 
 
 
+
     IEnumerator procesarHijos()
     {
         fabricando = true;
-
+        slider.gameObject.SetActive(true);
         // Guardamos una copia de los hijos originales antes de modificar la jerarqu�a
         List<Transform> hijosOriginales = new List<Transform>();
         foreach (Transform hijo in transform)
@@ -139,7 +150,7 @@ public class MaquinaProduccion : MonoBehaviour
                     yield return null;
                 }
 
-                slider.gameObject.SetActive(false);
+                //slider.gameObject.SetActive(false);
 
                 //Instanciamos la leche
                 GameObject leche = Instantiate(lecheOBJ);
@@ -197,7 +208,7 @@ public class MaquinaProduccion : MonoBehaviour
 
         // Obtener los sliders activos
         slider.value = 0;
-        slider.gameObject.SetActive(false);
+        //slider.gameObject.SetActive(false);
         cartasEnFusion.Remove(gameObject);
         fusionCancelada = false;
         cartasAProcesar.Clear();

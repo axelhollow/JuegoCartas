@@ -47,7 +47,7 @@ public GameObject packsemillas3;
         {
 
             //Datos en escena y player prefab
-            Debug.LogWarning("Iniciando partida nueva.");
+            //Debug.LogWarning("Iniciando partida nueva.");
             EliminarObjetosExistentes();
             monedas.text="10";
             diaNumero.text="1";

@@ -6649,7 +6649,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1106726477
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10647,6 +10647,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monedas: {fileID: 516375350}
+  logroVaca: 0
+  logro100: 0
+  logroVacuna: 0
+  logroHeno: 0
+  logroBasura: 0
+  logroCarne: 0
+  logroHuevo: 0
 --- !u!4 &1866490536
 Transform:
   m_ObjectHideFlags: 0

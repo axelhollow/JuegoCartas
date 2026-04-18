@@ -19,7 +19,7 @@ public class NuevaPartida : MonoBehaviour
         if (File.Exists(path))
         {   
                  File.Delete(path);
-                 print("archivo de guardado eliminado");
+//                 print("archivo de guardado eliminado");
         }
        
         if (!PlayerPrefs.HasKey("PrimerArranque"))
@@ -31,7 +31,7 @@ public class NuevaPartida : MonoBehaviour
             }
         else
             {
-                Debug.Log("Ya se había ejecutado antes");
+                //Debug.Log("Ya se había ejecutado antes");
             }
 
     }
