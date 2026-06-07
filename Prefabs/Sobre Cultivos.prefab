@@ -357,7 +357,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stackOffset: 0.2
   agarrada: 0
-  valorCarta: 5
+  valorCarta: 3
 --- !u!114 &7290984836991250133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,7 +374,7 @@ MonoBehaviour:
   objectNameENG: Seeds pack
   description: Contiene cartas de semillas o cartas relacionadas
   descriptionENG: Includes animal cards and other related cards.
-  valor: 5
+  valor: 3
 --- !u!1 &3142410750967766722
 GameObject:
   m_ObjectHideFlags: 0

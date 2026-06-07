@@ -1601,7 +1601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce54d7fe5fb50fb4394c86430ce8522c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dayDuration: 30
+  dayDuration: 50
   dayProgressSlider: {fileID: 1428104973}
   dayCounterText: {fileID: 516375350}
   textResultado: {fileID: 1914763726}
@@ -4705,7 +4705,7 @@ MonoBehaviour:
   distanciaEmpuje: 1.2
   duracionEmpuje: 0.3
   monedas: {fileID: 4680631660819440087}
-  costeSobre: 5
+  costeSobre: 3
   particulaDestruccionPrefab: {fileID: 6813416509558619124, guid: 3b7f2c753d435d647a80f1f047a113e3, type: 3}
 --- !u!1 &687747096
 GameObject:
@@ -13490,7 +13490,7 @@ MonoBehaviour:
   objectNameENG: Seeds pack
   description: Contiene cartas de semillas o cartas relacionadas
   descriptionENG: Includes animal cards and other related cards.
-  valor: 5
+  valor: 3
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
